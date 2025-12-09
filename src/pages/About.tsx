@@ -6,7 +6,7 @@ function About() {
         <img
           src="/images/jmrGlasses.jpeg"
           width={200}
-          alt="Slightly blurry picture of smiling leaf with glasses and a plaid shirt."
+          alt="Leaf smiling, wearing glasses and a plaid shirt"
           className="rounded shadow-lg mb-6"
         />
         <p>

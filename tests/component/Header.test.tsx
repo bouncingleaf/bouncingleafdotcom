@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from 'vitest'
+import { describe, it, expect } from 'vitest'
 import { render, screen, fireEvent } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
 import Header from '../../src/components/Header'
@@ -76,7 +76,6 @@ describe('Header', () => {
   describe('Mobile navigation', () => {
     it('mobile navigation is hidden initially', () => {
       renderHeader()
-      const mobileNav = screen.queryByRole('link', { name: 'Writing' })
       const allWritingLinks = screen.getAllByText('Writing')
       expect(allWritingLinks.length).toBe(1)
     })

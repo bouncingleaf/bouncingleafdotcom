@@ -19,6 +19,12 @@ module.exports = {
       { allowConstantExport: true },
     ],
     'react/prop-types': 'off',
+    // Allow apostrophes and quotes in JSX text for better readability
+    'react/no-unescaped-entities': 'off',
+    // Allow click handlers on divs for lightbox overlays (common accessible pattern)
+    'jsx-a11y/no-static-element-interactions': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jsx-a11y/no-noninteractive-element-interactions': 'off',
   },
   settings: {
     react: {

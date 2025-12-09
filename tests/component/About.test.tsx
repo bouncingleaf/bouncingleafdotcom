@@ -34,7 +34,7 @@ describe('About', () => {
 
   it('displays profile image', () => {
     render(<About />)
-    const image = screen.getByAltText(/smiling leaf with glasses/i)
+    const image = screen.getByAltText(/Leaf smiling.*glasses/i)
     expect(image).toBeInTheDocument()
     expect(image).toHaveAttribute('src', '/images/jmrGlasses.jpeg')
   })
