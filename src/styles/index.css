@@ -1,6 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --color-text-primary: #383838;
+  --color-accent-primary: #3079c2;
+  --color-accent-secondary: #f68e61;
+  --max-width-content: 1200px;
+}
 
 @layer base {
   body {
