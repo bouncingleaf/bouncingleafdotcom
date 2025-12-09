@@ -8,14 +8,9 @@ import PairedLightbox from '../components/PairedLightbox'
 const gallery = galleryData as GalleryData
 
 function Art() {
-  // Track which galleries are expanded (all expanded by default)
+  // Track which non-creatures galleries are expanded
   const [expandedGalleries, setExpandedGalleries] = useState<Set<string>>(
-    new Set([
-      ...gallery.creatures.map((s) => s.id),
-      'artomat',
-      'circles',
-      'sketch1',
-    ])
+    new Set(['circles', 'sketch1'])
   )
 
   // Lightbox state
@@ -37,6 +32,13 @@ function Art() {
       }
       return newSet
     })
+  }
+
+  const scrollToSeries = (seriesId: string) => {
+    const element = document.getElementById(seriesId)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
   }
 
   const openLightbox = (images: string[], index: number) => {
@@ -115,59 +117,79 @@ function Art() {
 
         <h3 className="mb-6">Mysterious Creatures</h3>
 
+        {/* Emblem Menu */}
+        <div className="mb-8 p-4 bg-gray-50 rounded-lg">
+          <p className="text-sm text-gray-600 mb-3">
+            Jump to series (click emblem or number):
+          </p>
+          <div className="flex flex-wrap gap-4">
+            {gallery.creatures
+              .slice()
+              .reverse()
+              .map((series, idx) => {
+                const seriesNumber = gallery.creatures.length - idx
+                return (
+                  <div
+                    key={series.id}
+                    className="flex flex-col items-center cursor-pointer group"
+                    onClick={() => scrollToSeries(series.id)}
+                  >
+                    {series.emblem && (
+                      <img
+                        src={series.emblem}
+                        width={50}
+                        alt={`${series.title} emblem`}
+                        className="rounded hover:opacity-80 transition-opacity mb-1"
+                      />
+                    )}
+                    <span className="text-sm font-semibold group-hover:text-accent-primary transition-colors">
+                      {seriesNumber}
+                    </span>
+                  </div>
+                )
+              })}
+          </div>
+        </div>
+
         {/* Creatures Series 8 to 1 */}
         {gallery.creatures
           .slice()
           .reverse()
           .map((series) => (
-            <div key={series.id} className="mb-8">
-              <p
-                onClick={() => toggleGallery(series.id)}
-                className="cursor-pointer text-lg mb-2 hover:text-accent-primary"
-              >
-                {series.title}:{' '}
-                <span className="text-sm text-gray-500">
-                  (click to {expandedGalleries.has(series.id) ? 'hide' : 'show'})
-                </span>
-              </p>
-              {series.emblem && (
-                <img
-                  src={series.emblem}
-                  width={200}
-                  alt={`Thumbnail for ${series.title}`}
-                  onClick={() => toggleGallery(series.id)}
-                  className="cursor-pointer hover:opacity-80 transition-opacity rounded mb-4"
-                />
-              )}
-              {expandedGalleries.has(series.id) && (
-                <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {series.pairs.map((pair, idx) => (
-                    <div
-                      key={pair.id}
-                      className="grid grid-cols-2 gap-2 cursor-pointer"
-                      onClick={() =>
-                        openPairedLightbox(series.pairs, idx, series.title)
-                      }
-                    >
-                      <img
-                        src={pair.mainImage}
-                        alt={`${series.title} - ${pair.id}`}
-                        className="w-full rounded shadow-lg hover:shadow-xl transition-shadow"
-                      />
+            <div key={series.id} id={series.id} className="mb-12 scroll-mt-4">
+              <h4 className="text-xl font-semibold mb-4">{series.title}</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {series.pairs.map((pair, idx) => (
+                  <div
+                    key={pair.id}
+                    className={`cursor-pointer ${
+                      pair.isPaired ? 'grid grid-cols-2 gap-2' : ''
+                    }`}
+                    onClick={() =>
+                      openPairedLightbox(series.pairs, idx, series.title)
+                    }
+                  >
+                    <img
+                      src={pair.mainImage}
+                      alt={`${series.title} - ${pair.id}`}
+                      className="w-full rounded shadow-lg hover:shadow-xl transition-shadow"
+                    />
+                    {pair.isPaired && pair.namesImage && (
                       <img
                         src={pair.namesImage}
                         alt={`${series.title} - ${pair.id} names`}
                         className="w-full rounded shadow-lg hover:shadow-xl transition-shadow"
                       />
-                    </div>
-                  ))}
-                </div>
-              )}
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
 
         {/* Artomat Prototypes */}
         <div className="mb-8">
+          <h4 className="text-xl font-semibold mb-4">Artomat Prototypes</h4>
           <p className="mb-4">
             Here are my Artomat prototypes. These are watercolor and ink on 2"x3"
             watercolor paper (specifically{' '}
@@ -183,39 +205,26 @@ function Art() {
             slot in the machine.
           </p>
           {gallery.artomat.find((img) => img.id === 'artomatEmblem') && (
-            <>
-              <img
-                src={
-                  gallery.artomat.find((img) => img.id === 'artomatEmblem')!.path
-                }
-                width={200}
-                alt="Thumbnail for Artomat series"
-                onClick={() => toggleGallery('artomat')}
-                className="cursor-pointer hover:opacity-80 transition-opacity rounded mb-4"
-              />
-              {expandedGalleries.has('artomat') && (
-                <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                  {gallery.artomat
-                    .filter((img) => img.id !== 'artomatEmblem')
-                    .map((img, idx) => (
-                      <img
-                        key={img.id}
-                        src={img.path}
-                        alt={img.title}
-                        className="w-full rounded shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
-                        onClick={() =>
-                          openLightbox(
-                            gallery.artomat
-                              .filter((i) => i.id !== 'artomatEmblem')
-                              .map((i) => i.path),
-                            idx
-                          )
-                        }
-                      />
-                    ))}
-                </div>
-              )}
-            </>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {gallery.artomat
+                .filter((img) => img.id !== 'artomatEmblem')
+                .map((img, idx) => (
+                  <img
+                    key={img.id}
+                    src={img.path}
+                    alt={img.title}
+                    className="w-full rounded shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
+                    onClick={() =>
+                      openLightbox(
+                        gallery.artomat
+                          .filter((i) => i.id !== 'artomatEmblem')
+                          .map((i) => i.path),
+                        idx
+                      )
+                    }
+                  />
+                ))}
+            </div>
           )}
         </div>
       </section>
@@ -270,7 +279,7 @@ function Art() {
               className="cursor-pointer hover:opacity-80 transition-opacity rounded mb-4"
             />
             {expandedGalleries.has('circles') && (
-              <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {gallery.circles
                   .filter((img) => img.id !== 'circles_cover')
                   .map((img, idx) => (
@@ -339,7 +348,7 @@ function Art() {
                 className="cursor-pointer hover:opacity-80 transition-opacity rounded mb-4"
               />
               {expandedGalleries.has('sketch1') && (
-                <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                   {gallery.sketchbook
                     .filter((img) => img.id !== 'emblemSketch1')
                     .map((img, idx) => (

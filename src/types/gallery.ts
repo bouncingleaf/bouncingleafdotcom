@@ -3,7 +3,8 @@
 export interface ImagePair {
   id: string
   mainImage: string
-  namesImage: string
+  namesImage: string | null
+  isPaired: boolean
 }
 
 export interface CreaturesSeries {

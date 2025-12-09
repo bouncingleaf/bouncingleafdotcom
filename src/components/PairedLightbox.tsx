@@ -30,10 +30,11 @@ function PairedLightbox({
   }, [onClose, onPrevious, onNext])
 
   const currentPair = pairs[currentIndex]
+  const isPaired = currentPair.isPaired
 
   return (
     <div
-      className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center"
+      className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
       onClick={onClose}
     >
       <button
@@ -70,19 +71,29 @@ function PairedLightbox({
       )}
 
       <div
-        className="max-w-7xl max-h-[90vh] p-4 flex gap-2"
+        className="w-full h-full flex items-center justify-center"
         onClick={(e) => e.stopPropagation()}
       >
-        <img
-          src={currentPair.mainImage}
-          alt={`${altText} - ${currentPair.id}`}
-          className="max-h-[90vh] object-contain flex-1"
-        />
-        <img
-          src={currentPair.namesImage}
-          alt={`${altText} - ${currentPair.id} names`}
-          className="max-h-[90vh] object-contain flex-1"
-        />
+        {isPaired ? (
+          <div className="flex gap-4 items-center justify-center max-w-full max-h-full">
+            <img
+              src={currentPair.mainImage}
+              alt={`${altText} - ${currentPair.id}`}
+              className="max-h-[90vh] max-w-[45vw] object-contain"
+            />
+            <img
+              src={currentPair.namesImage!}
+              alt={`${altText} - ${currentPair.id} names`}
+              className="max-h-[90vh] max-w-[45vw] object-contain"
+            />
+          </div>
+        ) : (
+          <img
+            src={currentPair.mainImage}
+            alt={`${altText} - ${currentPair.id}`}
+            className="max-h-[90vh] max-w-[90vw] object-contain"
+          />
+        )}
       </div>
 
       {pairs.length > 1 && (

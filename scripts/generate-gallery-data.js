@@ -28,10 +28,14 @@ for (let i = 1; i <= 8; i++) {
     const pairs = mainImages.map(mainImage => {
       const baseName = mainImage.replace('.jpeg', '');
       const namesImage = `${baseName}names.jpeg`;
+      const namesPath = path.join(seriesDir, namesImage);
+      const hasNamesImage = fs.existsSync(namesPath);
+
       return {
         id: baseName,
         mainImage: `/images/creatures/creatures${seriesNum}/${mainImage}`,
-        namesImage: `/images/creatures/creatures${seriesNum}/${namesImage}`
+        namesImage: hasNamesImage ? `/images/creatures/creatures${seriesNum}/${namesImage}` : null,
+        isPaired: hasNamesImage
       };
     });
 
