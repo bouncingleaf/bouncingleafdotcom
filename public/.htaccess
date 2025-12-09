@@ -1,11 +1,19 @@
+# This file was uploaded manually by Leaf on 12/9/2025
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
-  
+
   # Don't rewrite files or directories
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  
+
   # Rewrite everything else to index.html
-  RewriteRule ^ index.html [L]
+  RewriteRule ^ /index.html [L]
 </IfModule>
+
+# Prevent directory listing
+Options -Indexes
+
+# Set default error document
+ErrorDocument 404 /index.html
