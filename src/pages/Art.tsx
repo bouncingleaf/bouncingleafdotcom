@@ -124,29 +124,29 @@ function Art() {
         <div className="flex flex-wrap gap-6">
           {/* Creatures Series */}
           {reversedCreatures.map((series, idx) => {
-              const seriesNumber = gallery.creatures.length - idx
-              return (
-                <div
-                  key={series.id}
-                  className="flex flex-col items-center cursor-pointer group"
-                  onClick={() => scrollToSeries(series.id)}
-                >
-                  {series.emblem && (
-                    <img
-                      src={series.emblem}
-                      width={100}
-                      height={100}
-                      alt={`${series.title} emblem`}
-                      className="rounded hover:opacity-80 transition-opacity mb-2"
-                      loading="lazy"
-                    />
-                  )}
-                  <span className="text-sm font-semibold group-hover:text-accent-primary transition-colors">
-                    Creatures {seriesNumber}
-                  </span>
-                </div>
-              )
-            })}
+            const seriesNumber = gallery.creatures.length - idx
+            return (
+              <div
+                key={series.id}
+                className="flex flex-col items-center cursor-pointer group"
+                onClick={() => scrollToSeries(series.id)}
+              >
+                {series.emblem && (
+                  <img
+                    src={series.emblem}
+                    width={100}
+                    height={100}
+                    alt={`${series.title} emblem`}
+                    className="rounded hover:opacity-80 transition-opacity mb-2"
+                    loading="lazy"
+                  />
+                )}
+                <span className="text-sm font-semibold group-hover:text-accent-primary transition-colors">
+                  Creatures {seriesNumber}
+                </span>
+              </div>
+            )
+          })}
 
           {/* Circles */}
           {circlesCover && (
@@ -232,44 +232,44 @@ function Art() {
 
         {/* Creatures Series 8 to 1 */}
         {reversedCreatures.map((series) => (
-            <div key={series.id} id={series.id} className="mb-12 scroll-mt-4">
-              <h4 className="text-xl font-semibold mb-4">{series.title}</h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                {series.pairs.map((pair, idx) => (
-                  <div
-                    key={pair.id}
-                    className={`cursor-pointer ${
-                      pair.isPaired ? 'grid grid-cols-2 gap-2' : ''
-                    }`}
-                    onClick={() =>
-                      openPairedLightbox(series.pairs, idx, series.title)
-                    }
-                  >
+          <div key={series.id} id={series.id} className="mb-12 scroll-mt-4">
+            <h4 className="text-xl font-semibold mb-4">{series.title}</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              {series.pairs.map((pair, idx) => (
+                <div
+                  key={pair.id}
+                  className={`cursor-pointer ${
+                    pair.isPaired ? 'grid grid-cols-2 gap-2' : ''
+                  }`}
+                  onClick={() =>
+                    openPairedLightbox(series.pairs, idx, series.title)
+                  }
+                >
+                  <img
+                    src={pair.mainImage}
+                    alt={`${series.title} - ${pair.id}`}
+                    className="w-full rounded shadow-lg hover:shadow-xl transition-shadow"
+                    loading="lazy"
+                  />
+                  {pair.isPaired && pair.namesImage && (
                     <img
-                      src={pair.mainImage}
-                      alt={`${series.title} - ${pair.id}`}
+                      src={pair.namesImage}
+                      alt={`${series.title} - ${pair.id} names`}
                       className="w-full rounded shadow-lg hover:shadow-xl transition-shadow"
                       loading="lazy"
                     />
-                    {pair.isPaired && pair.namesImage && (
-                      <img
-                        src={pair.namesImage}
-                        alt={`${series.title} - ${pair.id} names`}
-                        className="w-full rounded shadow-lg hover:shadow-xl transition-shadow"
-                        loading="lazy"
-                      />
-                    )}
-                  </div>
-                ))}
-              </div>
-              <button
-                onClick={scrollToTop}
-                className="text-sm text-gray-500 hover:text-accent-primary transition-colors"
-              >
-                ↑ top of page
-              </button>
+                  )}
+                </div>
+              ))}
             </div>
-          ))}
+            <button
+              onClick={scrollToTop}
+              className="text-sm text-gray-500 hover:text-accent-primary transition-colors"
+            >
+              ↑ top of page
+            </button>
+          </div>
+        ))}
 
         {/* Artomat Prototypes */}
         <div className="mb-8">
