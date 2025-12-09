@@ -4,7 +4,19 @@ function Home() {
       <div className="text-center mb-12">
         <h1 className="mb-4">Hi, I'm Leaf.</h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Book writing, Mysterious Creatures, and more.
+          Mysterious Creatures and more.
+        </p>
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto mt-2">
+          Check out my professional site at{' '}
+          <a
+            href="https://www.beyondwritingcode.com"
+            className="link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            beyondwritingcode.com
+          </a>
+          .
         </p>
       </div>
 

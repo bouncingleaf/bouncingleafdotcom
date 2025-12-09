@@ -15,7 +15,7 @@ describe('Layout', () => {
   describe('Component rendering', () => {
     it('renders Header component', () => {
       renderLayout()
-      expect(screen.getByText("Leaf's art portfolio")).toBeInTheDocument()
+      expect(screen.getByText("Leaf's site")).toBeInTheDocument()
     })
 
     it('renders Footer component', () => {

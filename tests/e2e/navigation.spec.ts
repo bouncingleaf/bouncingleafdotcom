@@ -30,7 +30,7 @@ test.describe('Navigation', () => {
 
   test('Can click site title to return home', async ({ page }) => {
     await page.goto('/about')
-    await page.click("text=Leaf's art portfolio")
+    await page.click("text=Leaf's site")
     await expect(page).toHaveURL('/')
   })
 

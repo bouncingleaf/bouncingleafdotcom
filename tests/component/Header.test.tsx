@@ -13,14 +13,14 @@ const renderHeader = () => {
 
 describe('Header', () => {
   describe('Site title', () => {
-    it('renders site title "Leaf\'s art portfolio"', () => {
+    it('renders site title "Leaf\'s site"', () => {
       renderHeader()
-      expect(screen.getByText("Leaf's art portfolio")).toBeInTheDocument()
+      expect(screen.getByText("Leaf's site")).toBeInTheDocument()
     })
 
     it('site title links to home', () => {
       renderHeader()
-      const titleLink = screen.getByText("Leaf's art portfolio")
+      const titleLink = screen.getByText("Leaf's site")
       expect(titleLink).toHaveAttribute('href', '/')
     })
   })

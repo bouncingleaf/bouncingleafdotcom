@@ -22,6 +22,13 @@ function Writing() {
           </Link>
           .
         </p>
+        <div className="flex justify-center my-8">
+          <img
+            src="/images/TBA_certificate.jpeg"
+            alt="The Book Academy Certificate"
+            className="max-w-full h-auto rounded shadow-lg"
+          />
+        </div>
         <p>
           I love getting a peek into the process of other artists. So I'll be
           posting about my writing journey as I go. Check out{' '}

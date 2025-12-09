@@ -8,8 +8,15 @@ function Header() {
     <header className="bg-white border-b border-gray-200">
       <nav className="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link to="/" className="text-xl font-semibold text-text-primary">
-            Leaf's art portfolio
+          <Link
+            to="/"
+            className="text-xl font-semibold text-text-primary"
+            style={{
+              fontFamily:
+                "'Garamond', 'Minion Pro', 'Adobe Garamond Pro', 'Cormorant Garamond', Georgia, 'Times New Roman', serif",
+            }}
+          >
+            Leaf's site
           </Link>
 
           {/* Desktop Navigation */}
