@@ -24,13 +24,8 @@
   h6 {
     @apply font-semibold;
     font-family:
-      'Garamond',
-      'Minion Pro',
-      'Adobe Garamond Pro',
-      'Cormorant Garamond',
-      Georgia,
-      'Times New Roman',
-      serif;
+      'Garamond', 'Minion Pro', 'Adobe Garamond Pro', 'Cormorant Garamond',
+      Georgia, 'Times New Roman', serif;
   }
 
   h1 {
