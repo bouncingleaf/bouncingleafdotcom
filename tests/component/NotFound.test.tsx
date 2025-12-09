@@ -22,8 +22,22 @@ describe('NotFound', () => {
       </BrowserRouter>
     )
     expect(
-      screen.getByText("The page you're looking for doesn't exist.")
+      screen.getByText("Hmm, the page you're looking for doesn't exist.")
     ).toBeInTheDocument()
+  })
+
+  it('displays the emblem image', () => {
+    render(
+      <BrowserRouter>
+        <NotFound />
+      </BrowserRouter>
+    )
+    const img = screen.getByAltText('Mysterious Creature')
+    expect(img).toBeInTheDocument()
+    expect(img).toHaveAttribute(
+      'src',
+      '/images/creatures/creatures01/emblem1.jpeg'
+    )
   })
 
   it('has a Go Home link that navigates to /', () => {

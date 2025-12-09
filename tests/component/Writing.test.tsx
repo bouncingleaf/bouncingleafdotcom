@@ -15,7 +15,7 @@ describe('Writing', () => {
   it('renders the main heading', () => {
     renderWriting()
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
-      "New: I'm writing a book."
+      "I'm writing a book."
     )
   })
 
@@ -41,21 +41,10 @@ describe('Writing', () => {
     expect(link).toHaveAttribute('href', 'https://luvvie.org/')
   })
 
-  it('has link to leafjessicaroy.com', () => {
+  it('has link to Beyond Writing Code', () => {
     renderWriting()
-    const link = screen.getByRole('link', { name: 'my new site' })
-    expect(link).toHaveAttribute('href', 'https://www.leafjessicaroy.com/')
-  })
-
-  it('has link to newsletter', () => {
-    renderWriting()
-    const link = screen.getByRole('link', {
-      name: 'my newsletter mailing list',
-    })
-    expect(link).toHaveAttribute(
-      'href',
-      'https://www.leafjessicaroy.com/connect/'
-    )
+    const link = screen.getByRole('link', { name: 'Beyond Writing Code' })
+    expect(link).toHaveAttribute('href', 'https://www.beyondwritingcode.com/')
   })
 
   it('has link to Instagram', () => {

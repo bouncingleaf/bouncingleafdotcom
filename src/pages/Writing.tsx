@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 function Writing() {
   return (
     <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 className="mb-6">New: I'm writing a book.</h1>
+      <h1 className="mb-6">I'm writing a book.</h1>
       <div className="prose max-w-none">
         <p>
           That's right: a book. Those of you who know me as an artist or a
@@ -11,7 +11,7 @@ function Writing() {
           writer first. Writing feels like coming home.
         </p>
         <p>
-          I am in Cohort 3 of{' '}
+          I graduated from Cohort 3 of{' '}
           <Link to="https://thebookacademy.org/" className="link">
             The Book Academy
           </Link>
@@ -25,15 +25,11 @@ function Writing() {
         <p>
           I love getting a peek into the process of other artists. So I'll be
           posting about my writing journey as I go. Check out{' '}
-          <Link to="https://www.leafjessicaroy.com/" className="link">
-            my new site
+          <Link to="https://www.beyondwritingcode.com/" className="link">
+            Beyond Writing Code
           </Link>
-          , sign up for{' '}
-          <Link to="https://www.leafjessicaroy.com/connect/" className="link">
-            my newsletter mailing list
-          </Link>{' '}
-          to get updates on the progress and perhaps some snippets, or follow me
-          on{' '}
+          , sign up for my newsletter mailing list to get updates on the
+          progress and perhaps some snippets, or follow me on{' '}
           <Link to="https://www.instagram.com/leafjessicaroy/" className="link">
             Instagram
           </Link>{' '}

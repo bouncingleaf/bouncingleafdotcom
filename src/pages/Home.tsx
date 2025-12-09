@@ -4,7 +4,7 @@ function Home() {
       <div className="text-center mb-12">
         <h1 className="mb-4">Hi, I'm Leaf.</h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Here you may find Mysterious Creatures to explore...
+          Book writing, Mysterious Creatures, and more.
         </p>
       </div>
 
