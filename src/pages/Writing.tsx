@@ -42,6 +42,14 @@ function Writing() {
           </Link>{' '}
           to get a peek into the book writing process as it unfolds.
         </p>
+        <p>
+          The Trump administration is causing a truly historic amount of damage
+          to our country and our world. I wrote a{' '}
+          <Link to="/resist" className="link">
+            What Now page
+          </Link>{' '}
+          with some thoughts, ideas, and resources about it all.
+        </p>
       </div>
     </div>
   )
