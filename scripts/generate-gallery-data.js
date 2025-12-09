@@ -73,18 +73,47 @@ const circlesImages = fs.existsSync(circlesDir)
       }))
   : [];
 
-// Generate sketchbook data
+// Generate sketchbook data (organized by book)
 const sketchbookDir = path.join(publicDir, 'sketchbook');
-const sketchbookImages = fs.existsSync(sketchbookDir)
-  ? fs.readdirSync(sketchbookDir)
-      .filter(f => f.endsWith('.jpeg'))
+const sketchbookData = [];
+
+if (fs.existsSync(sketchbookDir)) {
+  const bookDirs = fs.readdirSync(sketchbookDir)
+    .filter(f => {
+      const fullPath = path.join(sketchbookDir, f);
+      return fs.statSync(fullPath).isDirectory();
+    })
+    .sort();
+
+  bookDirs.forEach(bookDir => {
+    const bookPath = path.join(sketchbookDir, bookDir);
+    const files = fs.readdirSync(bookPath);
+
+    // Find emblem
+    const emblem = files.find(f => f.toLowerCase().includes('emblem'));
+
+    // Find all image files (both .jpeg and .jpg)
+    const images = files
+      .filter(f => (f.endsWith('.jpeg') || f.endsWith('.jpg')) && !f.toLowerCase().includes('emblem'))
       .sort()
       .map(f => ({
-        id: f.replace('.jpeg', ''),
-        path: `/images/sketchbook/${f}`,
-        title: f.replace('.jpeg', '').replace(/_/g, ' ')
-      }))
-  : [];
+        id: f.replace(/\.(jpeg|jpg)$/, ''),
+        path: `/images/sketchbook/${bookDir}/${f}`,
+        title: f.replace(/\.(jpeg|jpg)$/, '').replace(/_/g, ' ')
+      }));
+
+    sketchbookData.push({
+      id: bookDir,
+      title: bookDir === 'book1'
+        ? 'Casual References to Other Dimensions (2020-2021)'
+        : bookDir === 'book2'
+        ? 'Your Guide to Drawing the Line (2021)'
+        : bookDir,
+      emblem: emblem ? `/images/sketchbook/${bookDir}/${emblem}` : null,
+      images: images
+    });
+  });
+}
 
 // Generate other images data
 const otherImages = [];
@@ -104,7 +133,7 @@ const galleryData = {
   creatures: creaturesData,
   artomat: artomatImages,
   circles: circlesImages,
-  sketchbook: sketchbookImages,
+  sketchbook: sketchbookData,
   other: otherImages
 };
 
@@ -116,5 +145,5 @@ console.log(`Generated gallery data with:`);
 console.log(`  - ${creaturesData.length} creatures series`);
 console.log(`  - ${artomatImages.length} artomat images`);
 console.log(`  - ${circlesImages.length} circles images`);
-console.log(`  - ${sketchbookImages.length} sketchbook images`);
+console.log(`  - ${sketchbookData.length} sketchbook books`);
 console.log(`  - ${otherImages.length} other images`);

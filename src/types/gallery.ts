@@ -20,10 +20,17 @@ export interface SimpleImage {
   title: string
 }
 
+export interface SketchbookBook {
+  id: string
+  title: string
+  emblem: string | null
+  images: SimpleImage[]
+}
+
 export interface GalleryData {
   creatures: CreaturesSeries[]
   artomat: SimpleImage[]
   circles: SimpleImage[]
-  sketchbook: SimpleImage[]
+  sketchbook: SketchbookBook[]
   other: SimpleImage[]
 }

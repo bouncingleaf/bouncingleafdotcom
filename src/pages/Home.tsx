@@ -8,16 +8,28 @@ function Home() {
         </p>
       </div>
 
-      {/* Featured artwork section - placeholder */}
+      {/* Featured artwork section */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-        <div className="aspect-square bg-gray-200 rounded flex items-center justify-center text-gray-400">
-          Featured Image 1
+        <div className="aspect-square overflow-hidden rounded shadow-lg">
+          <img
+            src="/images/creatures/creatures03/emblem3.jpeg"
+            alt="Mysterious Creatures Series 3"
+            className="w-full h-full object-cover"
+          />
         </div>
-        <div className="aspect-square bg-gray-200 rounded flex items-center justify-center text-gray-400">
-          Featured Image 2
+        <div className="aspect-square overflow-hidden rounded shadow-lg">
+          <img
+            src="/images/creatures/creatures05/emblem5.jpeg"
+            alt="Mysterious Creatures Series 5"
+            className="w-full h-full object-cover"
+          />
         </div>
-        <div className="aspect-square bg-gray-200 rounded flex items-center justify-center text-gray-400">
-          Featured Image 3
+        <div className="aspect-square overflow-hidden rounded shadow-lg">
+          <img
+            src="/images/creatures/creatures07/emblem07.jpeg"
+            alt="Mysterious Creatures Series 7"
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
     </div>

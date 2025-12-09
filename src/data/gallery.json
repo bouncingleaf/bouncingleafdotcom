@@ -647,104 +647,208 @@
   ],
   "sketchbook": [
     {
-      "id": "book1-s1134032-0001",
-      "path": "/images/sketchbook/book1-s1134032-0001.jpeg",
-      "title": "book1-s1134032-0001"
+      "id": "book1",
+      "title": "Casual References to Other Dimensions (2020-2021)",
+      "emblem": "/images/sketchbook/book1/emblemSketch1.jpeg",
+      "images": [
+        {
+          "id": "book1-s1134032-0001",
+          "path": "/images/sketchbook/book1/book1-s1134032-0001.jpeg",
+          "title": "book1-s1134032-0001"
+        },
+        {
+          "id": "book1-s1134032-0002",
+          "path": "/images/sketchbook/book1/book1-s1134032-0002.jpeg",
+          "title": "book1-s1134032-0002"
+        },
+        {
+          "id": "book1-s1134032-0003",
+          "path": "/images/sketchbook/book1/book1-s1134032-0003.jpeg",
+          "title": "book1-s1134032-0003"
+        },
+        {
+          "id": "book1-s1134032-0004",
+          "path": "/images/sketchbook/book1/book1-s1134032-0004.jpeg",
+          "title": "book1-s1134032-0004"
+        },
+        {
+          "id": "book1-s1134032-0005",
+          "path": "/images/sketchbook/book1/book1-s1134032-0005.jpeg",
+          "title": "book1-s1134032-0005"
+        },
+        {
+          "id": "book1-s1134032-0006",
+          "path": "/images/sketchbook/book1/book1-s1134032-0006.jpeg",
+          "title": "book1-s1134032-0006"
+        },
+        {
+          "id": "book1-s1134032-0007",
+          "path": "/images/sketchbook/book1/book1-s1134032-0007.jpeg",
+          "title": "book1-s1134032-0007"
+        },
+        {
+          "id": "book1-s1134032-0008",
+          "path": "/images/sketchbook/book1/book1-s1134032-0008.jpeg",
+          "title": "book1-s1134032-0008"
+        },
+        {
+          "id": "book1-s1134032-0009",
+          "path": "/images/sketchbook/book1/book1-s1134032-0009.jpeg",
+          "title": "book1-s1134032-0009"
+        },
+        {
+          "id": "book1-s1134032-0010",
+          "path": "/images/sketchbook/book1/book1-s1134032-0010.jpeg",
+          "title": "book1-s1134032-0010"
+        },
+        {
+          "id": "book1-s1134032-0011",
+          "path": "/images/sketchbook/book1/book1-s1134032-0011.jpeg",
+          "title": "book1-s1134032-0011"
+        },
+        {
+          "id": "book1-s1134032-0012",
+          "path": "/images/sketchbook/book1/book1-s1134032-0012.jpeg",
+          "title": "book1-s1134032-0012"
+        },
+        {
+          "id": "book1-s1134032-0013",
+          "path": "/images/sketchbook/book1/book1-s1134032-0013.jpeg",
+          "title": "book1-s1134032-0013"
+        },
+        {
+          "id": "book1-s1134032-0014",
+          "path": "/images/sketchbook/book1/book1-s1134032-0014.jpeg",
+          "title": "book1-s1134032-0014"
+        },
+        {
+          "id": "book1-s1134032-0015",
+          "path": "/images/sketchbook/book1/book1-s1134032-0015.jpeg",
+          "title": "book1-s1134032-0015"
+        },
+        {
+          "id": "book1-s1134032-0016",
+          "path": "/images/sketchbook/book1/book1-s1134032-0016.jpeg",
+          "title": "book1-s1134032-0016"
+        },
+        {
+          "id": "book1-s1134032-0017",
+          "path": "/images/sketchbook/book1/book1-s1134032-0017.jpeg",
+          "title": "book1-s1134032-0017"
+        },
+        {
+          "id": "book1-s1134032-0018",
+          "path": "/images/sketchbook/book1/book1-s1134032-0018.jpeg",
+          "title": "book1-s1134032-0018"
+        },
+        {
+          "id": "book1-s1134032-0019",
+          "path": "/images/sketchbook/book1/book1-s1134032-0019.jpeg",
+          "title": "book1-s1134032-0019"
+        }
+      ]
     },
     {
-      "id": "book1-s1134032-0002",
-      "path": "/images/sketchbook/book1-s1134032-0002.jpeg",
-      "title": "book1-s1134032-0002"
-    },
-    {
-      "id": "book1-s1134032-0003",
-      "path": "/images/sketchbook/book1-s1134032-0003.jpeg",
-      "title": "book1-s1134032-0003"
-    },
-    {
-      "id": "book1-s1134032-0004",
-      "path": "/images/sketchbook/book1-s1134032-0004.jpeg",
-      "title": "book1-s1134032-0004"
-    },
-    {
-      "id": "book1-s1134032-0005",
-      "path": "/images/sketchbook/book1-s1134032-0005.jpeg",
-      "title": "book1-s1134032-0005"
-    },
-    {
-      "id": "book1-s1134032-0006",
-      "path": "/images/sketchbook/book1-s1134032-0006.jpeg",
-      "title": "book1-s1134032-0006"
-    },
-    {
-      "id": "book1-s1134032-0007",
-      "path": "/images/sketchbook/book1-s1134032-0007.jpeg",
-      "title": "book1-s1134032-0007"
-    },
-    {
-      "id": "book1-s1134032-0008",
-      "path": "/images/sketchbook/book1-s1134032-0008.jpeg",
-      "title": "book1-s1134032-0008"
-    },
-    {
-      "id": "book1-s1134032-0009",
-      "path": "/images/sketchbook/book1-s1134032-0009.jpeg",
-      "title": "book1-s1134032-0009"
-    },
-    {
-      "id": "book1-s1134032-0010",
-      "path": "/images/sketchbook/book1-s1134032-0010.jpeg",
-      "title": "book1-s1134032-0010"
-    },
-    {
-      "id": "book1-s1134032-0011",
-      "path": "/images/sketchbook/book1-s1134032-0011.jpeg",
-      "title": "book1-s1134032-0011"
-    },
-    {
-      "id": "book1-s1134032-0012",
-      "path": "/images/sketchbook/book1-s1134032-0012.jpeg",
-      "title": "book1-s1134032-0012"
-    },
-    {
-      "id": "book1-s1134032-0013",
-      "path": "/images/sketchbook/book1-s1134032-0013.jpeg",
-      "title": "book1-s1134032-0013"
-    },
-    {
-      "id": "book1-s1134032-0014",
-      "path": "/images/sketchbook/book1-s1134032-0014.jpeg",
-      "title": "book1-s1134032-0014"
-    },
-    {
-      "id": "book1-s1134032-0015",
-      "path": "/images/sketchbook/book1-s1134032-0015.jpeg",
-      "title": "book1-s1134032-0015"
-    },
-    {
-      "id": "book1-s1134032-0016",
-      "path": "/images/sketchbook/book1-s1134032-0016.jpeg",
-      "title": "book1-s1134032-0016"
-    },
-    {
-      "id": "book1-s1134032-0017",
-      "path": "/images/sketchbook/book1-s1134032-0017.jpeg",
-      "title": "book1-s1134032-0017"
-    },
-    {
-      "id": "book1-s1134032-0018",
-      "path": "/images/sketchbook/book1-s1134032-0018.jpeg",
-      "title": "book1-s1134032-0018"
-    },
-    {
-      "id": "book1-s1134032-0019",
-      "path": "/images/sketchbook/book1-s1134032-0019.jpeg",
-      "title": "book1-s1134032-0019"
-    },
-    {
-      "id": "emblemSketch1",
-      "path": "/images/sketchbook/emblemSketch1.jpeg",
-      "title": "emblemSketch1"
+      "id": "book2",
+      "title": "Your Guide to Drawing the Line (2021)",
+      "emblem": "/images/sketchbook/book2/emblemSketch2.png",
+      "images": [
+        {
+          "id": "book2-S6664862_01",
+          "path": "/images/sketchbook/book2/book2-S6664862_01.jpg",
+          "title": "book2-S6664862 01"
+        },
+        {
+          "id": "book2-S6664862_02",
+          "path": "/images/sketchbook/book2/book2-S6664862_02.jpg",
+          "title": "book2-S6664862 02"
+        },
+        {
+          "id": "book2-S6664862_03",
+          "path": "/images/sketchbook/book2/book2-S6664862_03.jpg",
+          "title": "book2-S6664862 03"
+        },
+        {
+          "id": "book2-S6664862_04",
+          "path": "/images/sketchbook/book2/book2-S6664862_04.jpg",
+          "title": "book2-S6664862 04"
+        },
+        {
+          "id": "book2-S6664862_05",
+          "path": "/images/sketchbook/book2/book2-S6664862_05.jpg",
+          "title": "book2-S6664862 05"
+        },
+        {
+          "id": "book2-S6664862_06",
+          "path": "/images/sketchbook/book2/book2-S6664862_06.jpg",
+          "title": "book2-S6664862 06"
+        },
+        {
+          "id": "book2-S6664862_07",
+          "path": "/images/sketchbook/book2/book2-S6664862_07.jpg",
+          "title": "book2-S6664862 07"
+        },
+        {
+          "id": "book2-S6664862_08",
+          "path": "/images/sketchbook/book2/book2-S6664862_08.jpg",
+          "title": "book2-S6664862 08"
+        },
+        {
+          "id": "book2-S6664862_09",
+          "path": "/images/sketchbook/book2/book2-S6664862_09.jpg",
+          "title": "book2-S6664862 09"
+        },
+        {
+          "id": "book2-S6664862_10",
+          "path": "/images/sketchbook/book2/book2-S6664862_10.jpg",
+          "title": "book2-S6664862 10"
+        },
+        {
+          "id": "book2-S6664862_11",
+          "path": "/images/sketchbook/book2/book2-S6664862_11.jpg",
+          "title": "book2-S6664862 11"
+        },
+        {
+          "id": "book2-S6664862_12",
+          "path": "/images/sketchbook/book2/book2-S6664862_12.jpg",
+          "title": "book2-S6664862 12"
+        },
+        {
+          "id": "book2-S6664862_13",
+          "path": "/images/sketchbook/book2/book2-S6664862_13.jpg",
+          "title": "book2-S6664862 13"
+        },
+        {
+          "id": "book2-S6664862_14",
+          "path": "/images/sketchbook/book2/book2-S6664862_14.jpg",
+          "title": "book2-S6664862 14"
+        },
+        {
+          "id": "book2-S6664862_15",
+          "path": "/images/sketchbook/book2/book2-S6664862_15.jpg",
+          "title": "book2-S6664862 15"
+        },
+        {
+          "id": "book2-S6664862_16",
+          "path": "/images/sketchbook/book2/book2-S6664862_16.jpg",
+          "title": "book2-S6664862 16"
+        },
+        {
+          "id": "book2-S6664862_17",
+          "path": "/images/sketchbook/book2/book2-S6664862_17.jpg",
+          "title": "book2-S6664862 17"
+        },
+        {
+          "id": "book2-S6664862_18",
+          "path": "/images/sketchbook/book2/book2-S6664862_18.jpg",
+          "title": "book2-S6664862 18"
+        },
+        {
+          "id": "book2-S6664862_19",
+          "path": "/images/sketchbook/book2/book2-S6664862_19.jpg",
+          "title": "book2-S6664862 19"
+        }
+      ]
     }
   ],
   "other": [

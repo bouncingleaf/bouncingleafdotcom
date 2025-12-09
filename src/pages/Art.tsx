@@ -10,7 +10,7 @@ const gallery = galleryData as GalleryData
 function Art() {
   // Track which non-creatures galleries are expanded
   const [expandedGalleries, setExpandedGalleries] = useState<Set<string>>(
-    new Set(['circles', 'sketch1'])
+    new Set(['circles', 'book1'])
   )
 
   // Lightbox state
@@ -39,6 +39,10 @@ function Art() {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
+  }
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   const openLightbox = (images: string[], index: number) => {
@@ -95,6 +99,84 @@ function Art() {
     <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <h1 className="mb-8">Art</h1>
 
+      {/* Navigation Menu */}
+      <div className="mb-12 p-6 bg-gray-50 rounded-lg">
+        <p className="text-sm text-gray-600 mb-4">
+          Jump to section (click emblem or label):
+        </p>
+        <div className="flex flex-wrap gap-6">
+          {/* Creatures Series */}
+          {gallery.creatures
+            .slice()
+            .reverse()
+            .map((series, idx) => {
+              const seriesNumber = gallery.creatures.length - idx
+              return (
+                <div
+                  key={series.id}
+                  className="flex flex-col items-center cursor-pointer group"
+                  onClick={() => scrollToSeries(series.id)}
+                >
+                  {series.emblem && (
+                    <img
+                      src={series.emblem}
+                      width={100}
+                      height={100}
+                      alt={`${series.title} emblem`}
+                      className="rounded hover:opacity-80 transition-opacity mb-2"
+                    />
+                  )}
+                  <span className="text-sm font-semibold group-hover:text-accent-primary transition-colors">
+                    Creatures {seriesNumber}
+                  </span>
+                </div>
+              )
+            })}
+
+          {/* Circles */}
+          {gallery.circles.find((img) => img.id === 'circles_cover') && (
+            <div
+              className="flex flex-col items-center cursor-pointer group"
+              onClick={() => scrollToSeries('circles')}
+            >
+              <img
+                src={gallery.circles.find((img) => img.id === 'circles_cover')!.path}
+                width={100}
+                height={100}
+                alt="Circles emblem"
+                className="rounded hover:opacity-80 transition-opacity mb-2 object-cover"
+                style={{ width: '100px', height: '100px' }}
+              />
+              <span className="text-sm font-semibold group-hover:text-accent-primary transition-colors">
+                Circles
+              </span>
+            </div>
+          )}
+
+          {/* Sketchbooks */}
+          {gallery.sketchbook.map((book) => (
+            <div
+              key={book.id}
+              className="flex flex-col items-center cursor-pointer group"
+              onClick={() => scrollToSeries(book.id)}
+            >
+              {book.emblem && (
+                <img
+                  src={book.emblem}
+                  width={100}
+                  height={100}
+                  alt={`${book.title} emblem`}
+                  className="rounded hover:opacity-80 transition-opacity mb-2"
+                />
+              )}
+              <span className="text-sm font-semibold group-hover:text-accent-primary transition-colors">
+                {book.id === 'book1' ? 'Book 1' : book.id === 'book2' ? 'Book 2' : book.id}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Artomat Section */}
       <section className="mb-16">
         <h2 className="mb-4">Artomat</h2>
@@ -117,40 +199,6 @@ function Art() {
 
         <h3 className="mb-6">Mysterious Creatures</h3>
 
-        {/* Emblem Menu */}
-        <div className="mb-8 p-4 bg-gray-50 rounded-lg">
-          <p className="text-sm text-gray-600 mb-3">
-            Jump to series (click emblem or number):
-          </p>
-          <div className="flex flex-wrap gap-4">
-            {gallery.creatures
-              .slice()
-              .reverse()
-              .map((series, idx) => {
-                const seriesNumber = gallery.creatures.length - idx
-                return (
-                  <div
-                    key={series.id}
-                    className="flex flex-col items-center cursor-pointer group"
-                    onClick={() => scrollToSeries(series.id)}
-                  >
-                    {series.emblem && (
-                      <img
-                        src={series.emblem}
-                        width={50}
-                        alt={`${series.title} emblem`}
-                        className="rounded hover:opacity-80 transition-opacity mb-1"
-                      />
-                    )}
-                    <span className="text-sm font-semibold group-hover:text-accent-primary transition-colors">
-                      {seriesNumber}
-                    </span>
-                  </div>
-                )
-              })}
-          </div>
-        </div>
-
         {/* Creatures Series 8 to 1 */}
         {gallery.creatures
           .slice()
@@ -158,7 +206,7 @@ function Art() {
           .map((series) => (
             <div key={series.id} id={series.id} className="mb-12 scroll-mt-4">
               <h4 className="text-xl font-semibold mb-4">{series.title}</h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 {series.pairs.map((pair, idx) => (
                   <div
                     key={pair.id}
@@ -184,6 +232,12 @@ function Art() {
                   </div>
                 ))}
               </div>
+              <button
+                onClick={scrollToTop}
+                className="text-sm text-gray-500 hover:text-accent-primary transition-colors"
+              >
+                ↑ top of page
+              </button>
             </div>
           ))}
 
@@ -205,32 +259,40 @@ function Art() {
             slot in the machine.
           </p>
           {gallery.artomat.find((img) => img.id === 'artomatEmblem') && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-              {gallery.artomat
-                .filter((img) => img.id !== 'artomatEmblem')
-                .map((img, idx) => (
-                  <img
-                    key={img.id}
-                    src={img.path}
-                    alt={img.title}
-                    className="w-full rounded shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
-                    onClick={() =>
-                      openLightbox(
-                        gallery.artomat
-                          .filter((i) => i.id !== 'artomatEmblem')
-                          .map((i) => i.path),
-                        idx
-                      )
-                    }
-                  />
-                ))}
-            </div>
+            <>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-4">
+                {gallery.artomat
+                  .filter((img) => img.id !== 'artomatEmblem')
+                  .map((img, idx) => (
+                    <img
+                      key={img.id}
+                      src={img.path}
+                      alt={img.title}
+                      className="w-full rounded shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
+                      onClick={() =>
+                        openLightbox(
+                          gallery.artomat
+                            .filter((i) => i.id !== 'artomatEmblem')
+                            .map((i) => i.path),
+                          idx
+                        )
+                      }
+                    />
+                  ))}
+              </div>
+              <button
+                onClick={scrollToTop}
+                className="text-sm text-gray-500 hover:text-accent-primary transition-colors"
+              >
+                ↑ top of page
+              </button>
+            </>
           )}
         </div>
       </section>
 
       {/* Thousands of Circles Section */}
-      <section className="mb-16">
+      <section id="circles" className="mb-16 scroll-mt-4">
         <h2 className="mb-4">Thousands of Circles</h2>
         <div className="prose max-w-none mb-8">
           <p>
@@ -279,7 +341,7 @@ function Art() {
               className="cursor-pointer hover:opacity-80 transition-opacity rounded mb-4"
             />
             {expandedGalleries.has('circles') && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-4">
                 {gallery.circles
                   .filter((img) => img.id !== 'circles_cover')
                   .map((img, idx) => (
@@ -300,6 +362,12 @@ function Art() {
                   ))}
               </div>
             )}
+            <button
+              onClick={scrollToTop}
+              className="text-sm text-gray-500 hover:text-accent-primary transition-colors"
+            >
+              ↑ top of page
+            </button>
           </>
         )}
       </section>
@@ -318,14 +386,14 @@ function Art() {
           </p>
         </div>
 
-        <div className="mb-8">
+        <div id="book1" className="mb-8 scroll-mt-4">
           <h3
-            onClick={() => toggleGallery('sketch1')}
+            onClick={() => toggleGallery('book1')}
             className="cursor-pointer hover:text-accent-primary mb-2"
           >
             "Casual References to Other Dimensions" (2020-2021){' '}
             <span className="text-sm text-gray-500">
-              (click to {expandedGalleries.has('sketch1') ? 'hide' : 'show'})
+              (click to {expandedGalleries.has('book1') ? 'hide' : 'show'})
             </span>
           </h3>
           <p className="mb-4">
@@ -335,23 +403,22 @@ function Art() {
             flies anyway," and the collage at the back. May you walk free of
             interference.
           </p>
-          {gallery.sketchbook.find((img) => img.id === 'emblemSketch1') && (
+          {gallery.sketchbook.find((book) => book.id === 'book1') && (
             <>
               <img
                 src={
-                  gallery.sketchbook.find((img) => img.id === 'emblemSketch1')!
-                    .path
+                  gallery.sketchbook.find((book) => book.id === 'book1')!.emblem!
                 }
                 width={200}
                 alt="Thumbnail for sketchbook series 1"
-                onClick={() => toggleGallery('sketch1')}
+                onClick={() => toggleGallery('book1')}
                 className="cursor-pointer hover:opacity-80 transition-opacity rounded mb-4"
               />
-              {expandedGalleries.has('sketch1') && (
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {expandedGalleries.has('book1') && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-4">
                   {gallery.sketchbook
-                    .filter((img) => img.id !== 'emblemSketch1')
-                    .map((img, idx) => (
+                    .find((book) => book.id === 'book1')!
+                    .images.map((img, idx) => (
                       <img
                         key={img.id}
                         src={img.path}
@@ -360,8 +427,8 @@ function Art() {
                         onClick={() =>
                           openLightbox(
                             gallery.sketchbook
-                              .filter((i) => i.id !== 'emblemSketch1')
-                              .map((i) => i.path),
+                              .find((book) => book.id === 'book1')!
+                              .images.map((i) => i.path),
                             idx
                           )
                         }
@@ -369,12 +436,26 @@ function Art() {
                     ))}
                 </div>
               )}
+              <button
+                onClick={scrollToTop}
+                className="text-sm text-gray-500 hover:text-accent-primary transition-colors"
+              >
+                ↑ top of page
+              </button>
             </>
           )}
         </div>
 
-        <div className="mb-8">
-          <h3 className="mb-2">"Your Guide to Drawing the Line" (2021)</h3>
+        <div id="book2" className="mb-8 scroll-mt-4">
+          <h3
+            onClick={() => toggleGallery('book2')}
+            className="cursor-pointer hover:text-accent-primary mb-2"
+          >
+            "Your Guide to Drawing the Line" (2021){' '}
+            <span className="text-sm text-gray-500">
+              (click to {expandedGalleries.has('book2') ? 'hide' : 'show'})
+            </span>
+          </h3>
           <div className="prose max-w-none mb-4">
             <p>100% of adults are into lines.</p>
             <p>
@@ -386,10 +467,47 @@ function Art() {
               until I'd drawn half of it, haha.
             </p>
           </div>
-          <p className="text-sm text-gray-500 italic mb-4">
-            Note: The second sketchbook images are not yet available in this
-            gallery.
-          </p>
+          {gallery.sketchbook.find((book) => book.id === 'book2') && (
+            <>
+              <img
+                src={
+                  gallery.sketchbook.find((book) => book.id === 'book2')!.emblem!
+                }
+                width={200}
+                alt="Thumbnail for sketchbook series 2"
+                onClick={() => toggleGallery('book2')}
+                className="cursor-pointer hover:opacity-80 transition-opacity rounded mb-4"
+              />
+              {expandedGalleries.has('book2') && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-4">
+                  {gallery.sketchbook
+                    .find((book) => book.id === 'book2')!
+                    .images.map((img, idx) => (
+                      <img
+                        key={img.id}
+                        src={img.path}
+                        alt={img.title}
+                        className="w-full rounded shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
+                        onClick={() =>
+                          openLightbox(
+                            gallery.sketchbook
+                              .find((book) => book.id === 'book2')!
+                              .images.map((i) => i.path),
+                            idx
+                          )
+                        }
+                      />
+                    ))}
+                </div>
+              )}
+              <button
+                onClick={scrollToTop}
+                className="text-sm text-gray-500 hover:text-accent-primary transition-colors"
+              >
+                ↑ top of page
+              </button>
+            </>
+          )}
         </div>
       </section>
 
