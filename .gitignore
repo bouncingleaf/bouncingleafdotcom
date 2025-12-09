@@ -35,3 +35,6 @@ coverage
 /playwright-report/
 /playwright/.cache/
 /test-results/
+
+# Migration Plan
+bouncingleaf-migration-plan.md
