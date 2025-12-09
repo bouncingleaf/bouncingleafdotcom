@@ -13,7 +13,9 @@
     "type-check": "tsc --noEmit",
     "test": "vitest",
     "test:coverage": "vitest --coverage",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "security:check": "npm audit --audit-level=high",
+    "security:fix": "npm audit fix"
   },
   "dependencies": {
     "react": "^18.3.1",

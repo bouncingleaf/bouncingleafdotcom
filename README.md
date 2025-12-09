@@ -28,16 +28,18 @@ npm run preview
 ### Available Scripts
 
 ```bash
-npm run dev           # Start development server
-npm run build         # Build for production
-npm run preview       # Preview production build
-npm run lint          # Run ESLint
-npm run format        # Format code with Prettier
-npm run format:check  # Check formatting
-npm run type-check    # Run TypeScript type checking
-npm run test          # Run unit and component tests
-npm run test:coverage # Run tests with coverage
-npm run test:e2e      # Run end-to-end tests
+npm run dev            # Start development server
+npm run build          # Build for production
+npm run preview        # Preview production build
+npm run lint           # Run ESLint
+npm run format         # Format code with Prettier
+npm run format:check   # Check formatting
+npm run type-check     # Run TypeScript type checking
+npm run test           # Run unit and component tests
+npm run test:coverage  # Run tests with coverage
+npm run test:e2e       # Run end-to-end tests
+npm run security:check # Check for high/critical vulnerabilities
+npm run security:fix   # Attempt to fix vulnerabilities
 ```
 
 ## Project Structure
@@ -99,9 +101,17 @@ bouncingleafdotcom/
 - WCAG 2.1 AA accessibility compliance
 - Maximum content width: 1200px
 
+## Security
+
+**Critical requirement**: The project must have no high or critical severity security vulnerabilities.
+
+- Run `npm run security:check` before committing
+- CI/CD pipeline automatically checks for vulnerabilities
+- Deployment is blocked if high/critical vulnerabilities are detected
+
 ## Deployment
 
-The site automatically deploys to DreamHost via GitHub Actions when pushing to the `main` branch. See `.github/workflows/deploy.yml` for details.
+The site automatically deploys to DreamHost via GitHub Actions when pushing to the `main` branch. The CI pipeline includes security checks, linting, testing, and building before deployment.
 
 ## License
 

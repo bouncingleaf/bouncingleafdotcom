@@ -37,6 +37,10 @@ npm run type-check
 # Build for production
 npm run build
 npm run preview           # Preview production build locally
+
+# Security checks
+npm run security:check    # Check for high/critical vulnerabilities
+npm run security:fix      # Attempt to fix vulnerabilities
 ```
 
 ## Architecture & Key Concepts
@@ -98,6 +102,16 @@ Images and content are managed via Git commits:
 
 No CMS, database, or user authentication needed.
 
+## Security Requirements
+
+**CRITICAL**: There must be **no high or critical severity security vulnerabilities** in dependencies.
+
+- Run `npm run security:check` before committing changes
+- Run `npm audit` regularly to check for vulnerabilities
+- Address high/critical vulnerabilities immediately
+- Moderate/low vulnerabilities should be evaluated and fixed when feasible
+- CI/CD pipeline blocks deployment if high/critical vulnerabilities are detected
+
 ## Testing Requirements
 
 - **Minimum 70% code coverage** on critical paths
@@ -111,10 +125,11 @@ No CMS, database, or user authentication needed.
 GitHub Actions workflow triggered on push/PR to `main`:
 
 1. Install dependencies (with caching)
-2. Lint & format check (ESLint, Prettier, TypeScript)
-3. Run all tests with coverage
-4. Production build
-5. Deploy to DreamHost (main branch only, after tests pass)
+2. Security audit (fails on high/critical vulnerabilities)
+3. Lint & format check (ESLint, Prettier, TypeScript)
+4. Run all tests with coverage
+5. Production build
+6. Deploy to DreamHost (main branch only, after tests pass)
 
 **Required GitHub Secrets**:
 - `DREAMHOST_HOST`
