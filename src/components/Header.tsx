@@ -9,7 +9,7 @@ function Header() {
       <nav className="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="text-xl font-semibold text-text-primary">
-            BouncingLeaf
+            Leaf's art portfolio
           </Link>
 
           {/* Desktop Navigation */}

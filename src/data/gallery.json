@@ -1,3 +1,678 @@
 {
-  "images": []
+  "creatures": [
+    {
+      "id": "creatures01",
+      "title": "Mysterious Creatures Series 1",
+      "emblem": "/images/creatures/creatures01/emblem1.jpeg",
+      "pairs": [
+        {
+          "id": "01-01-05",
+          "mainImage": "/images/creatures/creatures01/01-01-05.jpeg",
+          "namesImage": "/images/creatures/creatures01/01-01-05names.jpeg"
+        },
+        {
+          "id": "01-06-10",
+          "mainImage": "/images/creatures/creatures01/01-06-10.jpeg",
+          "namesImage": "/images/creatures/creatures01/01-06-10names.jpeg"
+        },
+        {
+          "id": "01-11-15",
+          "mainImage": "/images/creatures/creatures01/01-11-15.jpeg",
+          "namesImage": "/images/creatures/creatures01/01-11-15names.jpeg"
+        },
+        {
+          "id": "01-16-20",
+          "mainImage": "/images/creatures/creatures01/01-16-20.jpeg",
+          "namesImage": "/images/creatures/creatures01/01-16-20names.jpeg"
+        },
+        {
+          "id": "01-21-25",
+          "mainImage": "/images/creatures/creatures01/01-21-25.jpeg",
+          "namesImage": "/images/creatures/creatures01/01-21-25names.jpeg"
+        },
+        {
+          "id": "01-26-30",
+          "mainImage": "/images/creatures/creatures01/01-26-30.jpeg",
+          "namesImage": "/images/creatures/creatures01/01-26-30names.jpeg"
+        },
+        {
+          "id": "01-31-35",
+          "mainImage": "/images/creatures/creatures01/01-31-35.jpeg",
+          "namesImage": "/images/creatures/creatures01/01-31-35names.jpeg"
+        },
+        {
+          "id": "01-36-40",
+          "mainImage": "/images/creatures/creatures01/01-36-40.jpeg",
+          "namesImage": "/images/creatures/creatures01/01-36-40names.jpeg"
+        },
+        {
+          "id": "01-41-45",
+          "mainImage": "/images/creatures/creatures01/01-41-45.jpeg",
+          "namesImage": "/images/creatures/creatures01/01-41-45names.jpeg"
+        },
+        {
+          "id": "01-46-50",
+          "mainImage": "/images/creatures/creatures01/01-46-50.jpeg",
+          "namesImage": "/images/creatures/creatures01/01-46-50names.jpeg"
+        }
+      ]
+    },
+    {
+      "id": "creatures02",
+      "title": "Mysterious Creatures Series 2",
+      "emblem": "/images/creatures/creatures02/emblem2.jpeg",
+      "pairs": [
+        {
+          "id": "02-01-05",
+          "mainImage": "/images/creatures/creatures02/02-01-05.jpeg",
+          "namesImage": "/images/creatures/creatures02/02-01-05names.jpeg"
+        },
+        {
+          "id": "02-06-10",
+          "mainImage": "/images/creatures/creatures02/02-06-10.jpeg",
+          "namesImage": "/images/creatures/creatures02/02-06-10names.jpeg"
+        },
+        {
+          "id": "02-11-15",
+          "mainImage": "/images/creatures/creatures02/02-11-15.jpeg",
+          "namesImage": "/images/creatures/creatures02/02-11-15names.jpeg"
+        },
+        {
+          "id": "02-16-20",
+          "mainImage": "/images/creatures/creatures02/02-16-20.jpeg",
+          "namesImage": "/images/creatures/creatures02/02-16-20names.jpeg"
+        },
+        {
+          "id": "02-21-25",
+          "mainImage": "/images/creatures/creatures02/02-21-25.jpeg",
+          "namesImage": "/images/creatures/creatures02/02-21-25names.jpeg"
+        },
+        {
+          "id": "02-26-30",
+          "mainImage": "/images/creatures/creatures02/02-26-30.jpeg",
+          "namesImage": "/images/creatures/creatures02/02-26-30names.jpeg"
+        },
+        {
+          "id": "02-31-35",
+          "mainImage": "/images/creatures/creatures02/02-31-35.jpeg",
+          "namesImage": "/images/creatures/creatures02/02-31-35names.jpeg"
+        },
+        {
+          "id": "02-36-40",
+          "mainImage": "/images/creatures/creatures02/02-36-40.jpeg",
+          "namesImage": "/images/creatures/creatures02/02-36-40names.jpeg"
+        },
+        {
+          "id": "02-41-45",
+          "mainImage": "/images/creatures/creatures02/02-41-45.jpeg",
+          "namesImage": "/images/creatures/creatures02/02-41-45names.jpeg"
+        },
+        {
+          "id": "02-46-50",
+          "mainImage": "/images/creatures/creatures02/02-46-50.jpeg",
+          "namesImage": "/images/creatures/creatures02/02-46-50names.jpeg"
+        }
+      ]
+    },
+    {
+      "id": "creatures03",
+      "title": "Mysterious Creatures Series 3",
+      "emblem": "/images/creatures/creatures03/emblem3.jpeg",
+      "pairs": [
+        {
+          "id": "03-01-05",
+          "mainImage": "/images/creatures/creatures03/03-01-05.jpeg",
+          "namesImage": "/images/creatures/creatures03/03-01-05names.jpeg"
+        },
+        {
+          "id": "03-06-10",
+          "mainImage": "/images/creatures/creatures03/03-06-10.jpeg",
+          "namesImage": "/images/creatures/creatures03/03-06-10names.jpeg"
+        },
+        {
+          "id": "03-11-15",
+          "mainImage": "/images/creatures/creatures03/03-11-15.jpeg",
+          "namesImage": "/images/creatures/creatures03/03-11-15names.jpeg"
+        },
+        {
+          "id": "03-16-20",
+          "mainImage": "/images/creatures/creatures03/03-16-20.jpeg",
+          "namesImage": "/images/creatures/creatures03/03-16-20names.jpeg"
+        },
+        {
+          "id": "03-21-25",
+          "mainImage": "/images/creatures/creatures03/03-21-25.jpeg",
+          "namesImage": "/images/creatures/creatures03/03-21-25names.jpeg"
+        },
+        {
+          "id": "03-26-30",
+          "mainImage": "/images/creatures/creatures03/03-26-30.jpeg",
+          "namesImage": "/images/creatures/creatures03/03-26-30names.jpeg"
+        },
+        {
+          "id": "03-31-35",
+          "mainImage": "/images/creatures/creatures03/03-31-35.jpeg",
+          "namesImage": "/images/creatures/creatures03/03-31-35names.jpeg"
+        },
+        {
+          "id": "03-36-40",
+          "mainImage": "/images/creatures/creatures03/03-36-40.jpeg",
+          "namesImage": "/images/creatures/creatures03/03-36-40names.jpeg"
+        },
+        {
+          "id": "03-41-45",
+          "mainImage": "/images/creatures/creatures03/03-41-45.jpeg",
+          "namesImage": "/images/creatures/creatures03/03-41-45names.jpeg"
+        },
+        {
+          "id": "03-46-50",
+          "mainImage": "/images/creatures/creatures03/03-46-50.jpeg",
+          "namesImage": "/images/creatures/creatures03/03-46-50names.jpeg"
+        }
+      ]
+    },
+    {
+      "id": "creatures04",
+      "title": "Mysterious Creatures Series 4",
+      "emblem": "/images/creatures/creatures04/emblem4.jpeg",
+      "pairs": [
+        {
+          "id": "04-01-05",
+          "mainImage": "/images/creatures/creatures04/04-01-05.jpeg",
+          "namesImage": "/images/creatures/creatures04/04-01-05names.jpeg"
+        },
+        {
+          "id": "04-06-10",
+          "mainImage": "/images/creatures/creatures04/04-06-10.jpeg",
+          "namesImage": "/images/creatures/creatures04/04-06-10names.jpeg"
+        },
+        {
+          "id": "04-11-15",
+          "mainImage": "/images/creatures/creatures04/04-11-15.jpeg",
+          "namesImage": "/images/creatures/creatures04/04-11-15names.jpeg"
+        },
+        {
+          "id": "04-16-20",
+          "mainImage": "/images/creatures/creatures04/04-16-20.jpeg",
+          "namesImage": "/images/creatures/creatures04/04-16-20names.jpeg"
+        },
+        {
+          "id": "04-21-25",
+          "mainImage": "/images/creatures/creatures04/04-21-25.jpeg",
+          "namesImage": "/images/creatures/creatures04/04-21-25names.jpeg"
+        },
+        {
+          "id": "04-26-30",
+          "mainImage": "/images/creatures/creatures04/04-26-30.jpeg",
+          "namesImage": "/images/creatures/creatures04/04-26-30names.jpeg"
+        },
+        {
+          "id": "04-31-35",
+          "mainImage": "/images/creatures/creatures04/04-31-35.jpeg",
+          "namesImage": "/images/creatures/creatures04/04-31-35names.jpeg"
+        },
+        {
+          "id": "04-36-40",
+          "mainImage": "/images/creatures/creatures04/04-36-40.jpeg",
+          "namesImage": "/images/creatures/creatures04/04-36-40names.jpeg"
+        },
+        {
+          "id": "04-41-45",
+          "mainImage": "/images/creatures/creatures04/04-41-45.jpeg",
+          "namesImage": "/images/creatures/creatures04/04-41-45names.jpeg"
+        },
+        {
+          "id": "04-46-50",
+          "mainImage": "/images/creatures/creatures04/04-46-50.jpeg",
+          "namesImage": "/images/creatures/creatures04/04-46-50names.jpeg"
+        }
+      ]
+    },
+    {
+      "id": "creatures05",
+      "title": "Mysterious Creatures Series 5",
+      "emblem": "/images/creatures/creatures05/emblem5.jpeg",
+      "pairs": [
+        {
+          "id": "05-01-05",
+          "mainImage": "/images/creatures/creatures05/05-01-05.jpeg",
+          "namesImage": "/images/creatures/creatures05/05-01-05names.jpeg"
+        },
+        {
+          "id": "05-06-10",
+          "mainImage": "/images/creatures/creatures05/05-06-10.jpeg",
+          "namesImage": "/images/creatures/creatures05/05-06-10names.jpeg"
+        },
+        {
+          "id": "05-11-15",
+          "mainImage": "/images/creatures/creatures05/05-11-15.jpeg",
+          "namesImage": "/images/creatures/creatures05/05-11-15names.jpeg"
+        },
+        {
+          "id": "05-16-20",
+          "mainImage": "/images/creatures/creatures05/05-16-20.jpeg",
+          "namesImage": "/images/creatures/creatures05/05-16-20names.jpeg"
+        },
+        {
+          "id": "05-21-25",
+          "mainImage": "/images/creatures/creatures05/05-21-25.jpeg",
+          "namesImage": "/images/creatures/creatures05/05-21-25names.jpeg"
+        },
+        {
+          "id": "05-26-30",
+          "mainImage": "/images/creatures/creatures05/05-26-30.jpeg",
+          "namesImage": "/images/creatures/creatures05/05-26-30names.jpeg"
+        },
+        {
+          "id": "05-31-35",
+          "mainImage": "/images/creatures/creatures05/05-31-35.jpeg",
+          "namesImage": "/images/creatures/creatures05/05-31-35names.jpeg"
+        },
+        {
+          "id": "05-36-40",
+          "mainImage": "/images/creatures/creatures05/05-36-40.jpeg",
+          "namesImage": "/images/creatures/creatures05/05-36-40names.jpeg"
+        },
+        {
+          "id": "05-41-45",
+          "mainImage": "/images/creatures/creatures05/05-41-45.jpeg",
+          "namesImage": "/images/creatures/creatures05/05-41-45names.jpeg"
+        },
+        {
+          "id": "05-46-50",
+          "mainImage": "/images/creatures/creatures05/05-46-50.jpeg",
+          "namesImage": "/images/creatures/creatures05/05-46-50names.jpeg"
+        }
+      ]
+    },
+    {
+      "id": "creatures06",
+      "title": "Mysterious Creatures Series 6",
+      "emblem": "/images/creatures/creatures06/emblem6.jpeg",
+      "pairs": [
+        {
+          "id": "06-01-05",
+          "mainImage": "/images/creatures/creatures06/06-01-05.jpeg",
+          "namesImage": "/images/creatures/creatures06/06-01-05names.jpeg"
+        },
+        {
+          "id": "06-06-10",
+          "mainImage": "/images/creatures/creatures06/06-06-10.jpeg",
+          "namesImage": "/images/creatures/creatures06/06-06-10names.jpeg"
+        },
+        {
+          "id": "06-11-15",
+          "mainImage": "/images/creatures/creatures06/06-11-15.jpeg",
+          "namesImage": "/images/creatures/creatures06/06-11-15names.jpeg"
+        },
+        {
+          "id": "06-16-20",
+          "mainImage": "/images/creatures/creatures06/06-16-20.jpeg",
+          "namesImage": "/images/creatures/creatures06/06-16-20names.jpeg"
+        },
+        {
+          "id": "06-21-25",
+          "mainImage": "/images/creatures/creatures06/06-21-25.jpeg",
+          "namesImage": "/images/creatures/creatures06/06-21-25names.jpeg"
+        },
+        {
+          "id": "06-26-30",
+          "mainImage": "/images/creatures/creatures06/06-26-30.jpeg",
+          "namesImage": "/images/creatures/creatures06/06-26-30names.jpeg"
+        },
+        {
+          "id": "06-31-35",
+          "mainImage": "/images/creatures/creatures06/06-31-35.jpeg",
+          "namesImage": "/images/creatures/creatures06/06-31-35names.jpeg"
+        },
+        {
+          "id": "06-36-40",
+          "mainImage": "/images/creatures/creatures06/06-36-40.jpeg",
+          "namesImage": "/images/creatures/creatures06/06-36-40names.jpeg"
+        },
+        {
+          "id": "06-41-45",
+          "mainImage": "/images/creatures/creatures06/06-41-45.jpeg",
+          "namesImage": "/images/creatures/creatures06/06-41-45names.jpeg"
+        },
+        {
+          "id": "06-46-50",
+          "mainImage": "/images/creatures/creatures06/06-46-50.jpeg",
+          "namesImage": "/images/creatures/creatures06/06-46-50names.jpeg"
+        }
+      ]
+    },
+    {
+      "id": "creatures07",
+      "title": "Mysterious Creatures Series 7",
+      "emblem": "/images/creatures/creatures07/emblem07.jpeg",
+      "pairs": [
+        {
+          "id": "07-01-05",
+          "mainImage": "/images/creatures/creatures07/07-01-05.jpeg",
+          "namesImage": "/images/creatures/creatures07/07-01-05names.jpeg"
+        },
+        {
+          "id": "07-06-10",
+          "mainImage": "/images/creatures/creatures07/07-06-10.jpeg",
+          "namesImage": "/images/creatures/creatures07/07-06-10names.jpeg"
+        },
+        {
+          "id": "07-11-15",
+          "mainImage": "/images/creatures/creatures07/07-11-15.jpeg",
+          "namesImage": "/images/creatures/creatures07/07-11-15names.jpeg"
+        },
+        {
+          "id": "07-16-20",
+          "mainImage": "/images/creatures/creatures07/07-16-20.jpeg",
+          "namesImage": "/images/creatures/creatures07/07-16-20names.jpeg"
+        },
+        {
+          "id": "07-21-25",
+          "mainImage": "/images/creatures/creatures07/07-21-25.jpeg",
+          "namesImage": "/images/creatures/creatures07/07-21-25names.jpeg"
+        },
+        {
+          "id": "07-26-30",
+          "mainImage": "/images/creatures/creatures07/07-26-30.jpeg",
+          "namesImage": "/images/creatures/creatures07/07-26-30names.jpeg"
+        },
+        {
+          "id": "07-31-35",
+          "mainImage": "/images/creatures/creatures07/07-31-35.jpeg",
+          "namesImage": "/images/creatures/creatures07/07-31-35names.jpeg"
+        },
+        {
+          "id": "07-36-40",
+          "mainImage": "/images/creatures/creatures07/07-36-40.jpeg",
+          "namesImage": "/images/creatures/creatures07/07-36-40names.jpeg"
+        },
+        {
+          "id": "07-41-45",
+          "mainImage": "/images/creatures/creatures07/07-41-45.jpeg",
+          "namesImage": "/images/creatures/creatures07/07-41-45names.jpeg"
+        },
+        {
+          "id": "07-46-50",
+          "mainImage": "/images/creatures/creatures07/07-46-50.jpeg",
+          "namesImage": "/images/creatures/creatures07/07-46-50names.jpeg"
+        },
+        {
+          "id": "07class",
+          "mainImage": "/images/creatures/creatures07/07class.jpeg",
+          "namesImage": "/images/creatures/creatures07/07classnames.jpeg"
+        },
+        {
+          "id": "07edges",
+          "mainImage": "/images/creatures/creatures07/07edges.jpeg",
+          "namesImage": "/images/creatures/creatures07/07edgesnames.jpeg"
+        }
+      ]
+    },
+    {
+      "id": "creatures08",
+      "title": "Mysterious Creatures Series 8",
+      "emblem": "/images/creatures/creatures08/emblem08.jpeg",
+      "pairs": [
+        {
+          "id": "08-01-05",
+          "mainImage": "/images/creatures/creatures08/08-01-05.jpeg",
+          "namesImage": "/images/creatures/creatures08/08-01-05names.jpeg"
+        },
+        {
+          "id": "08-06-10",
+          "mainImage": "/images/creatures/creatures08/08-06-10.jpeg",
+          "namesImage": "/images/creatures/creatures08/08-06-10names.jpeg"
+        },
+        {
+          "id": "08-11-15",
+          "mainImage": "/images/creatures/creatures08/08-11-15.jpeg",
+          "namesImage": "/images/creatures/creatures08/08-11-15names.jpeg"
+        },
+        {
+          "id": "08-16-20",
+          "mainImage": "/images/creatures/creatures08/08-16-20.jpeg",
+          "namesImage": "/images/creatures/creatures08/08-16-20names.jpeg"
+        },
+        {
+          "id": "08-21-25",
+          "mainImage": "/images/creatures/creatures08/08-21-25.jpeg",
+          "namesImage": "/images/creatures/creatures08/08-21-25names.jpeg"
+        },
+        {
+          "id": "08-26-30",
+          "mainImage": "/images/creatures/creatures08/08-26-30.jpeg",
+          "namesImage": "/images/creatures/creatures08/08-26-30names.jpeg"
+        },
+        {
+          "id": "08-31-35",
+          "mainImage": "/images/creatures/creatures08/08-31-35.jpeg",
+          "namesImage": "/images/creatures/creatures08/08-31-35names.jpeg"
+        },
+        {
+          "id": "08-36-40",
+          "mainImage": "/images/creatures/creatures08/08-36-40.jpeg",
+          "namesImage": "/images/creatures/creatures08/08-36-40names.jpeg"
+        },
+        {
+          "id": "08-41-45",
+          "mainImage": "/images/creatures/creatures08/08-41-45.jpeg",
+          "namesImage": "/images/creatures/creatures08/08-41-45names.jpeg"
+        },
+        {
+          "id": "08-46-50",
+          "mainImage": "/images/creatures/creatures08/08-46-50.jpeg",
+          "namesImage": "/images/creatures/creatures08/08-46-50names.jpeg"
+        },
+        {
+          "id": "08class",
+          "mainImage": "/images/creatures/creatures08/08class.jpeg",
+          "namesImage": "/images/creatures/creatures08/08classnames.jpeg"
+        },
+        {
+          "id": "08edges",
+          "mainImage": "/images/creatures/creatures08/08edges.jpeg",
+          "namesImage": "/images/creatures/creatures08/08edgesnames.jpeg"
+        }
+      ]
+    }
+  ],
+  "artomat": [
+    {
+      "id": "IMG_6224",
+      "path": "/images/artomat/IMG_6224.jpeg",
+      "title": "IMG 6224"
+    },
+    {
+      "id": "IMG_6225",
+      "path": "/images/artomat/IMG_6225.jpeg",
+      "title": "IMG 6225"
+    },
+    {
+      "id": "IMG_6235",
+      "path": "/images/artomat/IMG_6235.jpeg",
+      "title": "IMG 6235"
+    },
+    {
+      "id": "artomatEmblem",
+      "path": "/images/artomat/artomatEmblem.jpeg",
+      "title": "artomatEmblem"
+    }
+  ],
+  "circles": [
+    {
+      "id": "circles001-004",
+      "path": "/images/circles/circles001-004.jpeg",
+      "title": "circles001-004"
+    },
+    {
+      "id": "circles005-008",
+      "path": "/images/circles/circles005-008.jpeg",
+      "title": "circles005-008"
+    },
+    {
+      "id": "circles009-012",
+      "path": "/images/circles/circles009-012.jpeg",
+      "title": "circles009-012"
+    },
+    {
+      "id": "circles013-016",
+      "path": "/images/circles/circles013-016.jpeg",
+      "title": "circles013-016"
+    },
+    {
+      "id": "circles017-020",
+      "path": "/images/circles/circles017-020.jpeg",
+      "title": "circles017-020"
+    },
+    {
+      "id": "circles021-024",
+      "path": "/images/circles/circles021-024.jpeg",
+      "title": "circles021-024"
+    },
+    {
+      "id": "circles025-028",
+      "path": "/images/circles/circles025-028.jpeg",
+      "title": "circles025-028"
+    },
+    {
+      "id": "circles029-032",
+      "path": "/images/circles/circles029-032.jpeg",
+      "title": "circles029-032"
+    },
+    {
+      "id": "circles033-036",
+      "path": "/images/circles/circles033-036.jpeg",
+      "title": "circles033-036"
+    },
+    {
+      "id": "circles037-040",
+      "path": "/images/circles/circles037-040.jpeg",
+      "title": "circles037-040"
+    },
+    {
+      "id": "circles041-044",
+      "path": "/images/circles/circles041-044.jpeg",
+      "title": "circles041-044"
+    },
+    {
+      "id": "circles_cover",
+      "path": "/images/circles/circles_cover.jpeg",
+      "title": "circles cover"
+    }
+  ],
+  "sketchbook": [
+    {
+      "id": "book1-s1134032-0001",
+      "path": "/images/sketchbook/book1-s1134032-0001.jpeg",
+      "title": "book1-s1134032-0001"
+    },
+    {
+      "id": "book1-s1134032-0002",
+      "path": "/images/sketchbook/book1-s1134032-0002.jpeg",
+      "title": "book1-s1134032-0002"
+    },
+    {
+      "id": "book1-s1134032-0003",
+      "path": "/images/sketchbook/book1-s1134032-0003.jpeg",
+      "title": "book1-s1134032-0003"
+    },
+    {
+      "id": "book1-s1134032-0004",
+      "path": "/images/sketchbook/book1-s1134032-0004.jpeg",
+      "title": "book1-s1134032-0004"
+    },
+    {
+      "id": "book1-s1134032-0005",
+      "path": "/images/sketchbook/book1-s1134032-0005.jpeg",
+      "title": "book1-s1134032-0005"
+    },
+    {
+      "id": "book1-s1134032-0006",
+      "path": "/images/sketchbook/book1-s1134032-0006.jpeg",
+      "title": "book1-s1134032-0006"
+    },
+    {
+      "id": "book1-s1134032-0007",
+      "path": "/images/sketchbook/book1-s1134032-0007.jpeg",
+      "title": "book1-s1134032-0007"
+    },
+    {
+      "id": "book1-s1134032-0008",
+      "path": "/images/sketchbook/book1-s1134032-0008.jpeg",
+      "title": "book1-s1134032-0008"
+    },
+    {
+      "id": "book1-s1134032-0009",
+      "path": "/images/sketchbook/book1-s1134032-0009.jpeg",
+      "title": "book1-s1134032-0009"
+    },
+    {
+      "id": "book1-s1134032-0010",
+      "path": "/images/sketchbook/book1-s1134032-0010.jpeg",
+      "title": "book1-s1134032-0010"
+    },
+    {
+      "id": "book1-s1134032-0011",
+      "path": "/images/sketchbook/book1-s1134032-0011.jpeg",
+      "title": "book1-s1134032-0011"
+    },
+    {
+      "id": "book1-s1134032-0012",
+      "path": "/images/sketchbook/book1-s1134032-0012.jpeg",
+      "title": "book1-s1134032-0012"
+    },
+    {
+      "id": "book1-s1134032-0013",
+      "path": "/images/sketchbook/book1-s1134032-0013.jpeg",
+      "title": "book1-s1134032-0013"
+    },
+    {
+      "id": "book1-s1134032-0014",
+      "path": "/images/sketchbook/book1-s1134032-0014.jpeg",
+      "title": "book1-s1134032-0014"
+    },
+    {
+      "id": "book1-s1134032-0015",
+      "path": "/images/sketchbook/book1-s1134032-0015.jpeg",
+      "title": "book1-s1134032-0015"
+    },
+    {
+      "id": "book1-s1134032-0016",
+      "path": "/images/sketchbook/book1-s1134032-0016.jpeg",
+      "title": "book1-s1134032-0016"
+    },
+    {
+      "id": "book1-s1134032-0017",
+      "path": "/images/sketchbook/book1-s1134032-0017.jpeg",
+      "title": "book1-s1134032-0017"
+    },
+    {
+      "id": "book1-s1134032-0018",
+      "path": "/images/sketchbook/book1-s1134032-0018.jpeg",
+      "title": "book1-s1134032-0018"
+    },
+    {
+      "id": "book1-s1134032-0019",
+      "path": "/images/sketchbook/book1-s1134032-0019.jpeg",
+      "title": "book1-s1134032-0019"
+    },
+    {
+      "id": "emblemSketch1",
+      "path": "/images/sketchbook/emblemSketch1.jpeg",
+      "title": "emblemSketch1"
+    }
+  ],
+  "other": [
+    {
+      "id": "jmrGlasses",
+      "path": "/images/jmrGlasses.jpeg",
+      "title": "jmrGlasses"
+    },
+    {
+      "id": "leaf2",
+      "path": "/images/leaf2.png",
+      "title": "leaf2"
+    }
+  ]
 }

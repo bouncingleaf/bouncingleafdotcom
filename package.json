@@ -15,7 +15,8 @@
     "test:coverage": "vitest --coverage",
     "test:e2e": "playwright test",
     "security:check": "npm audit --audit-level=high",
-    "security:fix": "npm audit fix"
+    "security:fix": "npm audit fix",
+    "gallery:generate": "node scripts/generate-gallery-data.js"
   },
   "dependencies": {
     "react": "^18.3.1",
