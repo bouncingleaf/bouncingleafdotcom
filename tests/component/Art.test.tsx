@@ -69,38 +69,29 @@ describe('Art Page', () => {
   describe("Other People's Art Section", () => {
     it('contains links to artists', () => {
       renderArt()
-      expect(
-        screen.getByRole('link', { name: 'Larry Barth' })
-      ).toBeInTheDocument()
-      expect(
-        screen.getByRole('link', { name: 'Bird and Moon by Rosemary Mosco' })
-      ).toBeInTheDocument()
-      expect(
-        screen.getByRole('link', { name: 'Birdstrips' })
-      ).toBeInTheDocument()
-      expect(
-        screen.getByRole('link', { name: 'Chuck Draws Things' })
-      ).toBeInTheDocument()
-      expect(
-        screen.getByRole('link', { name: 'False Knees by Joshua Barkman' })
-      ).toBeInTheDocument()
-      expect(
-        screen.getByRole('link', {
-          name: 'Milky Way Opera by Jenny Johannesson',
-        })
-      ).toBeInTheDocument()
+      // Check for the text labels within the artist links section
+      expect(screen.getByText('Larry Barth')).toBeInTheDocument()
+      expect(screen.getByText('Rosemary Mosco')).toBeInTheDocument()
+      expect(screen.getByText('Birdstrips')).toBeInTheDocument()
+      expect(screen.getByText('Chuck Draws Things')).toBeInTheDocument()
+      expect(screen.getByText('False Knees')).toBeInTheDocument()
+      expect(screen.getByText('Milky Way Opera')).toBeInTheDocument()
     })
 
     it('links have correct hrefs', () => {
       renderArt()
-      expect(screen.getByRole('link', { name: 'Larry Barth' })).toHaveAttribute(
-        'href',
-        'https://wardfdn.org/artists/larry-barth/'
+      const links = screen.getAllByRole('link')
+      const larryBarthLink = links.find(
+        (link) =>
+          link.getAttribute('href') ===
+          'https://wardfdn.org/artists/larry-barth/'
       )
-      expect(screen.getByRole('link', { name: 'Birdstrips' })).toHaveAttribute(
-        'href',
-        'https://www.instagram.com/birdstrips/'
+      const birdstripsLink = links.find(
+        (link) =>
+          link.getAttribute('href') === 'https://www.instagram.com/birdstrips/'
       )
+      expect(larryBarthLink).toBeInTheDocument()
+      expect(birdstripsLink).toBeInTheDocument()
     })
   })
 

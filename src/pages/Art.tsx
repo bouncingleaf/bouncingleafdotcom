@@ -498,11 +498,19 @@ function Art() {
             <p>100% of adults are into lines.</p>
             <p>
               I think of "banan" often. "Wary, Ready" is like this book's
-              mascot. The notes about NodeJS were really fun (and Stephen
-              Grider's "NodeJS: Advanced Concepts" class on Udemy is great).
-              "Now" was assembled from a surprisingly small amount of source
-              material. I didn't realize "is that so?" (one of my dad's favorite
-              things to say) was upside down until I'd drawn half of it, haha.
+              mascot. The notes about NodeJS were really fun (and{' '}
+              <a
+                href="https://www.udemy.com/course/advanced-node-for-developers/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link"
+              >
+                Stephen Grider's "NodeJS: Advanced Concepts" class on Udemy
+              </a>{' '}
+              is great). "Now" was assembled from a surprisingly small amount of
+              source material. I didn't realize "is that so?" (one of my dad's
+              favorite things to say) was upside down until I'd drawn half of
+              it, haha.
             </p>
           </div>
           {book2 && (
@@ -548,70 +556,122 @@ function Art() {
       {/* Notes about other artists */}
       <section className="mb-16">
         <h2 className="mb-4">Other people's art</h2>
-        <div className="prose max-w-none">
-          <p>Here are some artists whose work I enjoy:</p>
-          <ul>
-            <li>
-              <a
-                href="https://wardfdn.org/artists/larry-barth/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link"
-              >
-                Larry Barth
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://rosemarymosco.com/comics/bird-and-moon"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link"
-              >
-                Bird and Moon by Rosemary Mosco
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/birdstrips/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link"
-              >
-                Birdstrips
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/chuckdrawsthings/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link"
-              >
-                Chuck Draws Things
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.falseknees.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link"
-              >
-                False Knees by Joshua Barkman
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.milkywayopera.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link"
-              >
-                Milky Way Opera by Jenny Johannesson
-              </a>
-            </li>
-          </ul>
+        <p className="mb-4">Here are some artists whose work I enjoy:</p>
+        <div className="flex flex-wrap gap-6">
+          <a
+            href="https://wardfdn.org/artists/larry-barth/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center group"
+          >
+            <img
+              src="/images/other-artists/larry-barth.jpg"
+              width={100}
+              height={100}
+              alt="Larry Barth artwork"
+              className="rounded hover:opacity-80 transition-opacity mb-2 object-cover"
+              style={{ width: '100px', height: '100px' }}
+              loading="lazy"
+            />
+            <span className="text-sm font-semibold group-hover:text-accent-primary transition-colors text-center">
+              Larry Barth
+            </span>
+          </a>
+          <a
+            href="https://rosemarymosco.com/comics/bird-and-moon"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center group"
+          >
+            <img
+              src="/images/other-artists/bird-and-moon.webp"
+              width={100}
+              height={100}
+              alt="Bird and Moon comic"
+              className="rounded hover:opacity-80 transition-opacity mb-2 object-cover"
+              style={{ width: '100px', height: '100px' }}
+              loading="lazy"
+            />
+            <span className="text-sm font-semibold group-hover:text-accent-primary transition-colors text-center">
+              Rosemary Mosco
+            </span>
+          </a>
+          <a
+            href="https://www.instagram.com/birdstrips/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center group"
+          >
+            <img
+              src="/images/other-artists/birdstrips.jpg"
+              width={100}
+              height={100}
+              alt="Birdstrips artwork"
+              className="rounded hover:opacity-80 transition-opacity mb-2 object-cover"
+              style={{ width: '100px', height: '100px' }}
+              loading="lazy"
+            />
+            <span className="text-sm font-semibold group-hover:text-accent-primary transition-colors text-center">
+              Birdstrips
+            </span>
+          </a>
+          <a
+            href="https://www.instagram.com/chuckdrawsthings/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center group"
+          >
+            <img
+              src="/images/other-artists/chuckdrawsthings.jpg"
+              width={100}
+              height={100}
+              alt="Chuck Draws Things artwork"
+              className="rounded hover:opacity-80 transition-opacity mb-2 object-cover"
+              style={{ width: '100px', height: '100px' }}
+              loading="lazy"
+            />
+            <span className="text-sm font-semibold group-hover:text-accent-primary transition-colors text-center">
+              Chuck Draws Things
+            </span>
+          </a>
+          <a
+            href="https://www.falseknees.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center group"
+          >
+            <img
+              src="/images/other-artists/false-knees.jpeg"
+              width={100}
+              height={100}
+              alt="False Knees comic"
+              className="rounded hover:opacity-80 transition-opacity mb-2 object-cover"
+              style={{ width: '100px', height: '100px' }}
+              loading="lazy"
+            />
+            <span className="text-sm font-semibold group-hover:text-accent-primary transition-colors text-center">
+              False Knees
+            </span>
+          </a>
+          <a
+            href="https://www.milkywayopera.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center group"
+          >
+            <img
+              src="/images/other-artists/milky-way-opera.jpg"
+              width={100}
+              height={100}
+              alt="Milky Way Opera artwork"
+              className="rounded hover:opacity-80 transition-opacity mb-2 object-cover"
+              style={{ width: '100px', height: '100px' }}
+              loading="lazy"
+            />
+            <span className="text-sm font-semibold group-hover:text-accent-primary transition-colors text-center">
+              Milky Way Opera
+            </span>
+          </a>
         </div>
       </section>
 
