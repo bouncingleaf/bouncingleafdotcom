@@ -47,8 +47,8 @@ function Resist() {
           and livelihoods. It's nauseating.
         </p>
         <p>
-          But: overwhelm and hopelessness is part of the plan. It's essential
-          to the plan.
+          But: overwhelm and hopelessness is part of the plan. It's essential to
+          the plan.
         </p>
         <p>When we believe that...</p>
         <ul className="list-disc list-inside space-y-1">
@@ -61,14 +61,12 @@ function Resist() {
         </ul>
         <p>
           ... all of these beliefs will keep us from acting. And the one thing
-          they don't want us to do is act. People staying quiet and compliant
-          is essential for making the democracy fall.
+          they don't want us to do is act. People staying quiet and compliant is
+          essential for making the democracy fall.
         </p>
 
         <h2 id="reminders">Reminders</h2>
-        <p>
-          Things I'm reminding myself, maybe they will help you too:
-        </p>
+        <p>Things I'm reminding myself, maybe they will help you too:</p>
         <ul className="list-disc list-inside space-y-1">
           <li>
             <strong>Choose your battles.</strong> Getting worked up about every
@@ -76,9 +74,8 @@ function Resist() {
             does real harm.
           </li>
           <li>
-            <strong>Limit news.</strong> Take in news only to the extent that
-            it helps you. Doomscrolling can feel like "doing something." It
-            isn't.
+            <strong>Limit news.</strong> Take in news only to the extent that it
+            helps you. Doomscrolling can feel like "doing something." It isn't.
           </li>
           <li>
             <strong>We aren't powerless.</strong> There ARE things people can
@@ -86,8 +83,8 @@ function Resist() {
           </li>
           <li>
             <strong>Consider your strengths.</strong> How can you be most
-            effective? What do you have access to, what skills do you have,
-            what resources do you have? (Hint: One of my skills is publishing a
+            effective? What do you have access to, what skills do you have, what
+            resources do you have? (Hint: One of my skills is publishing a
             website, another is assembling information from disparate
             sources...)
           </li>
@@ -107,8 +104,7 @@ function Resist() {
 
         <h2 id="resources">Resources</h2>
         <p>
-          Sites and other resources that are giving me hope and ideas right
-          now:
+          Sites and other resources that are giving me hope and ideas right now:
         </p>
         <ul className="list-disc list-inside space-y-1">
           <li>
@@ -221,8 +217,8 @@ function Resist() {
 
         <h3>Other ideas of what to do</h3>
         <p>
-          Being in pain is not, by itself, helpful. Doing something is. Here
-          are some ideas from others:
+          Being in pain is not, by itself, helpful. Doing something is. Here are
+          some ideas from others:
         </p>
         <ul className="list-disc list-inside space-y-1">
           <li>
@@ -251,9 +247,7 @@ function Resist() {
         </ul>
 
         <h3>Be safe out there</h3>
-        <p>
-          Some strategies for safety and self-care in these times:
-        </p>
+        <p>Some strategies for safety and self-care in these times:</p>
         <ul className="list-disc list-inside space-y-1">
           <li>
             <a
@@ -292,9 +286,9 @@ function Resist() {
 
         <h2 id="dei-scorecard">DEI Scorecard</h2>
         <p>
-          I've been wondering which major companies are willing to openly take
-          a stand in favor of DEI work after the Trump election. Here's what
-          I've found so far (3/3/2025).
+          I've been wondering which major companies are willing to openly take a
+          stand in favor of DEI work after the Trump election. Here's what I've
+          found so far (3/3/2025).
         </p>
         <ul className="list-disc list-inside space-y-1">
           <li>Apple</li>
@@ -317,17 +311,15 @@ function Resist() {
           <li>Pinterest</li>
           <li>Procter & Gamble</li>
           <li>
-            Salesforce - Salesforce CEO Marc Benioff said he plans to defend
-            his employees against attacks on diversity and inclusion. "If
-            somebody's going to come after our employees or discriminate against
-            them in any way, we'll do everything we can to help them, support
-            them."
+            Salesforce - Salesforce CEO Marc Benioff said he plans to defend his
+            employees against attacks on diversity and inclusion. "If somebody's
+            going to come after our employees or discriminate against them in
+            any way, we'll do everything we can to help them, support them."
           </li>
           <li>Scale AI</li>
           <li>Sephora</li>
           <li>
-            Verizon - Issued Public Statement (Interview, Blog, Press)
-            2/25/2025
+            Verizon - Issued Public Statement (Interview, Blog, Press) 2/25/2025
           </li>
           <li>Vista Equity Partners</li>
         </ul>
@@ -335,8 +327,8 @@ function Resist() {
         <h2 id="first-few-weeks">News from the first few weeks</h2>
         <p>
           For a few weeks, I tried to keep track of the destruction being done
-          to our country and the world, but I've only got so much energy and
-          you can get your news elsewhere.
+          to our country and the world, but I've only got so much energy and you
+          can get your news elsewhere.
         </p>
         <p>Here are some news sources keeping a feed of his damage:</p>
         <ul className="list-disc list-inside space-y-1">
@@ -442,12 +434,12 @@ function Resist() {
         </p>
         <blockquote className="border-l-4 border-gray-300 pl-4 italic my-4">
           The Department of Government Efficiency, run by President Donald
-          Trump's billionaire adviser and Tesla CEO Elon Musk, has gained
-          access to sensitive Treasury data including Social Security and
-          Medicare customer payment systems, according to two people familiar
-          with the situation. The move by DOGE, a Trump administration task
-          force assigned to find ways to fire federal workers, cut programs and
-          slash federal regulations, means it could have wide leeway to access
+          Trump's billionaire adviser and Tesla CEO Elon Musk, has gained access
+          to sensitive Treasury data including Social Security and Medicare
+          customer payment systems, according to two people familiar with the
+          situation. The move by DOGE, a Trump administration task force
+          assigned to find ways to fire federal workers, cut programs and slash
+          federal regulations, means it could have wide leeway to access
           important taxpayer data, among other things.
           <br />
           -- from PBS
