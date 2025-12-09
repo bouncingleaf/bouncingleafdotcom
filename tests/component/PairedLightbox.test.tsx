@@ -40,9 +40,7 @@ describe('PairedLightbox', () => {
 
     it('renders main image with default alt text including id', () => {
       render(<PairedLightbox {...defaultProps} />)
-      expect(
-        screen.getByAltText('Gallery image - pair-1')
-      ).toBeInTheDocument()
+      expect(screen.getByAltText('Gallery image - pair-1')).toBeInTheDocument()
     })
 
     it('renders main image with custom alt text', () => {
@@ -54,9 +52,7 @@ describe('PairedLightbox', () => {
   describe('paired images display', () => {
     it('shows both images when isPaired is true', () => {
       render(<PairedLightbox {...defaultProps} />)
-      expect(
-        screen.getByAltText('Gallery image - pair-1')
-      ).toBeInTheDocument()
+      expect(screen.getByAltText('Gallery image - pair-1')).toBeInTheDocument()
       expect(
         screen.getByAltText('Gallery image - pair-1 names')
       ).toBeInTheDocument()
@@ -203,9 +199,9 @@ describe('PairedLightbox', () => {
   describe('click behavior', () => {
     it('calls onClose when clicking the backdrop', () => {
       render(<PairedLightbox {...defaultProps} />)
-      const backdrop = screen.getByAltText('Gallery image - pair-1').closest(
-        'div[class*="fixed"]'
-      )
+      const backdrop = screen
+        .getByAltText('Gallery image - pair-1')
+        .closest('div[class*="fixed"]')
       fireEvent.click(backdrop!)
       expect(defaultProps.onClose).toHaveBeenCalledTimes(1)
     })

@@ -17,7 +17,7 @@ function Art() {
   const [lightboxImages, setLightboxImages] = useState<string[] | null>(null)
   const [lightboxIndex, setLightboxIndex] = useState(0)
   const [pairedLightbox, setPairedLightbox] = useState<{
-    pairs: typeof gallery.creatures[0]['pairs']
+    pairs: (typeof gallery.creatures)[0]['pairs']
     index: number
     title: string
   } | null>(null)
@@ -51,7 +51,7 @@ function Art() {
   }
 
   const openPairedLightbox = (
-    pairs: typeof gallery.creatures[0]['pairs'],
+    pairs: (typeof gallery.creatures)[0]['pairs'],
     index: number,
     title: string
   ) => {
@@ -140,7 +140,10 @@ function Art() {
               onClick={() => scrollToSeries('circles')}
             >
               <img
-                src={gallery.circles.find((img) => img.id === 'circles_cover')!.path}
+                src={
+                  gallery.circles.find((img) => img.id === 'circles_cover')!
+                    .path
+                }
                 width={100}
                 height={100}
                 alt="Circles emblem"
@@ -170,7 +173,11 @@ function Art() {
                 />
               )}
               <span className="text-sm font-semibold group-hover:text-accent-primary transition-colors">
-                {book.id === 'book1' ? 'Book 1' : book.id === 'book2' ? 'Book 2' : book.id}
+                {book.id === 'book1'
+                  ? 'Book 1'
+                  : book.id === 'book2'
+                    ? 'Book 2'
+                    : book.id}
               </span>
             </div>
           ))}
@@ -245,18 +252,18 @@ function Art() {
         <div className="mb-8">
           <h4 className="text-xl font-semibold mb-4">Artomat Prototypes</h4>
           <p className="mb-4">
-            Here are my Artomat prototypes. These are watercolor and ink on 2"x3"
-            watercolor paper (specifically{' '}
+            Here are my Artomat prototypes. These are watercolor and ink on
+            2"x3" watercolor paper (specifically{' '}
             <Link
               to="https://www.dickblick.com/products/strathmore-500-series-heavyweight-mixed-media-pads/"
               className="link"
             >
               Strathmore 500 Heavyweight Mixed Media paper
             </Link>
-            , which is pretty glorious). The final product has the art mounted on
-            a block to make it the appropriate size for the vending machine. The
-            fourth creature is on a 2"x2" card, it's an example of the ID for my
-            slot in the machine.
+            , which is pretty glorious). The final product has the art mounted
+            on a block to make it the appropriate size for the vending machine.
+            The fourth creature is on a 2"x2" card, it's an example of the ID
+            for my slot in the machine.
           </p>
           {gallery.artomat.find((img) => img.id === 'artomatEmblem') && (
             <>
@@ -296,8 +303,9 @@ function Art() {
         <h2 className="mb-4">Thousands of Circles</h2>
         <div className="prose max-w-none mb-8">
           <p>
-            One of the things I like best about drawing is just the act of putting
-            ink on paper. In 2025, I started drawing circles on blank postcards.
+            One of the things I like best about drawing is just the act of
+            putting ink on paper. In 2025, I started drawing circles on blank
+            postcards.
           </p>
           <p>
             Each card has at least 100 circles on it, some of them have 200 or
@@ -306,20 +314,21 @@ function Art() {
           </p>
           <p>
             As of this writing (April 2025), I have made more than 90 of these
-            cards, so if you are holding one, you're holding at least 100 of a set
-            of over 9000 circles. Not impressive yet, perhaps, but I'm not done.
+            cards, so if you are holding one, you're holding at least 100 of a
+            set of over 9000 circles. Not impressive yet, perhaps, but I'm not
+            done.
           </p>
           <p>
             What does it all mean? I don't know. Maybe I seek roundness and
             connection in a sharp-edged and disconnected world. Maybe they will
-            eventually add up to some significant number, representing the number
-            of people who... or the number of times that... I don't know. Maybe I
-            just like circles.
+            eventually add up to some significant number, representing the
+            number of people who... or the number of times that... I don't know.
+            Maybe I just like circles.
           </p>
           <p>
-            If you've received one of these postcards from me, you're welcome and
-            encouraged to use circles in your art, your writing (ooo!), or as you
-            go about your day-to-day life. Enjoy.
+            If you've received one of these postcards from me, you're welcome
+            and encouraged to use circles in your art, your writing (ooo!), or
+            as you go about your day-to-day life. Enjoy.
           </p>
         </div>
         {gallery.circles.find((img) => img.id === 'circles_cover') && (
@@ -334,7 +343,9 @@ function Art() {
               </span>
             </p>
             <img
-              src={gallery.circles.find((img) => img.id === 'circles_cover')!.path}
+              src={
+                gallery.circles.find((img) => img.id === 'circles_cover')!.path
+              }
               width={200}
               alt="Thumbnail for Thousands of Circles"
               onClick={() => toggleGallery('circles')}
@@ -398,16 +409,17 @@ function Art() {
           </h3>
           <p className="mb-4">
             I'm especially proud of "Sing" (the one about the triangles), the
-            empty speech balloon bird comic, the title of the book, the phrases "a
-            little old for owl's sea ellicon" and "too heavy to fly / defiant,
-            flies anyway," and the collage at the back. May you walk free of
-            interference.
+            empty speech balloon bird comic, the title of the book, the phrases
+            "a little old for owl's sea ellicon" and "too heavy to fly /
+            defiant, flies anyway," and the collage at the back. May you walk
+            free of interference.
           </p>
           {gallery.sketchbook.find((book) => book.id === 'book1') && (
             <>
               <img
                 src={
-                  gallery.sketchbook.find((book) => book.id === 'book1')!.emblem!
+                  gallery.sketchbook.find((book) => book.id === 'book1')!
+                    .emblem!
                 }
                 width={200}
                 alt="Thumbnail for sketchbook series 1"
@@ -459,19 +471,20 @@ function Art() {
           <div className="prose max-w-none mb-4">
             <p>100% of adults are into lines.</p>
             <p>
-              I think of "banan" often. "Wary, Ready" is like this book's mascot.
-              The notes about NodeJS were really fun (and Stephen Grider's "NodeJS:
-              Advanced Concepts" class on Udemy is great). "Now" was assembled from
-              a surprisingly small amount of source material. I didn't realize "is
-              that so?" (one of my dad's favorite things to say) was upside down
-              until I'd drawn half of it, haha.
+              I think of "banan" often. "Wary, Ready" is like this book's
+              mascot. The notes about NodeJS were really fun (and Stephen
+              Grider's "NodeJS: Advanced Concepts" class on Udemy is great).
+              "Now" was assembled from a surprisingly small amount of source
+              material. I didn't realize "is that so?" (one of my dad's favorite
+              things to say) was upside down until I'd drawn half of it, haha.
             </p>
           </div>
           {gallery.sketchbook.find((book) => book.id === 'book2') && (
             <>
               <img
                 src={
-                  gallery.sketchbook.find((book) => book.id === 'book2')!.emblem!
+                  gallery.sketchbook.find((book) => book.id === 'book2')!
+                    .emblem!
                 }
                 width={200}
                 alt="Thumbnail for sketchbook series 2"

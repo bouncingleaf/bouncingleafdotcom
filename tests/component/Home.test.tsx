@@ -12,9 +12,7 @@ describe('Home', () => {
 
   it('shows text about Mysterious Creatures', () => {
     render(<Home />)
-    expect(
-      screen.getByText(/Mysterious Creatures/i)
-    ).toBeInTheDocument()
+    expect(screen.getByText(/Mysterious Creatures/i)).toBeInTheDocument()
   })
 
   it('renders 3 featured emblem images', () => {
@@ -29,8 +27,17 @@ describe('Home', () => {
   it('featured images have correct src paths', () => {
     render(<Home />)
     const images = screen.getAllByRole('img')
-    expect(images[0]).toHaveAttribute('src', '/images/creatures/creatures03/emblem3.jpeg')
-    expect(images[1]).toHaveAttribute('src', '/images/creatures/creatures05/emblem5.jpeg')
-    expect(images[2]).toHaveAttribute('src', '/images/creatures/creatures07/emblem07.jpeg')
+    expect(images[0]).toHaveAttribute(
+      'src',
+      '/images/creatures/creatures03/emblem3.jpeg'
+    )
+    expect(images[1]).toHaveAttribute(
+      'src',
+      '/images/creatures/creatures05/emblem5.jpeg'
+    )
+    expect(images[2]).toHaveAttribute(
+      'src',
+      '/images/creatures/creatures07/emblem07.jpeg'
+    )
   })
 })

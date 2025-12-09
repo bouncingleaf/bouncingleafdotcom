@@ -155,15 +155,17 @@ describe('Lightbox', () => {
   describe('click behavior', () => {
     it('calls onClose when clicking the backdrop', () => {
       render(<Lightbox {...defaultProps} />)
-      const backdrop = screen.getByAltText('Gallery image 1').closest('div')
-        ?.parentElement
+      const backdrop = screen
+        .getByAltText('Gallery image 1')
+        .closest('div')?.parentElement
       fireEvent.click(backdrop!)
       expect(defaultProps.onClose).toHaveBeenCalledTimes(1)
     })
 
     it('does not call onClose when clicking the image area', () => {
       render(<Lightbox {...defaultProps} />)
-      const imageContainer = screen.getByAltText('Gallery image 1').parentElement
+      const imageContainer =
+        screen.getByAltText('Gallery image 1').parentElement
       fireEvent.click(imageContainer!)
       expect(defaultProps.onClose).not.toHaveBeenCalled()
     })

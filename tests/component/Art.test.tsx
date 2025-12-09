@@ -66,14 +66,18 @@ describe('Art Page', () => {
     })
   })
 
-  describe('Other People\'s Art Section', () => {
+  describe("Other People's Art Section", () => {
     it('contains links to artists', () => {
       renderArt()
-      expect(screen.getByRole('link', { name: 'Larry Barth' })).toBeInTheDocument()
+      expect(
+        screen.getByRole('link', { name: 'Larry Barth' })
+      ).toBeInTheDocument()
       expect(
         screen.getByRole('link', { name: 'Bird and Moon by Rosemary Mosco' })
       ).toBeInTheDocument()
-      expect(screen.getByRole('link', { name: 'Birdstrips' })).toBeInTheDocument()
+      expect(
+        screen.getByRole('link', { name: 'Birdstrips' })
+      ).toBeInTheDocument()
       expect(
         screen.getByRole('link', { name: 'Chuck Draws Things' })
       ).toBeInTheDocument()
@@ -81,7 +85,9 @@ describe('Art Page', () => {
         screen.getByRole('link', { name: 'False Knees by Joshua Barkman' })
       ).toBeInTheDocument()
       expect(
-        screen.getByRole('link', { name: 'Milky Way Opera by Jenny Johannesson' })
+        screen.getByRole('link', {
+          name: 'Milky Way Opera by Jenny Johannesson',
+        })
       ).toBeInTheDocument()
     })
 
@@ -136,7 +142,9 @@ describe('Art Page', () => {
         .getByRole('heading', { level: 2, name: 'Thousands of Circles' })
         .closest('section')
       expect(circlesSection).toBeInTheDocument()
-      expect(within(circlesSection!).getByText(/click to hide/)).toBeInTheDocument()
+      expect(
+        within(circlesSection!).getByText(/click to hide/)
+      ).toBeInTheDocument()
     })
 
     it('book1 gallery is expanded by default', () => {
@@ -156,11 +164,15 @@ describe('Art Page', () => {
       const circlesSection = screen
         .getByRole('heading', { level: 2, name: 'Thousands of Circles' })
         .closest('section')
-      const toggleText = within(circlesSection!).getByText(/Thousands of circles/)
+      const toggleText = within(circlesSection!).getByText(
+        /Thousands of circles/
+      )
       expect(toggleText).toBeInTheDocument()
 
       fireEvent.click(toggleText)
-      expect(within(circlesSection!).getByText(/click to show/)).toBeInTheDocument()
+      expect(
+        within(circlesSection!).getByText(/click to show/)
+      ).toBeInTheDocument()
     })
 
     it('toggles sketchbook gallery visibility when clicked', () => {
@@ -248,7 +260,9 @@ describe('Art Page', () => {
   describe('Paired Lightbox for Creatures', () => {
     it('opens paired lightbox when clicking creature images', () => {
       renderArt()
-      const creatureImages = screen.getAllByAltText(/Mysterious Creatures Series \d+ - \d/)
+      const creatureImages = screen.getAllByAltText(
+        /Mysterious Creatures Series \d+ - \d/
+      )
       expect(creatureImages.length).toBeGreaterThan(0)
 
       fireEvent.click(creatureImages[0])
@@ -258,7 +272,9 @@ describe('Art Page', () => {
 
     it('shows navigation buttons in paired lightbox', () => {
       renderArt()
-      const creatureImages = screen.getAllByAltText(/Mysterious Creatures Series \d+ - \d/)
+      const creatureImages = screen.getAllByAltText(
+        /Mysterious Creatures Series \d+ - \d/
+      )
       fireEvent.click(creatureImages[0])
 
       expect(screen.getByLabelText('Previous pair')).toBeInTheDocument()
@@ -267,7 +283,9 @@ describe('Art Page', () => {
 
     it('closes paired lightbox when close button is clicked', () => {
       renderArt()
-      const creatureImages = screen.getAllByAltText(/Mysterious Creatures Series \d+ - \d/)
+      const creatureImages = screen.getAllByAltText(
+        /Mysterious Creatures Series \d+ - \d/
+      )
       fireEvent.click(creatureImages[0])
 
       const closeButton = screen.getByLabelText('Close lightbox')
@@ -278,7 +296,9 @@ describe('Art Page', () => {
 
     it('navigates to next pair when next button is clicked', () => {
       renderArt()
-      const creatureImages = screen.getAllByAltText(/Mysterious Creatures Series \d+ - \d/)
+      const creatureImages = screen.getAllByAltText(
+        /Mysterious Creatures Series \d+ - \d/
+      )
       fireEvent.click(creatureImages[0])
 
       const nextButton = screen.getByLabelText('Next pair')
@@ -376,8 +396,12 @@ describe('Art Page', () => {
         name: /Your Guide to Drawing the Line/,
       })
 
-      expect(within(book1Title.parentElement!).getByText(/click to/)).toBeInTheDocument()
-      expect(within(book2Title.parentElement!).getByText(/click to/)).toBeInTheDocument()
+      expect(
+        within(book1Title.parentElement!).getByText(/click to/)
+      ).toBeInTheDocument()
+      expect(
+        within(book2Title.parentElement!).getByText(/click to/)
+      ).toBeInTheDocument()
     })
   })
 
@@ -401,7 +425,7 @@ describe('Art Page', () => {
 
       expect(window.scrollTo).toHaveBeenCalledWith({
         top: 0,
-        behavior: 'smooth'
+        behavior: 'smooth',
       })
     })
   })

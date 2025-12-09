@@ -21,16 +21,12 @@ describe('Writing', () => {
 
   it('shows information about The Book Academy', () => {
     renderWriting()
-    expect(
-      screen.getByText(/The Book Academy/i)
-    ).toBeInTheDocument()
+    expect(screen.getByText(/The Book Academy/i)).toBeInTheDocument()
   })
 
   it('mentions Luvvie Ajayi Jones', () => {
     renderWriting()
-    expect(
-      screen.getByText(/Luvvie Ajayi Jones/i)
-    ).toBeInTheDocument()
+    expect(screen.getByText(/Luvvie Ajayi Jones/i)).toBeInTheDocument()
   })
 
   it('has link to The Book Academy', () => {
@@ -53,13 +49,21 @@ describe('Writing', () => {
 
   it('has link to newsletter', () => {
     renderWriting()
-    const link = screen.getByRole('link', { name: 'my newsletter mailing list' })
-    expect(link).toHaveAttribute('href', 'https://www.leafjessicaroy.com/connect/')
+    const link = screen.getByRole('link', {
+      name: 'my newsletter mailing list',
+    })
+    expect(link).toHaveAttribute(
+      'href',
+      'https://www.leafjessicaroy.com/connect/'
+    )
   })
 
   it('has link to Instagram', () => {
     renderWriting()
     const link = screen.getByRole('link', { name: 'Instagram' })
-    expect(link).toHaveAttribute('href', 'https://www.instagram.com/leafjessicaroy/')
+    expect(link).toHaveAttribute(
+      'href',
+      'https://www.instagram.com/leafjessicaroy/'
+    )
   })
 })
