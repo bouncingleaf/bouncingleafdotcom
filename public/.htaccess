@@ -1,12 +1,22 @@
-# Enable rewrite engine
+# Fallback to index.html for client-side routing (simpler than mod_rewrite)
+<IfModule mod_negotiation.c>
+  Options -MultiViews
+</IfModule>
+
+# Use FallbackResource for SPA routing - simpler and more reliable
+FallbackResource /index.html
+
+# Alternative: mod_rewrite (if FallbackResource doesn't work)
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
 
-  # Redirect all requests to index.html except for existing files and directories
+  # Don't rewrite files or directories
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
+
+  # Rewrite everything else to index.html
+  RewriteRule ^ /index.html [L]
 </IfModule>
 
 # Prevent directory listing
