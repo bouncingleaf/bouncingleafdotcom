@@ -14,6 +14,9 @@ jobs:
   test:
     name: Run security checks, lint, tests, and build
     runs-on: ubuntu-latest
+    env:
+      BUILD_DIR: dist
+      HTACCESS_PATH: public/.htaccess
 
     steps:
       - name: Checkout code
@@ -51,6 +54,61 @@ jobs:
         with:
           name: site-dist
           path: dist
+
+      - name: Verify .htaccess is tracked in git (repo)
+        id: repo-check
+        run: |
+          if git ls-files --error-unmatch "${HTACCESS_PATH}" > /dev/null 2>&1; then
+            echo "✅ ${HTACCESS_PATH} is tracked in git"
+            echo "repo_has_htaccess=true" >> $GITHUB_OUTPUT
+            # show the first 50 lines for debugging (safe in CI logs)
+            echo "---- ${HTACCESS_PATH} preview (first 50 lines) ----"
+            git --no-pager show HEAD:"${HTACCESS_PATH}" | sed -n '1,50p' || true
+            echo "---- end preview ----"
+          else
+            echo "::warning::${HTACCESS_PATH} is NOT tracked in git (git ls-files failed)"
+            echo "repo_has_htaccess=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Verify .htaccess in build output
+        id: build-check
+        run: |
+          # Check common locations
+          BUILD_LOCATION="${BUILD_DIR}"
+          echo "Looking for .htaccess under ${BUILD_LOCATION}..."
+          if [ -f "${BUILD_LOCATION}/.htaccess" ]; then
+            echo "✅ Found ${BUILD_LOCATION}/.htaccess"
+            echo "build_has_htaccess=true" >> $GITHUB_OUTPUT
+            ls -la "${BUILD_LOCATION}/.htaccess" || true
+            echo "Preview:"
+            sed -n '1,50p' "${BUILD_LOCATION}/.htaccess" || true
+          else
+            echo "::warning::No .htaccess at ${BUILD_LOCATION}/.htaccess"
+            # Also check if the source path was copied directly into the root of build
+            if [ -f "public/.htaccess" ]; then
+              echo "::warning::Found public/.htaccess in repo root but not in ${BUILD_LOCATION}"
+            fi
+            echo "build_has_htaccess=false" >> $GITHUB_OUTPUT
+          fi
+          # Show any .htaccess anywhere inside build dir
+          echo "All .htaccess files inside ${BUILD_LOCATION}:"
+          find "${BUILD_LOCATION}" -name ".htaccess" -maxdepth 5 -print || echo "none"
+
+      - name: Package build and inspect archive
+        id: archive-check
+        run: |
+          TAR_NAME=site-preview.tar.gz
+          tar -czf "${TAR_NAME}" "${BUILD_DIR}" || { echo "::warning::tar failed"; exit 0; }
+          echo "Archive contents (filtered for .htaccess):"
+          tar -tf "${TAR_NAME}" | grep -F ".htaccess" || echo "::warning::No .htaccess found inside ${TAR_NAME}"
+          # Print a few lines from inside archive if present
+          if tar -tf "${TAR_NAME}" | grep -F ".htaccess" > /dev/null 2>&1; then
+            echo "Contents of first .htaccess in archive:"
+            tar -xOzf "${TAR_NAME}" "$(tar -tf "${TAR_NAME}" | grep -F ".htaccess" | head -n1)" | sed -n '1,50p' || true
+            echo "archive_has_htaccess=true" >> $GITHUB_OUTPUT
+          else
+            echo "archive_has_htaccess=false" >> $GITHUB_OUTPUT
+          fi
 
   deploy:
     name: Deploy to DreamHost (rsync over SSH, manual ssh-agent)
