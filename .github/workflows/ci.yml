@@ -148,7 +148,7 @@ jobs:
           # rsync -avzn -e "ssh -o StrictHostKeyChecking=yes" dist/ "${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_PATH}"
 
           # Actual deploy (use -e to pass identity if you prefer not to rely on agent)
-          rsync -avz --delete -e "ssh -o StrictHostKeyChecking=yes" dist/ "${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_PATH}"
+          rsync -avz --delete --include='.htaccess' -e "ssh -o StrictHostKeyChecking=yes" dist/ "${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_PATH}"
 
           # Cleanup: remove key and stop agent
           ssh-add -D || true
