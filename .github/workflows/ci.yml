@@ -49,54 +49,11 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Verify .htaccess is tracked in git (repo)
-        id: repo-check
-        run: |
-          if git ls-files --error-unmatch "${HTACCESS_PATH}" > /dev/null 2>&1; then
-            echo "✅ ${HTACCESS_PATH} is tracked in git"
-            echo "repo_has_htaccess=true" >> $GITHUB_OUTPUT
-            echo "---- ${HTACCESS_PATH} preview (first 50 lines) ----"
-            git --no-pager show HEAD:"${HTACCESS_PATH}" | sed -n '1,50p' || true
-            echo "---- end preview ----"
-          else
-            echo "::warning::${HTACCESS_PATH} is NOT tracked in git (git ls-files failed)"
-            echo "repo_has_htaccess=false" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Verify .htaccess in build output
-        id: build-check
-        run: |
-          BUILD_LOCATION="${BUILD_DIR}"
-          echo "Looking for .htaccess under ${BUILD_LOCATION}..."
-          if [ -f "${BUILD_LOCATION}/.htaccess" ]; then
-            echo "✅ Found ${BUILD_LOCATION}/.htaccess"
-            echo "build_has_htaccess=true" >> $GITHUB_OUTPUT
-            ls -la "${BUILD_LOCATION}/.htaccess" || true
-            echo "Preview:"
-            sed -n '1,50p' "${BUILD_LOCATION}/.htaccess" || true
-          else
-            echo "::warning::No .htaccess at ${BUILD_LOCATION}/.htaccess"
-            if [ -f "public/.htaccess" ]; then
-              echo "::warning::Found public/.htaccess in repo root but not in ${BUILD_LOCATION}"
-            fi
-            echo "build_has_htaccess=false" >> $GITHUB_OUTPUT
-          fi
-          echo "All .htaccess files inside ${BUILD_LOCATION}:"
-          find "${BUILD_LOCATION}" -name ".htaccess" -maxdepth 5 -print || echo "none"
-
-      - name: Package build into tar.gz (preserves dotfiles reliably)
-        id: package-tar
+      - name: Package build into tar.gz (preserves dotfiles)
         run: |
           set -euo pipefail
           TAR_NAME=site-dist.tar.gz
-          # create a gzipped tar of the build dir; this preserves dotfiles
           tar -C "${BUILD_DIR}" -czf "${TAR_NAME}" .
-          echo "Created ${TAR_NAME}:"
-          tar -tzf "${TAR_NAME}" | grep -F ".htaccess" || echo "::warning::No .htaccess found inside ${TAR_NAME}"
-          echo "If present, show first 50 lines of first .htaccess inside archive:"
-          if tar -tzf "${TAR_NAME}" | grep -F ".htaccess" > /dev/null 2>&1; then
-            tar -xOzf "${TAR_NAME}" "$(tar -tzf "${TAR_NAME}" | grep -F ".htaccess" | head -n1)" | sed -n '1,50p' || true
-          fi
 
       - name: Upload build artifact (tarball)
         uses: actions/upload-artifact@v4
@@ -105,7 +62,7 @@ jobs:
           path: site-dist.tar.gz
 
   deploy:
-    name: Deploy to DreamHost (rsync over SSH, manual ssh-agent)
+    name: Deploy to DreamHost (rsync over SSH)
     runs-on: ubuntu-latest
     needs: test
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -120,10 +77,8 @@ jobs:
       - name: Extract artifact to dist/
         run: |
           set -euo pipefail
-          # ensure dist is clean/created
           rm -rf dist
           mkdir -p dist
-          # the artifact file is site-dist.tar.gz in the workspace
           TAR_NAME=site-dist.tar.gz
           if [ ! -f "${TAR_NAME}" ]; then
             echo "::error::Expected ${TAR_NAME} not found"
@@ -131,16 +86,8 @@ jobs:
             exit 1
           fi
           tar -C dist -xzf "${TAR_NAME}"
-          echo "After extraction, list dist root (including dotfiles):"
-          ls -la dist || true
-          echo "Find any .htaccess files under dist:"
-          find dist -name ".htaccess" -maxdepth 5 -print -exec stat {} \; || true
-          if [ -f dist/.htaccess ]; then
-            echo "Preview dist/.htaccess (first 50 lines):"
-            sed -n '1,50p' dist/.htaccess || true
-          fi
 
-      - name: Deploy via rsync over SSH (dry-run diagnostic)
+      - name: Deploy via rsync over SSH
         env:
           REMOTE_PATH: ${{ secrets.DREAMHOST_REMOTE_PATH }}
           REMOTE_USER: ${{ secrets.DREAMHOST_SSH_USER }}
@@ -148,23 +95,20 @@ jobs:
           SSH_KEY: ${{ secrets.DREAMHOST_SSH_PRIVATE_KEY }}
         run: |
           set -euo pipefail
+
           mkdir -p ~/.ssh
           printf "%s\n" "$SSH_KEY" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
+
           eval "$(ssh-agent -s)"
           ssh-add ~/.ssh/deploy_key
+
           ssh-keyscan -H "$REMOTE_HOST" >> ~/.ssh/known_hosts
 
-          echo "DRY-RUN with itemized output to see what rsync will transfer/delete:"
-          rsync -avzi --delete --dry-run -e "ssh -o StrictHostKeyChecking=yes" dist/ "${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_PATH}" || true
+          # Actual deploy
+          rsync -avz --delete -e "ssh -o StrictHostKeyChecking=yes" dist/ "${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_PATH}"
 
-          echo ""
-          echo "If the dry-run looks good, here is a suggested actual deploy line:"
-          echo "rsync -avz --delete -e \"ssh -o StrictHostKeyChecking=yes\" dist/ \"${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_PATH}\""
-          echo ""
-          echo "If you want to protect the remote .htaccess from deletion when the local build lacks it, add --exclude='.htaccess' to the rsync command."
-
-          # Cleanup
+          # Cleanup: remove key and stop agent
           ssh-add -D || true
           rm -f ~/.ssh/deploy_key
           if [ -n "${SSH_AGENT_PID:-}" ]; then
