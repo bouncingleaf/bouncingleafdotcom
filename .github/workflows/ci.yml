@@ -70,9 +70,11 @@ jobs:
     steps:
       - name: Download build artifact (tarball)
         uses: actions/download-artifact@v4
+        env:
+          NODE_OPTIONS: '--trace-deprecation'
         with:
           name: site-dist
-          path: .
+          path: ./site-dist
 
       - name: Extract artifact to dist/
         run: |
