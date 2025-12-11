@@ -12,14 +12,24 @@ function Writing() {
         </p>
         <p>
           I graduated from Cohort 3 of{' '}
-          <Link to="https://thebookacademy.org/" className="link">
+          <a
+            href="https://thebookacademy.org/"
+            className="link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             The Book Academy
-          </Link>
+          </a>
           , run and taught by four-time New York Times bestselling author,
           speaker, 20-year marketing veteran, and Professional Troublemaker{' '}
-          <Link to="https://luvvie.org/" className="link">
+          <a
+            href="https://luvvie.org/"
+            className="link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Luvvie Ajayi Jones
-          </Link>
+          </a>
           .
         </p>
         <div className="flex justify-center my-8">
@@ -32,14 +42,24 @@ function Writing() {
         <p>
           I love getting a peek into the process of other artists. So I'll be
           posting about my writing journey as I go. Check out{' '}
-          <Link to="https://www.beyondwritingcode.com/" className="link">
+          <a
+            href="https://www.beyondwritingcode.com/"
+            className="link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Beyond Writing Code
-          </Link>
+          </a>
           , sign up for my newsletter mailing list to get updates on the
           progress and perhaps some snippets, or follow me on{' '}
-          <Link to="https://www.instagram.com/leafjessicaroy/" className="link">
+          <a
+            href="https://www.instagram.com/leafjessicaroy/"
+            className="link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Instagram
-          </Link>{' '}
+          </a>{' '}
           to get a peek into the book writing process as it unfolds.
         </p>
         <p>

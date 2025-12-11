@@ -1,8 +1,10 @@
-# This file was uploaded manually by Leaf on 12/9/2025
-
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+
+  # Force HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
   # Don't rewrite files or directories
   RewriteCond %{REQUEST_FILENAME} !-f
@@ -12,8 +14,42 @@
   RewriteRule ^ /index.html [L]
 </IfModule>
 
+# Security Headers
+<IfModule mod_headers.c>
+  # Content Security Policy
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+
+  # Prevent clickjacking
+  Header always set X-Frame-Options "DENY"
+
+  # Prevent MIME type sniffing
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Referrer policy
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Disable dangerous browser features
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
+
+  # Force HTTPS (31536000 = 1 year)
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+
+  # Remove server information disclosure
+  Header always unset X-Powered-By
+  Header unset X-Powered-By
+</IfModule>
+
+# Disable server signature
+ServerSignature Off
+
 # Prevent directory listing
 Options -Indexes
 
 # Set default error document
 ErrorDocument 404 /index.html
+
+# Block access to sensitive files
+<FilesMatch "^\.">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
