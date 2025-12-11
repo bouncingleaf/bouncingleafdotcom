@@ -138,7 +138,7 @@ function Art() {
                     height={100}
                     alt={`${series.title} emblem`}
                     className="rounded hover:opacity-80 transition-opacity mb-2"
-                    loading="lazy"
+                    loading="eager"
                   />
                 )}
                 <span className="text-sm font-semibold group-hover:text-accent-primary transition-colors">
@@ -161,7 +161,7 @@ function Art() {
                 alt="Circles emblem"
                 className="rounded hover:opacity-80 transition-opacity mb-2 object-cover"
                 style={{ width: '100px', height: '100px' }}
-                loading="lazy"
+                loading="eager"
               />
               <span className="text-sm font-semibold group-hover:text-accent-primary transition-colors">
                 Circles
@@ -183,7 +183,7 @@ function Art() {
                   height={100}
                   alt={`${book.title} emblem`}
                   className="rounded hover:opacity-80 transition-opacity mb-2"
-                  loading="lazy"
+                  loading="eager"
                 />
               )}
               <span className="text-sm font-semibold group-hover:text-accent-primary transition-colors">
@@ -231,7 +231,7 @@ function Art() {
         <h3 className="mb-6">Mysterious Creatures</h3>
 
         {/* Creatures Series 8 to 1 */}
-        {reversedCreatures.map((series) => (
+        {reversedCreatures.map((series, seriesIdx) => (
           <div key={series.id} id={series.id} className="mb-12 scroll-mt-4">
             <h4 className="text-xl font-semibold mb-4">{series.title}</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
@@ -249,14 +249,14 @@ function Art() {
                     src={pair.mainImage}
                     alt={`${series.title} - ${pair.id}`}
                     className="w-full rounded shadow-lg hover:shadow-xl transition-shadow"
-                    loading="lazy"
+                    loading={seriesIdx === 0 && idx < 4 ? 'eager' : 'lazy'}
                   />
                   {pair.isPaired && pair.namesImage && (
                     <img
                       src={pair.namesImage}
                       alt={`${series.title} - ${pair.id} names`}
                       className="w-full rounded shadow-lg hover:shadow-xl transition-shadow"
-                      loading="lazy"
+                      loading={seriesIdx === 0 && idx < 4 ? 'eager' : 'lazy'}
                     />
                   )}
                 </div>

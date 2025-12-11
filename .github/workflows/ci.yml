@@ -74,7 +74,7 @@ jobs:
           NODE_OPTIONS: '--trace-deprecation'
         with:
           name: site-dist
-          path: ./site-dist
+          path: .
 
       - name: Extract artifact to dist/
         run: |
