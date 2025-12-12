@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { render, screen, fireEvent, within, waitFor } from '@testing-library/react'
+import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
 import Art from '../../src/pages/Art'
 
@@ -320,31 +320,35 @@ describe('Art Page', () => {
   })
 
   describe('Creatures Series Display', () => {
-    it('displays all 8 creatures series', () => {
+    it('displays all 10 creatures series', () => {
       renderArt()
-      for (let i = 1; i <= 8; i++) {
-        expect(
-          screen.getByRole('heading', {
-            level: 4,
-            name: new RegExp(`Mysterious Creatures Series ${i}`),
-          })
-        ).toBeInTheDocument()
+      for (let i = 1; i <= 10; i++) {
+        // Use word boundary to match exact series number
+        const heading = screen.getByRole('heading', {
+          level: 4,
+          name: new RegExp(`Mysterious Creatures Series ${i}\\b`),
+        })
+        expect(heading).toBeInTheDocument()
       }
     })
 
-    it('displays creatures series in reverse order (8 first)', () => {
+    it('displays creatures series in reverse order (10 first)', () => {
       renderArt()
-      const series8 = screen.getByRole('heading', {
-        name: /Mysterious Creatures Series 8/,
+      // Find series 10 and series 1 headings specifically
+      const series10 = screen.getByRole('heading', {
+        level: 4,
+        name: /Mysterious Creatures Series 10/,
       })
       const series1 = screen.getByRole('heading', {
-        name: /Mysterious Creatures Series 1/,
+        level: 4,
+        name: /Mysterious Creatures Series 1[^0]/, // Negative lookahead to avoid matching "10"
       })
 
-      const series8Position =
-        series8.compareDocumentPosition(series1) &
+      // Series 10 should appear before Series 1 in the DOM
+      const position =
+        series10.compareDocumentPosition(series1) &
         Node.DOCUMENT_POSITION_FOLLOWING
-      expect(series8Position).toBeTruthy()
+      expect(position).toBeGreaterThan(0)
     })
   })
 

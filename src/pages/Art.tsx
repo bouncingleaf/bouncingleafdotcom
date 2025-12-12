@@ -182,17 +182,15 @@ function Art() {
                   className="flex flex-col items-center cursor-pointer group"
                   onClick={() => scrollToSeries(series.id)}
                 >
-                  {series.emblem && (
-                    <OptimizedImage
-                      src={series.emblem}
-                      width={100}
-                      height={100}
-                      alt={`${series.title} emblem`}
-                      className="rounded hover:opacity-80 transition-opacity mb-2"
-                      loading="eager"
-                      size="thumbnail"
-                    />
-                  )}
+                  <OptimizedImage
+                    src={series.emblem || '/images/emblem-placeholder.svg'}
+                    width={100}
+                    height={100}
+                    alt={`${series.title} emblem`}
+                    className="rounded hover:opacity-80 transition-opacity mb-2"
+                    loading="eager"
+                    size="thumbnail"
+                  />
                   <span className="text-sm font-semibold group-hover:text-accent-primary transition-colors">
                     Creatures {seriesNumber}
                   </span>

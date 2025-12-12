@@ -1,0 +1,15 @@
+<svg width="656" height="659" viewBox="0 0 656 659" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="656" height="659" fill="#F5F5F5"/>
+
+  <!-- Question mark circle -->
+  <circle cx="328" cy="329.5" r="200" fill="#D1D5DB" stroke="#9CA3AF" stroke-width="3"/>
+
+  <!-- Question mark -->
+  <path d="M328 220C362.3 220 390 247.7 390 282C390 306.2 376.4 327.2 356.5 337.8L356 338C345 343.5 338 354.8 338 367V375M328 415V425"
+        stroke="#6B7280"
+        stroke-width="16"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"/>
+</svg>
