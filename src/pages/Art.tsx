@@ -205,7 +205,9 @@ function Art() {
         {/* Creatures Series 8 to 1 */}
         {reversedCreatures.map((series, seriesIdx) => {
           const isExpanded = expandedCreatures.has(series.id)
-          const displayPairs = isExpanded ? series.pairs : series.pairs.slice(0, 2)
+          const displayPairs = isExpanded
+            ? series.pairs
+            : series.pairs.slice(0, 2)
 
           return (
             <div key={series.id} id={series.id} className="mb-12 scroll-mt-20">
@@ -341,9 +343,7 @@ function Art() {
         </div>
         {circlesCover && (
           <>
-            <p className="text-lg mb-2">
-              Thousands of circles
-            </p>
+            <p className="text-lg mb-2">Thousands of circles</p>
             <OptimizedImage
               src={circlesCover.path}
               width={200}
@@ -459,9 +459,7 @@ function Art() {
         </div>
 
         <div id="book2" className="mb-8 scroll-mt-20">
-          <h3 className="mb-2">
-            "Your Guide to Drawing the Line" (2021)
-          </h3>
+          <h3 className="mb-2">"Your Guide to Drawing the Line" (2021)</h3>
           <div className="prose max-w-none mb-4">
             <p>100% of adults are into lines.</p>
             <p>

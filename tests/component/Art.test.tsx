@@ -170,7 +170,9 @@ describe('Art Page', () => {
       expect(screen.queryAllByAltText(/book1-s/).length).toBe(0)
 
       // Find book1's emblem and click it to expand
-      const book1Emblem = screen.getByAltText('Thumbnail for sketchbook series 1')
+      const book1Emblem = screen.getByAltText(
+        'Thumbnail for sketchbook series 1'
+      )
       fireEvent.click(book1Emblem)
 
       // Should now have images visible since we expanded it
@@ -401,13 +403,17 @@ describe('Art Page', () => {
     it('toggles creatures series when bottom link is clicked', () => {
       renderArt()
       // Find first creatures series toggle button at bottom of section
-      const toggleButtons = screen.getAllByRole('button', { name: /click to expand/ })
+      const toggleButtons = screen.getAllByRole('button', {
+        name: /click to expand/,
+      })
 
       // Click to expand
       fireEvent.click(toggleButtons[0])
 
       // Should now show "click to hide" button
-      expect(screen.getAllByRole('button', { name: /click to hide/ }).length).toBeGreaterThan(0)
+      expect(
+        screen.getAllByRole('button', { name: /click to hide/ }).length
+      ).toBeGreaterThan(0)
     })
   })
 })
