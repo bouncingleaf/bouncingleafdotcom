@@ -17,7 +17,8 @@
     "test:e2e": "playwright test",
     "security:check": "npm audit --audit-level=high",
     "security:fix": "npm audit fix",
-    "gallery:generate": "node scripts/generate-gallery-data.js"
+    "gallery:generate": "node scripts/generate-gallery-data.js",
+    "optimize:images": "node scripts/optimize-images.js"
   },
   "dependencies": {
     "react": "^19.2.1",
@@ -49,6 +50,7 @@
     "jsdom": "^25.0.1",
     "postcss": "^8.5.6",
     "prettier": "^3.3.3",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4.1.17",
     "typescript": "^5.6.3",
     "typescript-eslint": "^8.49.0",
