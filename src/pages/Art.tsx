@@ -10,7 +10,12 @@ const gallery = galleryData as GalleryData
 function Art() {
   // Track which non-creatures galleries are expanded
   const [expandedGalleries, setExpandedGalleries] = useState<Set<string>>(
-    new Set(['circles', 'book1', 'book2'])
+    new Set(['circles'])
+  )
+
+  // Track which creatures series are expanded (default: none, show first 2 pairs only)
+  const [expandedCreatures, setExpandedCreatures] = useState<Set<string>>(
+    new Set()
   )
 
   // Memoized values to avoid repeated operations
@@ -52,6 +57,18 @@ function Art() {
     })
   }
 
+  const toggleCreaturesSeries = (id: string) => {
+    setExpandedCreatures((prev) => {
+      const newSet = new Set(prev)
+      if (newSet.has(id)) {
+        newSet.delete(id)
+      } else {
+        newSet.add(id)
+      }
+      return newSet
+    })
+  }
+
   const scrollToSeries = (seriesId: string) => {
     // Use requestAnimationFrame twice to ensure DOM has fully updated
     // First RAF: waits for next paint
@@ -64,10 +81,6 @@ function Art() {
         }
       })
     })
-  }
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   const openLightbox = (images: string[], index: number) => {
@@ -124,91 +137,6 @@ function Art() {
     <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <h1 className="mb-8">Art</h1>
 
-      {/* Navigation Menu */}
-      <div className="mb-12 p-6 bg-gray-50 rounded-lg">
-        <p className="text-sm text-gray-600 mb-4">
-          Jump to section (click emblem or label):
-        </p>
-        <div className="flex flex-wrap gap-6">
-          {/* Creatures Series */}
-          {reversedCreatures.map((series, idx) => {
-            const seriesNumber = gallery.creatures.length - idx
-            return (
-              <div
-                key={series.id}
-                className="flex flex-col items-center cursor-pointer group"
-                onClick={() => scrollToSeries(series.id)}
-              >
-                {series.emblem && (
-                  <OptimizedImage
-                    src={series.emblem}
-                    width={100}
-                    height={100}
-                    alt={`${series.title} emblem`}
-                    className="rounded hover:opacity-80 transition-opacity mb-2"
-                    loading="eager"
-                    size="thumbnail"
-                  />
-                )}
-                <span className="text-sm font-semibold group-hover:text-accent-primary transition-colors">
-                  Creatures {seriesNumber}
-                </span>
-              </div>
-            )
-          })}
-
-          {/* Circles */}
-          {circlesCover && (
-            <div
-              className="flex flex-col items-center cursor-pointer group"
-              onClick={() => scrollToSeries('circles')}
-            >
-              <OptimizedImage
-                src={circlesCover.path}
-                width={100}
-                height={100}
-                alt="Circles emblem"
-                className="rounded hover:opacity-80 transition-opacity mb-2 object-cover"
-                style={{ width: '100px', height: '100px' }}
-                loading="eager"
-                size="thumbnail"
-              />
-              <span className="text-sm font-semibold group-hover:text-accent-primary transition-colors">
-                Circles
-              </span>
-            </div>
-          )}
-
-          {/* Sketchbooks */}
-          {gallery.sketchbook.map((book) => (
-            <div
-              key={book.id}
-              className="flex flex-col items-center cursor-pointer group"
-              onClick={() => scrollToSeries(book.id)}
-            >
-              {book.emblem && (
-                <OptimizedImage
-                  src={book.emblem}
-                  width={100}
-                  height={100}
-                  alt={`${book.title} emblem`}
-                  className="rounded hover:opacity-80 transition-opacity mb-2"
-                  loading="eager"
-                  size="thumbnail"
-                />
-              )}
-              <span className="text-sm font-semibold group-hover:text-accent-primary transition-colors">
-                {book.id === 'book1'
-                  ? 'Book 1'
-                  : book.id === 'book2'
-                    ? 'Book 2'
-                    : book.id}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* Artomat Section */}
       <section className="mb-16">
         <h2 className="mb-4">Artomat</h2>
@@ -239,50 +167,98 @@ function Art() {
           <p>You can click on each of the pictures below to see more.</p>
         </div>
 
+        {/* Navigation Menu */}
+        <div className="mb-8 p-6 bg-gray-50 rounded-lg">
+          <p className="text-sm text-gray-600 mb-4">
+            Jump to series (click emblem or label):
+          </p>
+          <div className="flex flex-wrap gap-6">
+            {/* Creatures Series */}
+            {reversedCreatures.map((series, idx) => {
+              const seriesNumber = gallery.creatures.length - idx
+              return (
+                <div
+                  key={series.id}
+                  className="flex flex-col items-center cursor-pointer group"
+                  onClick={() => scrollToSeries(series.id)}
+                >
+                  {series.emblem && (
+                    <OptimizedImage
+                      src={series.emblem}
+                      width={100}
+                      height={100}
+                      alt={`${series.title} emblem`}
+                      className="rounded hover:opacity-80 transition-opacity mb-2"
+                      loading="eager"
+                      size="thumbnail"
+                    />
+                  )}
+                  <span className="text-sm font-semibold group-hover:text-accent-primary transition-colors">
+                    Creatures {seriesNumber}
+                  </span>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+
         <h3 className="mb-6">Mysterious Creatures</h3>
 
         {/* Creatures Series 8 to 1 */}
-        {reversedCreatures.map((series, seriesIdx) => (
-          <div key={series.id} id={series.id} className="mb-12 scroll-mt-20">
-            <h4 className="text-xl font-semibold mb-4">{series.title}</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-              {series.pairs.map((pair, idx) => (
-                <div
-                  key={pair.id}
-                  className={`cursor-pointer ${
-                    pair.isPaired ? 'grid grid-cols-2 gap-2' : ''
-                  }`}
-                  onClick={() =>
-                    openPairedLightbox(series.pairs, idx, series.title)
-                  }
-                >
-                  <OptimizedImage
-                    src={pair.mainImage}
-                    alt={`${series.title} - ${pair.id}`}
-                    className="w-full rounded shadow-lg hover:shadow-xl transition-shadow"
-                    loading={seriesIdx === 0 && idx < 4 ? 'eager' : 'lazy'}
-                    size="medium"
-                  />
-                  {pair.isPaired && pair.namesImage && (
+        {reversedCreatures.map((series, seriesIdx) => {
+          const isExpanded = expandedCreatures.has(series.id)
+          const displayPairs = isExpanded ? series.pairs : series.pairs.slice(0, 2)
+
+          return (
+            <div key={series.id} id={series.id} className="mb-12 scroll-mt-20">
+              <h4
+                className="text-xl font-semibold mb-4 cursor-pointer hover:text-accent-primary transition-colors"
+                onClick={() => toggleCreaturesSeries(series.id)}
+              >
+                {series.title}
+                <span className="text-sm text-gray-500 ml-2">
+                  (click to {isExpanded ? 'hide' : 'expand'})
+                </span>
+              </h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                {displayPairs.map((pair, idx) => (
+                  <div
+                    key={pair.id}
+                    className={`cursor-pointer ${
+                      pair.isPaired ? 'grid grid-cols-2 gap-2' : ''
+                    }`}
+                    onClick={() =>
+                      openPairedLightbox(series.pairs, idx, series.title)
+                    }
+                  >
                     <OptimizedImage
-                      src={pair.namesImage}
-                      alt={`${series.title} - ${pair.id} names`}
+                      src={pair.mainImage}
+                      alt={`${series.title} - ${pair.id}`}
                       className="w-full rounded shadow-lg hover:shadow-xl transition-shadow"
                       loading={seriesIdx === 0 && idx < 4 ? 'eager' : 'lazy'}
                       size="medium"
                     />
-                  )}
-                </div>
-              ))}
+                    {pair.isPaired && pair.namesImage && (
+                      <OptimizedImage
+                        src={pair.namesImage}
+                        alt={`${series.title} - ${pair.id} names`}
+                        className="w-full rounded shadow-lg hover:shadow-xl transition-shadow"
+                        loading={seriesIdx === 0 && idx < 4 ? 'eager' : 'lazy'}
+                        size="medium"
+                      />
+                    )}
+                  </div>
+                ))}
+              </div>
+              <button
+                onClick={() => toggleCreaturesSeries(series.id)}
+                className="text-sm text-gray-500 hover:text-accent-primary transition-colors"
+              >
+                click to {isExpanded ? 'hide' : 'expand'}
+              </button>
             </div>
-            <button
-              onClick={scrollToTop}
-              className="text-sm text-gray-500 hover:text-accent-primary transition-colors"
-            >
-              ↑ top of page
-            </button>
-          </div>
-        ))}
+          )
+        })}
 
         {/* Artomat Prototypes */}
         <div className="mb-8">
@@ -327,12 +303,6 @@ function Art() {
                     />
                   ))}
               </div>
-              <button
-                onClick={scrollToTop}
-                className="text-sm text-gray-500 hover:text-accent-primary transition-colors"
-              >
-                ↑ top of page
-              </button>
             </>
           )}
         </div>
@@ -373,14 +343,8 @@ function Art() {
         </div>
         {circlesCover && (
           <>
-            <p
-              onClick={() => toggleGallery('circles')}
-              className="cursor-pointer text-lg mb-2 hover:text-accent-primary"
-            >
-              Thousands of circles{' '}
-              <span className="text-sm text-gray-500">
-                (click to {expandedGalleries.has('circles') ? 'hide' : 'show'})
-              </span>
+            <p className="text-lg mb-2">
+              Thousands of circles
             </p>
             <OptimizedImage
               src={circlesCover.path}
@@ -416,10 +380,10 @@ function Art() {
               </div>
             )}
             <button
-              onClick={scrollToTop}
+              onClick={() => toggleGallery('circles')}
               className="text-sm text-gray-500 hover:text-accent-primary transition-colors"
             >
-              ↑ top of page
+              click to {expandedGalleries.has('circles') ? 'hide' : 'expand'}
             </button>
           </>
         )}
@@ -445,14 +409,8 @@ function Art() {
         </div>
 
         <div id="book1" className="mb-8 scroll-mt-20">
-          <h3
-            onClick={() => toggleGallery('book1')}
-            className="cursor-pointer hover:text-accent-primary mb-2"
-          >
-            "Casual References to Other Dimensions" (2020-2021){' '}
-            <span className="text-sm text-gray-500">
-              (click to {expandedGalleries.has('book1') ? 'hide' : 'show'})
-            </span>
+          <h3 className="mb-2">
+            "Casual References to Other Dimensions" (2020-2021)
           </h3>
           <p className="mb-4">
             I'm especially proud of "Sing" (the one about the triangles), the
@@ -493,24 +451,18 @@ function Art() {
                 </div>
               )}
               <button
-                onClick={scrollToTop}
+                onClick={() => toggleGallery('book1')}
                 className="text-sm text-gray-500 hover:text-accent-primary transition-colors"
               >
-                ↑ top of page
+                click to {expandedGalleries.has('book1') ? 'hide' : 'expand'}
               </button>
             </>
           )}
         </div>
 
         <div id="book2" className="mb-8 scroll-mt-20">
-          <h3
-            onClick={() => toggleGallery('book2')}
-            className="cursor-pointer hover:text-accent-primary mb-2"
-          >
-            "Your Guide to Drawing the Line" (2021){' '}
-            <span className="text-sm text-gray-500">
-              (click to {expandedGalleries.has('book2') ? 'hide' : 'show'})
-            </span>
+          <h3 className="mb-2">
+            "Your Guide to Drawing the Line" (2021)
           </h3>
           <div className="prose max-w-none mb-4">
             <p>100% of adults are into lines.</p>
@@ -563,10 +515,10 @@ function Art() {
                 </div>
               )}
               <button
-                onClick={scrollToTop}
+                onClick={() => toggleGallery('book2')}
                 className="text-sm text-gray-500 hover:text-accent-primary transition-colors"
               >
-                ↑ top of page
+                click to {expandedGalleries.has('book2') ? 'hide' : 'expand'}
               </button>
             </>
           )}

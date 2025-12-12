@@ -99,7 +99,7 @@ describe('Art Page', () => {
     it('renders navigation menu for jumping to sections', () => {
       renderArt()
       expect(
-        screen.getByText('Jump to section (click emblem or label):')
+        screen.getByText('Jump to series (click emblem or label):')
       ).toBeInTheDocument()
     })
 
@@ -107,13 +107,6 @@ describe('Art Page', () => {
       renderArt()
       expect(screen.getByText('Creatures 8')).toBeInTheDocument()
       expect(screen.getByText('Creatures 1')).toBeInTheDocument()
-    })
-
-    it('displays circles and sketchbook labels', () => {
-      renderArt()
-      expect(screen.getByText('Circles')).toBeInTheDocument()
-      expect(screen.getByText('Book 1')).toBeInTheDocument()
-      expect(screen.getByText('Book 2')).toBeInTheDocument()
     })
 
     it('scrolls to series when emblem is clicked', async () => {
@@ -136,55 +129,52 @@ describe('Art Page', () => {
         .getByRole('heading', { level: 2, name: 'Thousands of Circles' })
         .closest('section')
       expect(circlesSection).toBeInTheDocument()
-      expect(
-        within(circlesSection!).getByText(/click to hide/)
-      ).toBeInTheDocument()
+      // Check that images are visible (gallery is expanded)
+      const circleImages = screen.getAllByAltText(/circles\d/)
+      expect(circleImages.length).toBeGreaterThan(0)
     })
 
-    it('book1 gallery is expanded by default', () => {
+    it('book1 gallery is collapsed by default', () => {
       renderArt()
       const sketchTitle = screen.getByRole('heading', {
         level: 3,
         name: /Casual References to Other Dimensions/,
       })
       expect(sketchTitle).toBeInTheDocument()
-      expect(
-        within(sketchTitle.parentElement!).getByText(/click to hide/)
-      ).toBeInTheDocument()
+      // Check that book gallery images are not rendered (since collapsed)
+      const book1Images = screen.queryAllByAltText(/book1-s/)
+      expect(book1Images.length).toBe(0)
     })
 
     it('toggles circles gallery visibility when clicked', () => {
       renderArt()
-      const circlesSection = screen
-        .getByRole('heading', { level: 2, name: 'Thousands of Circles' })
-        .closest('section')
-      const toggleText = within(circlesSection!).getByText(
-        /Thousands of circles/
-      )
-      expect(toggleText).toBeInTheDocument()
+      // Count images before hiding
+      const imagesBefore = screen.getAllByAltText(/circles\d/)
+      expect(imagesBefore.length).toBeGreaterThan(0)
 
-      fireEvent.click(toggleText)
-      expect(
-        within(circlesSection!).getByText(/click to show/)
-      ).toBeInTheDocument()
+      // Find the toggle button at bottom of circles section
+      const circlesToggleButton = screen.getByRole('button', {
+        name: /click to hide/,
+      })
+
+      // Click to hide the gallery
+      fireEvent.click(circlesToggleButton)
+
+      // Images should be gone now
+      expect(screen.queryAllByAltText(/circles\d/).length).toBe(0)
     })
 
     it('toggles sketchbook gallery visibility when clicked', () => {
       renderArt()
-      const sketchTitle = screen.getByRole('heading', {
-        level: 3,
-        name: /Casual References to Other Dimensions/,
-      })
+      // Verify no images initially (book starts collapsed)
+      expect(screen.queryAllByAltText(/book1-s/).length).toBe(0)
 
-      fireEvent.click(sketchTitle)
+      // Find book1's emblem and click it to expand
+      const book1Emblem = screen.getByAltText('Thumbnail for sketchbook series 1')
+      fireEvent.click(book1Emblem)
 
-      const updatedSketchTitle = screen.getByRole('heading', {
-        level: 3,
-        name: /Casual References to Other Dimensions/,
-      })
-      expect(
-        within(updatedSketchTitle.parentElement!).getByText(/click to show/)
-      ).toBeInTheDocument()
+      // Should now have images visible since we expanded it
+      expect(screen.getAllByAltText(/book1-s/).length).toBeGreaterThan(0)
     })
   })
 
@@ -336,7 +326,7 @@ describe('Art Page', () => {
         expect(
           screen.getByRole('heading', {
             level: 4,
-            name: `Mysterious Creatures Series ${i}`,
+            name: new RegExp(`Mysterious Creatures Series ${i}`),
           })
         ).toBeInTheDocument()
       }
@@ -345,10 +335,10 @@ describe('Art Page', () => {
     it('displays creatures series in reverse order (8 first)', () => {
       renderArt()
       const series8 = screen.getByRole('heading', {
-        name: 'Mysterious Creatures Series 8',
+        name: /Mysterious Creatures Series 8/,
       })
       const series1 = screen.getByRole('heading', {
-        name: 'Mysterious Creatures Series 1',
+        name: /Mysterious Creatures Series 1/,
       })
 
       const series8Position =
@@ -381,46 +371,39 @@ describe('Art Page', () => {
 
     it('both sketchbooks are expandable', () => {
       renderArt()
-      const book1Title = screen.getByRole('heading', {
+      screen.getByRole('heading', {
         level: 3,
         name: /Casual References to Other Dimensions/,
       })
-      const book2Title = screen.getByRole('heading', {
+      screen.getByRole('heading', {
         level: 3,
         name: /Your Guide to Drawing the Line/,
       })
 
-      expect(
-        within(book1Title.parentElement!).getByText(/click to/)
-      ).toBeInTheDocument()
-      expect(
-        within(book2Title.parentElement!).getByText(/click to/)
-      ).toBeInTheDocument()
+      // Both books should have "click to expand" text below emblems since they start collapsed
+      const expandTexts = screen.getAllByText(/click to expand/)
+      expect(expandTexts.length).toBeGreaterThanOrEqual(2)
     })
   })
 
-  describe('Top of Page Links', () => {
-    beforeEach(() => {
-      window.scrollTo = vi.fn()
+  describe('Section Toggle Links', () => {
+    it('displays toggle links in creatures series', () => {
+      renderArt()
+      // Each of the 8 creatures series should have a toggle link
+      const toggleButtons = screen.getAllByRole('button', { name: /click to/ })
+      expect(toggleButtons.length).toBeGreaterThanOrEqual(8)
     })
 
-    it('displays top of page links in creatures series', () => {
+    it('toggles creatures series when bottom link is clicked', () => {
       renderArt()
-      const topLinks = screen.getAllByText('↑ top of page')
-      // 8 creatures series + artomat + circles + book1 + book2 = 12 total
-      expect(topLinks.length).toBeGreaterThanOrEqual(8)
-    })
+      // Find first creatures series toggle button at bottom of section
+      const toggleButtons = screen.getAllByRole('button', { name: /click to expand/ })
 
-    it('scrolls to top when top of page link is clicked', () => {
-      renderArt()
-      const topLinks = screen.getAllByText('↑ top of page')
+      // Click to expand
+      fireEvent.click(toggleButtons[0])
 
-      fireEvent.click(topLinks[0])
-
-      expect(window.scrollTo).toHaveBeenCalledWith({
-        top: 0,
-        behavior: 'smooth',
-      })
+      // Should now show "click to hide" button
+      expect(screen.getAllByRole('button', { name: /click to hide/ }).length).toBeGreaterThan(0)
     })
   })
 })
