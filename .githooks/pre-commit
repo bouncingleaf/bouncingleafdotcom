@@ -1,0 +1,109 @@
+#!/bin/bash
+
+# Pre-commit hook to ensure code quality and process images
+# This hook will:
+# 1. Run code quality checks (prettier, eslint, typescript)
+# 2. Check if there are changes in public/images/
+# 3. Update gallery.json if new creatures series are found
+# 4. Optimize images (create WebP versions)
+# 5. Stage the updated files
+
+echo "🔍 Pre-commit hook: Running quality checks..."
+echo ""
+
+# Check if there are any staged TypeScript/JavaScript files
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.(ts|tsx|js|jsx)$')
+
+if [ -n "$STAGED_FILES" ]; then
+  echo "📝 Running Prettier..."
+  npm run format:check
+  if [ $? -ne 0 ]; then
+    echo ""
+    echo "❌ Prettier formatting failed!"
+    echo "💡 Run 'npm run format' to fix formatting issues, then commit again."
+    exit 1
+  fi
+  echo "✅ Prettier check passed"
+  echo ""
+
+  echo "🔍 Running ESLint..."
+  npm run lint
+  if [ $? -ne 0 ]; then
+    echo ""
+    echo "❌ ESLint failed!"
+    echo "💡 Fix linting errors before committing."
+    exit 1
+  fi
+  echo "✅ ESLint passed"
+  echo ""
+
+  echo "🔧 Running TypeScript type check..."
+  npm run type-check
+  if [ $? -ne 0 ]; then
+    echo ""
+    echo "❌ TypeScript type check failed!"
+    echo "💡 Fix type errors before committing."
+    exit 1
+  fi
+  echo "✅ TypeScript check passed"
+  echo ""
+else
+  echo "ℹ️  No code files to check, skipping quality checks..."
+  echo ""
+fi
+
+echo "🔍 Checking for image changes..."
+
+# Check if there are changes in public/images/
+if git diff --cached --name-only | grep -q "^public/images/"; then
+  echo "📸 Changes detected in public/images/"
+
+  # Check specifically for new creatures folders
+  NEW_CREATURES=$(git diff --cached --name-only | grep -E "^public/images/creatures/creatures[0-9]+/" | sed 's|/.*||' | sort -u)
+
+  if [ -n "$NEW_CREATURES" ]; then
+    echo "🆕 New creatures series detected!"
+    echo ""
+
+    # Update gallery.json with new creatures series
+    echo "📝 Updating gallery.json..."
+    node scripts/update-gallery-data.js
+    GALLERY_UPDATED=$?
+
+    if [ $GALLERY_UPDATED -eq 0 ]; then
+      echo ""
+      echo "🎨 Optimizing images (creating WebP versions)..."
+      npm run optimize:images
+
+      echo ""
+      echo "➕ Staging updated files..."
+
+      # Stage gallery.json if it was updated
+      git add src/data/gallery.json
+
+      # Stage all newly created WebP files
+      git add public/images/**/*.webp
+
+      echo "✅ Image processing complete!"
+      echo ""
+      echo "📋 Summary:"
+      echo "  - gallery.json updated with new creatures series"
+      echo "  - Images optimized (WebP versions created)"
+      echo "  - All changes staged for commit"
+      echo ""
+    else
+      echo "ℹ️  No new creatures series to add, but optimizing any new images..."
+      npm run optimize:images
+      git add public/images/**/*.webp
+    fi
+  else
+    echo "🖼️  Image changes detected (not new creatures series)"
+    echo "🎨 Optimizing images..."
+    npm run optimize:images
+    git add public/images/**/*.webp
+  fi
+else
+  echo "✓ No image changes detected, proceeding with commit..."
+fi
+
+exit 0

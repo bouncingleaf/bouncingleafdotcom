@@ -18,7 +18,9 @@
     "security:check": "npm audit --audit-level=high",
     "security:fix": "npm audit fix",
     "gallery:generate": "node scripts/generate-gallery-data.js",
-    "optimize:images": "node scripts/optimize-images.js"
+    "optimize:images": "node scripts/optimize-images.js",
+    "install-hooks": "bash scripts/install-hooks.sh",
+    "prepare": "bash scripts/install-hooks.sh"
   },
   "dependencies": {
     "react": "^19.2.1",
