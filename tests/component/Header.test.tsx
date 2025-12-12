@@ -20,7 +20,7 @@ describe('Header', () => {
 
     it('site title links to home', () => {
       renderHeader()
-      const titleLink = screen.getByText("Leaf's site")
+      const titleLink = screen.getByRole('link', { name: /Leaf's site/i })
       expect(titleLink).toHaveAttribute('href', '/')
     })
   })

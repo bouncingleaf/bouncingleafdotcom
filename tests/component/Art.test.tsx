@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { render, screen, fireEvent, within } from '@testing-library/react'
+import { render, screen, fireEvent, within, waitFor } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
 import Art from '../../src/pages/Art'
 
@@ -116,13 +116,16 @@ describe('Art Page', () => {
       expect(screen.getByText('Book 2')).toBeInTheDocument()
     })
 
-    it('scrolls to series when emblem is clicked', () => {
+    it('scrolls to series when emblem is clicked', async () => {
       renderArt()
       const creatures8Label = screen.getByText('Creatures 8')
       expect(creatures8Label).toBeInTheDocument()
 
       fireEvent.click(creatures8Label)
-      expect(Element.prototype.scrollIntoView).toHaveBeenCalled()
+      // Wait for requestAnimationFrame callbacks to complete
+      await waitFor(() => {
+        expect(Element.prototype.scrollIntoView).toHaveBeenCalled()
+      })
     })
   })
 

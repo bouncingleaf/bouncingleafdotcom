@@ -53,10 +53,17 @@ function Art() {
   }
 
   const scrollToSeries = (seriesId: string) => {
-    const element = document.getElementById(seriesId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
+    // Use requestAnimationFrame twice to ensure DOM has fully updated
+    // First RAF: waits for next paint
+    // Second RAF: waits for layout to complete
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const element = document.getElementById(seriesId)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
+      })
+    })
   }
 
   const scrollToTop = () => {
