@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import type { ImagePair } from '../types/gallery'
+import OptimizedImage from './OptimizedImage'
 
 interface PairedLightboxProps {
   pairs: ImagePair[]
@@ -76,22 +77,28 @@ function PairedLightbox({
       >
         {isPaired ? (
           <div className="flex gap-4 items-center justify-center max-w-full max-h-full">
-            <img
+            <OptimizedImage
               src={currentPair.mainImage}
               alt={`${altText} - ${currentPair.id}`}
               className="max-h-[90vh] max-w-[45vw] object-contain"
+              loading="eager"
+              size="full"
             />
-            <img
+            <OptimizedImage
               src={currentPair.namesImage!}
               alt={`${altText} - ${currentPair.id} names`}
               className="max-h-[90vh] max-w-[45vw] object-contain"
+              loading="eager"
+              size="full"
             />
           </div>
         ) : (
-          <img
+          <OptimizedImage
             src={currentPair.mainImage}
             alt={`${altText} - ${currentPair.id}`}
             className="max-h-[90vh] max-w-[90vw] object-contain"
+            loading="eager"
+            size="full"
           />
         )}
       </div>

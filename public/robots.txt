@@ -1,0 +1,11 @@
+# robots.txt for bouncingleaf.com
+
+User-agent: *
+Allow: /
+
+# Disallow crawling of specific paths (add as needed)
+Disallow: /api/
+Disallow: /*.json$
+
+# Sitemap location
+Sitemap: https://bouncingleaf.com/sitemap.xml

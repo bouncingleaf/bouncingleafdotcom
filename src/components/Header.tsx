@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import OptimizedImage from './OptimizedImage'
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -8,19 +9,33 @@ function Header() {
     <header className="bg-white border-b border-gray-200">
       <nav className="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link
-            to="/"
-            className="text-xl font-semibold text-text-primary"
+          <Link to="/" className="flex items-center gap-3">
+            <OptimizedImage
+              src="/images/logo-sm.png"
+              alt="Leaf's site logo"
+              className="h-10 w-10 object-contain"
+              loading="eager"
+              size="thumbnail"
+            />
+            <span
+              className="text-xl font-semibold text-text-primary"
+              style={{
+                fontFamily:
+                  "'Garamond', 'Minion Pro', 'Adobe Garamond Pro', 'Cormorant Garamond', Georgia, 'Times New Roman', serif",
+              }}
+            >
+              Leaf's site
+            </span>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div
+            className="hidden md:flex space-x-8"
             style={{
               fontFamily:
                 "'Garamond', 'Minion Pro', 'Adobe Garamond Pro', 'Cormorant Garamond', Georgia, 'Times New Roman', serif",
             }}
           >
-            Leaf's site
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
             <Link to="/writing" className="link">
               Writing
             </Link>
@@ -59,7 +74,13 @@ function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden pb-4">
+          <div
+            className="md:hidden pb-4"
+            style={{
+              fontFamily:
+                "'Garamond', 'Minion Pro', 'Adobe Garamond Pro', 'Cormorant Garamond', Georgia, 'Times New Roman', serif",
+            }}
+          >
             <Link
               to="/writing"
               className="block py-2 link"

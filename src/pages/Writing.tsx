@@ -36,7 +36,7 @@ function Writing() {
           <img
             src="/images/TBA_certificate.jpeg"
             alt="The Book Academy Certificate"
-            className="max-w-full h-auto rounded shadow-lg"
+            className="w-full md:w-[90%] h-auto rounded shadow-lg mx-auto"
           />
         </div>
         <p>

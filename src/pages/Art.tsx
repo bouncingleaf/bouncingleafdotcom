@@ -3,13 +3,14 @@ import galleryData from '../data/gallery.json'
 import type { GalleryData } from '../types/gallery'
 import Lightbox from '../components/Lightbox'
 import PairedLightbox from '../components/PairedLightbox'
+import OptimizedImage from '../components/OptimizedImage'
 
 const gallery = galleryData as GalleryData
 
 function Art() {
   // Track which non-creatures galleries are expanded
   const [expandedGalleries, setExpandedGalleries] = useState<Set<string>>(
-    new Set(['circles', 'book1'])
+    new Set(['circles', 'book1', 'book2'])
   )
 
   // Memoized values to avoid repeated operations
@@ -132,13 +133,14 @@ function Art() {
                 onClick={() => scrollToSeries(series.id)}
               >
                 {series.emblem && (
-                  <img
+                  <OptimizedImage
                     src={series.emblem}
                     width={100}
                     height={100}
                     alt={`${series.title} emblem`}
                     className="rounded hover:opacity-80 transition-opacity mb-2"
                     loading="eager"
+                    size="thumbnail"
                   />
                 )}
                 <span className="text-sm font-semibold group-hover:text-accent-primary transition-colors">
@@ -154,7 +156,7 @@ function Art() {
               className="flex flex-col items-center cursor-pointer group"
               onClick={() => scrollToSeries('circles')}
             >
-              <img
+              <OptimizedImage
                 src={circlesCover.path}
                 width={100}
                 height={100}
@@ -162,6 +164,7 @@ function Art() {
                 className="rounded hover:opacity-80 transition-opacity mb-2 object-cover"
                 style={{ width: '100px', height: '100px' }}
                 loading="eager"
+                size="thumbnail"
               />
               <span className="text-sm font-semibold group-hover:text-accent-primary transition-colors">
                 Circles
@@ -177,13 +180,14 @@ function Art() {
               onClick={() => scrollToSeries(book.id)}
             >
               {book.emblem && (
-                <img
+                <OptimizedImage
                   src={book.emblem}
                   width={100}
                   height={100}
                   alt={`${book.title} emblem`}
                   className="rounded hover:opacity-80 transition-opacity mb-2"
                   loading="eager"
+                  size="thumbnail"
                 />
               )}
               <span className="text-sm font-semibold group-hover:text-accent-primary transition-colors">
@@ -232,7 +236,7 @@ function Art() {
 
         {/* Creatures Series 8 to 1 */}
         {reversedCreatures.map((series, seriesIdx) => (
-          <div key={series.id} id={series.id} className="mb-12 scroll-mt-4">
+          <div key={series.id} id={series.id} className="mb-12 scroll-mt-20">
             <h4 className="text-xl font-semibold mb-4">{series.title}</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               {series.pairs.map((pair, idx) => (
@@ -245,18 +249,20 @@ function Art() {
                     openPairedLightbox(series.pairs, idx, series.title)
                   }
                 >
-                  <img
+                  <OptimizedImage
                     src={pair.mainImage}
                     alt={`${series.title} - ${pair.id}`}
                     className="w-full rounded shadow-lg hover:shadow-xl transition-shadow"
                     loading={seriesIdx === 0 && idx < 4 ? 'eager' : 'lazy'}
+                    size="medium"
                   />
                   {pair.isPaired && pair.namesImage && (
-                    <img
+                    <OptimizedImage
                       src={pair.namesImage}
                       alt={`${series.title} - ${pair.id} names`}
                       className="w-full rounded shadow-lg hover:shadow-xl transition-shadow"
                       loading={seriesIdx === 0 && idx < 4 ? 'eager' : 'lazy'}
+                      size="medium"
                     />
                   )}
                 </div>
@@ -296,12 +302,13 @@ function Art() {
                 {gallery.artomat
                   .filter((img) => img.id !== 'artomatEmblem')
                   .map((img, idx) => (
-                    <img
+                    <OptimizedImage
                       key={img.id}
                       src={img.path}
                       alt={img.title}
-                      className="w-full rounded shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
+                      className="w-full h-64 object-cover rounded shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
                       loading="lazy"
+                      size="medium"
                       onClick={() =>
                         openLightbox(
                           gallery.artomat
@@ -325,7 +332,7 @@ function Art() {
       </section>
 
       {/* Thousands of Circles Section */}
-      <section id="circles" className="mb-16 scroll-mt-4">
+      <section id="circles" className="mb-16 scroll-mt-20">
         <h2 className="mb-4">Thousands of Circles</h2>
         <div className="prose max-w-none mb-8">
           <p>
@@ -368,25 +375,27 @@ function Art() {
                 (click to {expandedGalleries.has('circles') ? 'hide' : 'show'})
               </span>
             </p>
-            <img
+            <OptimizedImage
               src={circlesCover.path}
               width={200}
               alt="Thumbnail for Thousands of Circles"
               onClick={() => toggleGallery('circles')}
               className="cursor-pointer hover:opacity-80 transition-opacity rounded mb-4"
               loading="lazy"
+              size="thumbnail"
             />
             {expandedGalleries.has('circles') && (
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-4">
                 {gallery.circles
                   .filter((img) => img.id !== 'circles_cover')
                   .map((img, idx) => (
-                    <img
+                    <OptimizedImage
                       key={img.id}
                       src={img.path}
                       alt={img.title}
                       className="w-full rounded shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
                       loading="lazy"
+                      size="medium"
                       onClick={() =>
                         openLightbox(
                           gallery.circles
@@ -428,7 +437,7 @@ function Art() {
           </p>
         </div>
 
-        <div id="book1" className="mb-8 scroll-mt-4">
+        <div id="book1" className="mb-8 scroll-mt-20">
           <h3
             onClick={() => toggleGallery('book1')}
             className="cursor-pointer hover:text-accent-primary mb-2"
@@ -447,23 +456,25 @@ function Art() {
           </p>
           {book1 && (
             <>
-              <img
+              <OptimizedImage
                 src={book1.emblem!}
                 width={200}
                 alt="Thumbnail for sketchbook series 1"
                 onClick={() => toggleGallery('book1')}
                 className="cursor-pointer hover:opacity-80 transition-opacity rounded mb-4"
                 loading="lazy"
+                size="thumbnail"
               />
               {expandedGalleries.has('book1') && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-4">
                   {book1.images.map((img, idx) => (
-                    <img
+                    <OptimizedImage
                       key={img.id}
                       src={img.path}
                       alt={img.title}
                       className="w-full rounded shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
                       loading="lazy"
+                      size="medium"
                       onClick={() =>
                         openLightbox(
                           book1.images.map((i) => i.path),
@@ -484,7 +495,7 @@ function Art() {
           )}
         </div>
 
-        <div id="book2" className="mb-8 scroll-mt-4">
+        <div id="book2" className="mb-8 scroll-mt-20">
           <h3
             onClick={() => toggleGallery('book2')}
             className="cursor-pointer hover:text-accent-primary mb-2"
@@ -515,23 +526,25 @@ function Art() {
           </div>
           {book2 && (
             <>
-              <img
+              <OptimizedImage
                 src={book2.emblem!}
                 width={200}
                 alt="Thumbnail for sketchbook series 2"
                 onClick={() => toggleGallery('book2')}
                 className="cursor-pointer hover:opacity-80 transition-opacity rounded mb-4"
                 loading="lazy"
+                size="thumbnail"
               />
               {expandedGalleries.has('book2') && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-4">
                   {book2.images.map((img, idx) => (
-                    <img
+                    <OptimizedImage
                       key={img.id}
                       src={img.path}
                       alt={img.title}
                       className="w-full rounded shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
                       loading="lazy"
+                      size="medium"
                       onClick={() =>
                         openLightbox(
                           book2.images.map((i) => i.path),

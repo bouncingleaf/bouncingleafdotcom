@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import OptimizedImage from './OptimizedImage'
 
 interface LightboxProps {
   images: string[]
@@ -70,10 +71,12 @@ function Lightbox({
         className="max-w-7xl max-h-[90vh] p-4"
         onClick={(e) => e.stopPropagation()}
       >
-        <img
+        <OptimizedImage
           src={images[currentIndex]}
           alt={`${altText} ${currentIndex + 1}`}
           className="max-w-full max-h-[90vh] object-contain"
+          loading="eager"
+          size="full"
         />
       </div>
 
