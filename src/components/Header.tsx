@@ -11,7 +11,7 @@ function Header() {
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center gap-3">
             <OptimizedImage
-              src="/images/logo-sm.png"
+              src="/images/logo.png"
               alt="Leaf's site logo"
               className="h-10 w-10 object-contain"
               loading="eager"

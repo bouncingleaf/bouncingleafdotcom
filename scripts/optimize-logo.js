@@ -1,14 +1,14 @@
 import sharp from 'sharp';
 
 async function optimizeLogo() {
-  const inputPath = 'public/images/logo-sm.png';
+  const inputPath = 'public/images/logo.png';
 
   try {
     // Full size WebP
     await sharp(inputPath)
       .webp({ quality: 85, effort: 6 })
-      .toFile('public/images/logo-sm.webp');
-    console.log('✓ Created logo-sm.webp');
+      .toFile('public/images/logo.webp');
+    console.log('✓ Created logo.webp');
 
     // Thumbnail WebP (400px)
     await sharp(inputPath)
@@ -17,8 +17,8 @@ async function optimizeLogo() {
         background: { r: 255, g: 255, b: 255, alpha: 0 }
       })
       .webp({ quality: 80 })
-      .toFile('public/images/logo-sm-thumb.webp');
-    console.log('✓ Created logo-sm-thumb.webp');
+      .toFile('public/images/logo-thumb.webp');
+    console.log('✓ Created logo-thumb.webp');
 
     // Medium WebP (800px)
     await sharp(inputPath)
@@ -27,8 +27,8 @@ async function optimizeLogo() {
         background: { r: 255, g: 255, b: 255, alpha: 0 }
       })
       .webp({ quality: 85 })
-      .toFile('public/images/logo-sm-medium.webp');
-    console.log('✓ Created logo-sm-medium.webp');
+      .toFile('public/images/logo-medium.webp');
+    console.log('✓ Created logo-medium.webp');
 
     console.log('\n✓ Logo optimization complete!');
   } catch (error) {
