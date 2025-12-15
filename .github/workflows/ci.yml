@@ -62,7 +62,7 @@ jobs:
           path: site-dist.tar.gz
 
   deploy:
-    name: Deploy to DreamHost (rsync over SSH)
+    name: Deploy to DreamHost (rsync over SSH to primary and secondary paths)
     runs-on: ubuntu-latest
     needs: test
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -89,12 +89,12 @@ jobs:
           fi
           tar -C dist -xzf "${TAR_NAME}"
 
-      - name: Deploy via rsync over SSH
+      - name: Deploy to primary via rsync over SSH
         env:
-          REMOTE_PATH: ${{ secrets.DREAMHOST_REMOTE_PATH }}
-          REMOTE_USER: ${{ secrets.DREAMHOST_SSH_USER }}
+          REMOTE_PATH: ${{ secrets.DREAMHOST_BL_REMOTE_PATH }}
+          REMOTE_USER: ${{ secrets.DREAMHOST_BL_SSH_USER }}
           REMOTE_HOST: ${{ secrets.DREAMHOST_SSH_HOST }}
-          SSH_KEY: ${{ secrets.DREAMHOST_SSH_PRIVATE_KEY }}
+          SSH_KEY: ${{ secrets.DREAMHOST_BL_SSH_PRIVATE_KEY }}
         run: |
           set -euo pipefail
 
@@ -107,12 +107,40 @@ jobs:
 
           ssh-keyscan -H "$REMOTE_HOST" >> ~/.ssh/known_hosts
 
-          # Actual deploy
+          # Actual deploy to primary path
           rsync -avz --delete -e "ssh -o StrictHostKeyChecking=yes" dist/ "${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_PATH}"
 
           # Cleanup: remove key and stop agent
           ssh-add -D || true
           rm -f ~/.ssh/deploy_key
+          if [ -n "${SSH_AGENT_PID:-}" ]; then
+            kill "$SSH_AGENT_PID" || true
+          fi
+
+      - name: Deploy to secondary via rsync over SSH
+        env:
+          REMOTE_PATH: ${{ secrets.DREAMHOST_QWP_REMOTE_PATH }}
+          REMOTE_USER: ${{ secrets.DREAMHOST_QWP_SSH_USER }}
+          REMOTE_HOST: ${{ secrets.DREAMHOST_SSH_HOST }}
+          SSH_KEY: ${{ secrets.DREAMHOST_QWP_SSH_PRIVATE_KEY }}
+        run: |
+          set -euo pipefail
+
+          mkdir -p ~/.ssh
+          printf "%s\n" "$SSH_KEY" > ~/.ssh/deploy_key_secondary
+          chmod 600 ~/.ssh/deploy_key_secondary
+
+          eval "$(ssh-agent -s)"
+          ssh-add ~/.ssh/deploy_key_secondary
+
+          ssh-keyscan -H "$REMOTE_HOST" >> ~/.ssh/known_hosts
+
+          # Actual deploy to secondary path
+          rsync -avz --delete -e "ssh -o StrictHostKeyChecking=yes" dist/ "${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_PATH}"
+
+          # Cleanup: remove key and stop agent
+          ssh-add -D || true
+          rm -f ~/.ssh/deploy_key_secondary
           if [ -n "${SSH_AGENT_PID:-}" ]; then
             kill "$SSH_AGENT_PID" || true
           fi
