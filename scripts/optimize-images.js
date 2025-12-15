@@ -33,6 +33,7 @@ async function optimizeImage(inputPath) {
     const fullWebp = join(dir, `${name}.webp`);
     if (!existsSync(fullWebp)) {
       await sharp(inputPath)
+        .rotate() // Auto-rotate based on EXIF orientation
         .webp({ quality: QUALITY_FULL, effort: 6 })
         .toFile(fullWebp);
       console.log(`  ✓ Created ${basename(fullWebp)}`);
@@ -42,6 +43,7 @@ async function optimizeImage(inputPath) {
     const thumbWebp = join(dir, `${name}-thumb.webp`);
     if (!existsSync(thumbWebp)) {
       await sharp(inputPath)
+        .rotate() // Auto-rotate based on EXIF orientation
         .resize(THUMB_SIZE, THUMB_SIZE, {
           fit: 'cover',
           position: 'centre'
@@ -55,6 +57,7 @@ async function optimizeImage(inputPath) {
     const mediumWebp = join(dir, `${name}-medium.webp`);
     if (!existsSync(mediumWebp)) {
       await sharp(inputPath)
+        .rotate() // Auto-rotate based on EXIF orientation
         .resize(MEDIUM_SIZE, MEDIUM_SIZE, {
           fit: 'inside',
           withoutEnlargement: true

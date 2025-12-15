@@ -321,6 +321,173 @@ import OptimizedImage from '../components/OptimizedImage'
 
 ---
 
+## Git Hooks & Automation
+
+### Pre-Commit Hooks
+This project uses Git hooks to automate quality checks and image processing before commits.
+
+**Hook Location:** `.githooks/pre-commit` (tracked in repo)
+
+**Installation:**
+```bash
+npm run install-hooks  # Manual installation
+npm run prepare         # Auto-runs after npm install
+```
+
+**What the Pre-Commit Hook Does:**
+1. **Quality Checks** (on code files):
+   - Runs Prettier formatting check
+   - Runs ESLint
+   - Runs TypeScript type check
+   - **Blocks commit** if any check fails
+
+2. **Image Processing** (on image changes):
+   - Detects new creatures series folders
+   - Updates gallery.json automatically
+   - Generates WebP versions (full, medium, thumbnail)
+   - Stages all generated files
+
+**Hook Benefits:**
+- ✅ Prevents formatting errors from reaching CI
+- ✅ Catches type errors before commit
+- ✅ Automatically processes new images
+- ✅ Ensures gallery.json stays in sync with images
+
+**Bypassing Hooks (emergency only):**
+```bash
+git commit --no-verify  # Skip all hooks (use with caution!)
+```
+
+### Image Processing Automation
+
+When you add new creature series images to `public/images/creatures/creaturesXX/`:
+1. Git hook detects changes in commit
+2. Runs `scripts/update-gallery-data.js` to add series to gallery.json
+3. Runs `npm run optimize:images` to create WebP versions
+4. Automatically stages all generated files
+
+**Manual Trigger:**
+```bash
+npm run optimize:images          # Process all images
+node scripts/update-gallery-data.js  # Update gallery.json only
+```
+
+---
+
+## Common Patterns & Solutions
+
+### EXIF Orientation Handling
+
+**Problem:** Images may appear rotated incorrectly when converting JPEG to WebP because EXIF orientation metadata isn't preserved.
+
+**Solution:** Use Sharp's `.rotate()` method to auto-rotate based on EXIF data:
+
+```javascript
+// In scripts/optimize-images.js
+await sharp(inputPath)
+  .rotate()  // Auto-rotate based on EXIF orientation
+  .resize(800, 800, { fit: 'inside' })
+  .webp({ quality: 85 })
+  .toFile(outputPath);
+```
+
+**When to Use:**
+- Converting JPEG photos to WebP
+- Processing images from cameras/phones (they often have EXIF orientation)
+- Any time images appear sideways after conversion
+
+### Testing React Error Boundaries
+
+**Pattern for testing error boundaries:**
+
+```typescript
+// Component that throws an error (for testing)
+const ThrowError = ({ shouldThrow = true }) => {
+  if (shouldThrow) throw new Error('Test error')
+  return <div>No error</div>
+}
+
+// Test
+it('catches and displays errors', () => {
+  // Suppress console.error for expected errors
+  const spy = vi.spyOn(console, 'error').mockImplementation(() => {})
+
+  render(
+    <ErrorBoundary>
+      <ThrowError />
+    </ErrorBoundary>
+  )
+
+  expect(screen.getByText('Oops!')).toBeInTheDocument()
+  spy.mockRestore()
+})
+```
+
+**Key Points:**
+- Suppress console.error in tests (expected errors)
+- Test both default and custom fallback UI
+- Verify componentDidCatch logs errors
+- Test error state persistence
+
+### Fixing act() Warnings in Tests
+
+**Problem:** Warnings about suspended resources not wrapped in `act()` when testing lazy-loaded components.
+
+**Solution:** Use `waitFor` to wait for async operations:
+
+```typescript
+import { render, waitFor } from '@testing-library/react'
+
+it('renders lazy-loaded component', async () => {
+  const { container } = render(<App />)
+
+  // Wait for lazy-loaded components to finish loading
+  await waitFor(() => {
+    expect(container.querySelector('main')).toBeInTheDocument()
+  })
+})
+```
+
+**When to Use:**
+- Testing components with `React.lazy()`
+- Testing async data fetching
+- Any component with Suspense boundaries
+
+### Favicon Generation from Custom Icons
+
+**Workflow:**
+1. Place source icon in `public/icon.png` (or `public/images/logo.png`)
+2. Update `scripts/create-favicon.js` to point to source file
+3. Generate favicons:
+   ```bash
+   node scripts/create-favicon.js
+   ```
+
+**Generated Files:**
+- `favicon.png` (32x32) - Browser tab icon
+- `apple-touch-icon.png` (180x180) - iOS home screen
+- `android-chrome-192.png` (192x192) - Android home screen
+
+**Fit Modes:**
+- `fit: 'contain'` - Preserves aspect ratio, adds padding (logos)
+- `fit: 'cover'` - Fills entire square, may crop (photos/icons)
+
+```javascript
+// For logos with transparency
+await sharp('public/images/logo.png')
+  .resize(32, 32, { fit: 'contain', background: { r: 255, g: 255, b: 255, alpha: 0 } })
+  .png()
+  .toFile('public/favicon.png')
+
+// For icons/photos
+await sharp('public/icon.png')
+  .resize(32, 32, { fit: 'cover' })
+  .png()
+  .toFile('public/favicon.png')
+```
+
+---
+
 ## Build & Deployment
 
 ### Pre-Deployment Checklist
@@ -503,6 +670,14 @@ bouncingleafdotcom/
 ---
 
 ## Version History
+
+- **2025-12-14**: Added Git Hooks & Common Patterns sections
+  - Pre-commit hooks for quality checks and image processing
+  - EXIF orientation handling for image conversions
+  - ErrorBoundary testing patterns
+  - act() warning fixes for lazy-loaded components
+  - Favicon generation from custom icons
+  - Improved test coverage to 88.7%
 
 - **2025-12-12**: Initial maintenance guide created
   - Comprehensive quality checks documented

@@ -3,9 +3,9 @@ import sharp from 'sharp';
 async function createFavicon() {
   try {
     // Create 32x32 PNG favicon
-    await sharp('public/images/logo.png')
+    await sharp('public/icon.png')
       .resize(32, 32, {
-        fit: 'contain',
+        fit: 'cover',
         background: { r: 255, g: 255, b: 255, alpha: 0 }
       })
       .png()
@@ -14,9 +14,9 @@ async function createFavicon() {
     console.log('✓ Created favicon.png (32x32)');
 
     // Create 180x180 PNG for Apple touch icon
-    await sharp('public/images/logo.png')
+    await sharp('public/icon.png')
       .resize(180, 180, {
-        fit: 'contain',
+        fit: 'cover',
         background: { r: 255, g: 255, b: 255, alpha: 0 }
       })
       .png()
@@ -25,9 +25,9 @@ async function createFavicon() {
     console.log('✓ Created apple-touch-icon.png (180x180)');
 
     // Create 192x192 PNG for Android
-    await sharp('public/images/logo.png')
+    await sharp('public/icon.png')
       .resize(192, 192, {
-        fit: 'contain',
+        fit: 'cover',
         background: { r: 255, g: 255, b: 255, alpha: 0 }
       })
       .png()

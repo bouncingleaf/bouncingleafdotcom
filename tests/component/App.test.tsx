@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import App from '../../src/App'
 
@@ -152,7 +152,14 @@ describe('App Component', () => {
 })
 
 describe('App Component - Full Render', () => {
-  it('renders without crashing using BrowserRouter', () => {
-    expect(() => render(<App />)).not.toThrow()
+  it('renders without crashing using BrowserRouter', async () => {
+    const { container } = render(<App />)
+
+    // Wait for lazy-loaded components to finish loading
+    await waitFor(() => {
+      expect(container.querySelector('main')).toBeInTheDocument()
+    })
+
+    expect(container).toBeTruthy()
   })
 })
