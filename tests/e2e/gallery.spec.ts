@@ -17,16 +17,22 @@ test.describe('Gallery', () => {
   })
 
   test('Can expand/collapse gallery sections', async ({ page }) => {
-    const circlesToggle = page.locator('text=Thousands of circles').first()
+    // The thumbnail image is the toggle for the Circles gallery
+    const circlesToggle = page.locator(
+      'img[alt="Thumbnail for Thousands of Circles"]'
+    )
     const circlesGallery = page.locator(
       'section:has-text("Thousands of Circles") >> .grid'
     )
 
+    // Initially expanded
     await expect(circlesGallery).toBeVisible()
 
+    // Click to collapse
     await circlesToggle.click()
     await expect(circlesGallery).not.toBeVisible()
 
+    // Click to expand again
     await circlesToggle.click()
     await expect(circlesGallery).toBeVisible()
   })

@@ -11,7 +11,7 @@ test.describe('Navigation', () => {
     await page.goto('/')
     await page.click('header >> text=Writing')
     await expect(page).toHaveURL('/writing')
-    await expect(page.locator('h1')).toContainText('Writing')
+    await expect(page.locator('h1')).toContainText('writing a book')
   })
 
   test('Can navigate to Art page via header link', async ({ page }) => {
