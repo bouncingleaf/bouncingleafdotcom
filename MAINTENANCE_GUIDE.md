@@ -12,9 +12,10 @@ This document provides comprehensive guidelines for maintaining code quality, se
 5. [SEO & Metadata](#seo--metadata)
 6. [Error Handling](#error-handling)
 7. [Dependency Management](#dependency-management)
-8. [Image Optimization](#image-optimization)
-9. [Build & Deployment](#build--deployment)
-10. [Testing](#testing)
+8. [Automated Dependency & Security Management](#automated-dependency--security-management)
+9. [Image Optimization](#image-optimization)
+10. [Build & Deployment](#build--deployment)
+11. [Testing](#testing)
 
 ---
 
@@ -268,6 +269,179 @@ Be cautious with major version updates. Test thoroughly:
 
 ---
 
+## Automated Dependency & Security Management
+
+This project uses GitHub Actions workflows to automate dependency updates, security scanning, and performance monitoring. These automations reduce maintenance burden and catch issues early.
+
+### Dependabot (Automated Dependency Updates)
+
+**Configuration:** `.github/dependabot.yml`
+
+Dependabot automatically creates pull requests for dependency updates:
+
+**Schedule:**
+- **npm packages**: Weekly on Mondays at 9 AM
+- **GitHub Actions**: Monthly
+
+**Behavior:**
+- ✅ Groups minor/patch updates to reduce PR noise
+- ✅ Separates production and development dependencies
+- ✅ Limits to 5 open PRs max for npm, 3 for Actions
+- ✅ Auto-labels PRs as `dependencies` and `automated`
+- ✅ Commits with conventional commit prefixes (`deps:`, `ci:`)
+
+**Dependency Groups:**
+- `production-dependencies`: All prod deps (minor + patch only)
+- `development-dependencies`: All dev deps (minor + patch only)
+- Major updates are created as individual PRs for careful review
+
+**Managing Dependabot PRs:**
+```bash
+# Review the PR diff on GitHub
+# Check for breaking changes in CHANGELOG
+# Verify tests pass in CI
+# Merge if all checks pass
+
+# Or manually update and test locally:
+git fetch origin
+git checkout dependabot/npm_and_yarn/...
+npm install
+npm test
+```
+
+**Best Practices:**
+- ✅ Review and merge Dependabot PRs weekly
+- ✅ Test major updates thoroughly before merging
+- ✅ Keep PRs from piling up (stale PRs = merge conflicts)
+- ⚠️  Security updates (flagged) should be merged ASAP
+
+### Scheduled Security Audits
+
+**Configuration:** `.github/workflows/scheduled-security-audit.yml`
+
+Runs daily security vulnerability scans and automatically creates GitHub issues for problems.
+
+**Schedule:** Daily at 9 AM UTC (1 AM PST / 4 AM EST)
+
+**What It Does:**
+1. Runs `npm audit --audit-level=moderate`
+2. Checks for high/critical severity vulnerabilities
+3. **Creates GitHub issue** if vulnerabilities found
+4. **Updates existing issue** if one is already open
+5. Fails the workflow to trigger notifications
+
+**Automatic Issue Creation:**
+- ✅ Title: "🚨 Security Alert: X critical, Y high severity vulnerabilities detected"
+- ✅ Labels: `security`, `automated`, `high-priority`
+- ✅ Includes vulnerability counts and remediation steps
+- ✅ Links to useful commands (`npm audit fix`, etc.)
+
+**Manual Trigger:**
+You can manually run the security audit workflow:
+1. Go to Actions tab in GitHub
+2. Select "Scheduled Security Audit"
+3. Click "Run workflow"
+
+**Responding to Security Issues:**
+```bash
+# 1. Review the auto-created GitHub issue
+# 2. Run audit locally to see details
+npm audit
+
+# 3. Attempt automatic fixes
+npm audit fix
+
+# 4. For unfixable vulnerabilities:
+npm audit fix --force  # May include breaking changes
+
+# 5. Verify fixes don't break anything
+npm run type-check
+npm run lint
+npm test
+
+# 6. Commit and push
+git add package*.json
+git commit -m "fix: resolve security vulnerabilities"
+git push
+
+# 7. Close the GitHub issue
+```
+
+**Why Daily?**
+- New vulnerabilities are disclosed constantly
+- Early detection prevents deployment blocks
+- Automated alerts mean you don't have to remember to check
+
+### Scheduled Lighthouse Performance Checks
+
+**Configuration:** `.github/workflows/scheduled-lighthouse.yml`
+
+Runs weekly Lighthouse audits on the production site to catch performance regressions.
+
+**Schedule:** Weekly on Mondays at 10 AM UTC
+
+**What It Does:**
+1. Runs Lighthouse against https://quietwoodspath.com
+2. Takes 3 runs and averages the scores
+3. Checks Performance, Accessibility, Best Practices, and SEO
+4. **Creates GitHub issue** if any score drops below 90
+5. Posts summary to workflow run summary
+
+**Automatic Issue Creation:**
+- ✅ Title: "⚡ Lighthouse: Performance scores below target (90)"
+- ✅ Labels: `performance`, `automated`, `lighthouse`
+- ✅ Includes score table with current values
+- ✅ Links to PageSpeed Insights for detailed analysis
+
+**Score Targets:**
+- Performance: 90+
+- Accessibility: 90+
+- Best Practices: 90+
+- SEO: 90+
+
+**Manual Trigger:**
+```bash
+# Trigger from GitHub Actions UI (same as security audit)
+# Or run locally:
+npx @lhci/cli autorun --collect.url=http://localhost:4173
+```
+
+**Responding to Lighthouse Issues:**
+1. Review the auto-created GitHub issue for score breakdown
+2. Visit [PageSpeed Insights](https://pagespeed.web.dev/) for detailed recommendations
+3. Test locally: `npm run build && npm run preview`
+4. Implement fixes based on audit suggestions
+5. Re-run Lighthouse to verify improvements
+
+**Common Performance Regressions:**
+- Large image files added without optimization
+- New dependencies increasing bundle size
+- Render-blocking resources in `<head>`
+- Missing cache headers (check `.htaccess`)
+- Unused CSS/JS not being tree-shaken
+
+### Automation Summary
+
+| Automation | Frequency | Purpose | Creates Issues? |
+|------------|-----------|---------|-----------------|
+| **Dependabot** | Weekly (Mon) + Monthly (Actions) | Dependency updates | No (creates PRs) |
+| **Security Audit** | Daily (9 AM UTC) | Vulnerability scanning | Yes (if vulns found) |
+| **Lighthouse** | Weekly (Mon 10 AM UTC) | Performance monitoring | Yes (if scores <90) |
+
+**Benefits:**
+- ✅ **Reduces manual work** - No need to remember to check for updates/vulnerabilities
+- ✅ **Catches issues early** - Problems detected before they impact users
+- ✅ **Maintains quality** - Continuous monitoring prevents quality drift
+- ✅ **Documents problems** - GitHub issues provide audit trail
+
+**Managing Notification Fatigue:**
+- Watch the repository to get email/Slack notifications for new issues
+- Triage issues weekly during Monday maintenance window
+- Close non-critical issues that can be deferred
+- Use issue labels to prioritize (`high-priority`, `security`, etc.)
+
+---
+
 ## Image Optimization
 
 ### Workflow for Adding New Images
@@ -515,20 +689,34 @@ npm run preview
 
 ### GitHub Actions CI/CD
 The CI pipeline (`.github/workflows/ci.yml`) automatically:
-1. ✅ Installs dependencies (with caching)
-2. ✅ Runs security audit (fails on high/critical)
-3. ✅ Runs linting & formatting checks
-4. ✅ Runs type checking
+1. ✅ Skips build for docs-only changes (saves CI minutes)
+2. ✅ Installs dependencies (with caching)
+3. ✅ Runs security audit (fails on high/critical)
+4. ✅ Runs linting, formatting, and type checks in parallel
 5. ✅ Runs tests with coverage
-6. ✅ Builds production bundle
-7. ✅ Deploys to DreamHost (main branch only)
+6. ✅ Builds production bundle (with caching)
+7. ✅ Deploys to both sites in parallel (main branch only):
+   - **Primary**: bouncingleaf.com
+   - **Secondary**: quietwoodspath.com
 
 ### Deployment Secrets (GitHub)
-Required secrets in repository settings:
-- `DREAMHOST_HOST`
-- `DREAMHOST_USER`
-- `DREAMHOST_SSH_KEY` or `DREAMHOST_PASSWORD`
-- `DREAMHOST_DEPLOY_PATH`
+Required secrets in repository settings for dual deployment:
+
+**Primary Site (bouncingleaf.com):**
+- `DREAMHOST_BL_SSH_USER` - SSH username for bouncingleaf.com
+- `DREAMHOST_BL_SSH_PRIVATE_KEY` - SSH private key for bouncingleaf.com
+- `DREAMHOST_BL_REMOTE_PATH` - Remote path (e.g., `/home/user/bouncingleaf.com`)
+
+**Secondary Site (quietwoodspath.com):**
+- `DREAMHOST_QWP_SSH_USER` - SSH username for quietwoodspath.com
+- `DREAMHOST_QWP_SSH_PRIVATE_KEY` - SSH private key for quietwoodspath.com
+- `DREAMHOST_QWP_REMOTE_PATH` - Remote path (e.g., `/home/user/quietwoodspath.com`)
+
+**Shared:**
+- `DREAMHOST_SSH_HOST` - DreamHost server hostname (e.g., `server.dreamhost.com`)
+
+**Deployment Strategy:**
+Both sites deploy in parallel from the same build artifact, ensuring identical content on both domains. This allows testing on quietwoodspath.com while the primary site (bouncingleaf.com) remains stable.
 
 ---
 
@@ -670,6 +858,13 @@ bouncingleafdotcom/
 ---
 
 ## Version History
+
+- **2025-12-15**: Added Automated Dependency & Security Management
+  - Dependabot configuration for automated dependency updates (weekly npm, monthly Actions)
+  - Scheduled daily security audits with automatic GitHub issue creation
+  - Scheduled weekly Lighthouse performance checks
+  - CI/CD pipeline optimizations (docs-only skip, parallel checks, build caching, parallel deployment)
+  - Complete automation documentation with response procedures
 
 - **2025-12-14**: Added Git Hooks & Common Patterns sections
   - Pre-commit hooks for quality checks and image processing

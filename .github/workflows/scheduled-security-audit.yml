@@ -1,0 +1,153 @@
+name: Scheduled Security Audit
+
+on:
+  schedule:
+    # Run daily at 9 AM UTC (1 AM PST / 4 AM EST)
+    - cron: '0 9 * * *'
+  workflow_dispatch: # Allow manual triggering
+
+permissions:
+  contents: read
+  issues: write # To create issues for vulnerabilities
+
+jobs:
+  security-audit:
+    name: Daily security vulnerability check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run security audit
+        id: audit
+        run: |
+          set +e  # Don't fail immediately on error
+          npm audit --audit-level=moderate --json > audit-results.json
+          AUDIT_EXIT_CODE=$?
+          echo "exit_code=$AUDIT_EXIT_CODE" >> $GITHUB_OUTPUT
+
+          # Show results in logs
+          cat audit-results.json | jq '.'
+
+          exit 0  # Don't fail the step yet
+
+      - name: Check for high/critical vulnerabilities
+        id: check_severity
+        run: |
+          HIGH_COUNT=$(cat audit-results.json | jq '.metadata.vulnerabilities.high // 0')
+          CRITICAL_COUNT=$(cat audit-results.json | jq '.metadata.vulnerabilities.critical // 0')
+          MODERATE_COUNT=$(cat audit-results.json | jq '.metadata.vulnerabilities.moderate // 0')
+
+          echo "high=$HIGH_COUNT" >> $GITHUB_OUTPUT
+          echo "critical=$CRITICAL_COUNT" >> $GITHUB_OUTPUT
+          echo "moderate=$MODERATE_COUNT" >> $GITHUB_OUTPUT
+
+          TOTAL_SEVERE=$((HIGH_COUNT + CRITICAL_COUNT))
+          echo "total_severe=$TOTAL_SEVERE" >> $GITHUB_OUTPUT
+
+          if [ "$TOTAL_SEVERE" -gt 0 ]; then
+            echo "⚠️ Found $CRITICAL_COUNT critical and $HIGH_COUNT high severity vulnerabilities"
+            echo "has_severe=true" >> $GITHUB_OUTPUT
+          else
+            echo "✅ No high or critical vulnerabilities found"
+            echo "has_severe=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create issue for vulnerabilities
+        if: steps.check_severity.outputs.has_severe == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const critical = ${{ steps.check_severity.outputs.critical }};
+            const high = ${{ steps.check_severity.outputs.high }};
+            const moderate = ${{ steps.check_severity.outputs.moderate }};
+
+            const title = `🚨 Security Alert: ${critical} critical, ${high} high severity vulnerabilities detected`;
+            const body = `## Security Audit Results
+
+            **Critical:** ${critical}
+            **High:** ${high}
+            **Moderate:** ${moderate}
+
+            ### Action Required
+
+            High or critical severity vulnerabilities have been detected in dependencies.
+
+            **Steps to resolve:**
+            1. Run \`npm audit\` locally to see details
+            2. Run \`npm audit fix\` to attempt automatic fixes
+            3. For vulnerabilities that can't be auto-fixed, check for manual updates
+            4. Update \`package.json\` as needed and test thoroughly
+
+            ### Useful Commands
+            \`\`\`bash
+            # See full audit report
+            npm audit
+
+            # Attempt automatic fixes (safe updates)
+            npm audit fix
+
+            # Force updates (may include breaking changes)
+            npm audit fix --force
+
+            # Check what would be updated without making changes
+            npm audit fix --dry-run
+            \`\`\`
+
+            ### CI/CD Impact
+
+            ⚠️ **The deployment pipeline will fail until these vulnerabilities are resolved.**
+
+            ---
+            *This issue was automatically created by the scheduled security audit workflow.*
+            *Triggered: ${new Date().toISOString()}*
+            `;
+
+            // Check if there's already an open issue
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'security,automated'
+            });
+
+            const existingIssue = issues.data.find(issue =>
+              issue.title.includes('Security Alert')
+            );
+
+            if (existingIssue) {
+              // Update existing issue
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existingIssue.number,
+                body: `## Updated Security Scan Results\n\n${body}`
+              });
+              console.log(`Updated existing issue #${existingIssue.number}`);
+            } else {
+              // Create new issue
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: title,
+                body: body,
+                labels: ['security', 'automated', 'high-priority']
+              });
+              console.log('Created new security issue');
+            }
+
+      - name: Fail if severe vulnerabilities found
+        if: steps.check_severity.outputs.has_severe == 'true'
+        run: |
+          echo "::error::Found ${{ steps.check_severity.outputs.critical }} critical and ${{ steps.check_severity.outputs.high }} high severity vulnerabilities"
+          exit 1

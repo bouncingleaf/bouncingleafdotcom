@@ -1,0 +1,157 @@
+name: Scheduled Lighthouse Performance Check
+
+on:
+  schedule:
+    # Run weekly on Monday at 10 AM UTC
+    - cron: '0 10 * * 1'
+  workflow_dispatch: # Allow manual triggering
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  lighthouse:
+    name: Weekly Lighthouse audit
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli
+
+      - name: Run Lighthouse on quietwoodspath.com
+        id: lighthouse_qwp
+        run: |
+          lhci autorun --collect.url=https://quietwoodspath.com \
+            --collect.numberOfRuns=3 \
+            --collect.settings.preset=desktop \
+            --upload.target=temporary-public-storage
+        continue-on-error: true
+
+      - name: Parse Lighthouse results
+        id: parse_results
+        run: |
+          # Get the latest Lighthouse report
+          REPORT_PATH=".lighthouseci"
+
+          if [ -d "$REPORT_PATH" ]; then
+            # Extract scores from the latest report
+            PERFORMANCE=$(jq '.categories.performance.score * 100' $(ls -t $REPORT_PATH/*.json | head -1))
+            ACCESSIBILITY=$(jq '.categories.accessibility.score * 100' $(ls -t $REPORT_PATH/*.json | head -1))
+            BEST_PRACTICES=$(jq '.categories["best-practices"].score * 100' $(ls -t $REPORT_PATH/*.json | head -1))
+            SEO=$(jq '.categories.seo.score * 100' $(ls -t $REPORT_PATH/*.json | head -1))
+
+            echo "performance=$PERFORMANCE" >> $GITHUB_OUTPUT
+            echo "accessibility=$ACCESSIBILITY" >> $GITHUB_OUTPUT
+            echo "best_practices=$BEST_PRACTICES" >> $GITHUB_OUTPUT
+            echo "seo=$SEO" >> $GITHUB_OUTPUT
+
+            # Check if any score is below 90
+            if (( $(echo "$PERFORMANCE < 90" | bc -l) )) || \
+               (( $(echo "$ACCESSIBILITY < 90" | bc -l) )) || \
+               (( $(echo "$BEST_PRACTICES < 90" | bc -l) )) || \
+               (( $(echo "$SEO < 90" | bc -l) )); then
+              echo "below_threshold=true" >> $GITHUB_OUTPUT
+            else
+              echo "below_threshold=false" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "No Lighthouse results found"
+            echo "below_threshold=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create issue for low scores
+        if: steps.parse_results.outputs.below_threshold == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const perf = ${{ steps.parse_results.outputs.performance || 0 }};
+            const a11y = ${{ steps.parse_results.outputs.accessibility || 0 }};
+            const bp = ${{ steps.parse_results.outputs.best_practices || 0 }};
+            const seo = ${{ steps.parse_results.outputs.seo || 0 }};
+
+            const title = '⚡ Lighthouse: Performance scores below target (90)';
+            const body = `## Lighthouse Performance Report
+
+            Site: https://quietwoodspath.com
+            Date: ${new Date().toISOString().split('T')[0]}
+
+            ### Scores
+
+            | Category | Score | Target | Status |
+            |----------|-------|--------|--------|
+            | Performance | ${perf} | 90 | ${perf >= 90 ? '✅' : '⚠️'} |
+            | Accessibility | ${a11y} | 90 | ${a11y >= 90 ? '✅' : '⚠️'} |
+            | Best Practices | ${bp} | 90 | ${bp >= 90 ? '✅' : '⚠️'} |
+            | SEO | ${seo} | 90 | ${seo >= 90 ? '✅' : '⚠️'} |
+
+            ### Recommendations
+
+            One or more Lighthouse scores have fallen below the target threshold of 90.
+
+            **Next steps:**
+            1. Visit [PageSpeed Insights](https://pagespeed.web.dev/) and run a detailed audit on quietwoodspath.com
+            2. Review specific recommendations for the failing categories
+            3. Implement fixes based on the audit suggestions
+            4. Test changes locally before deploying
+
+            ### Common Performance Fixes
+
+            - **Performance**: Optimize images, reduce bundle size, minimize render-blocking resources
+            - **Accessibility**: Add alt text, improve color contrast, fix heading hierarchy
+            - **Best Practices**: Update dependencies, fix console errors, ensure HTTPS
+            - **SEO**: Add meta descriptions, ensure proper heading structure, fix broken links
+
+            ---
+            *This issue was automatically created by the scheduled Lighthouse workflow.*
+            `;
+
+            // Check for existing issue
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'performance,automated'
+            });
+
+            const existingIssue = issues.data.find(issue =>
+              issue.title.includes('Lighthouse')
+            );
+
+            if (existingIssue) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existingIssue.number,
+                body: `## Updated Lighthouse Scan\n\n${body}`
+              });
+              console.log(`Updated existing issue #${existingIssue.number}`);
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: title,
+                body: body,
+                labels: ['performance', 'automated', 'lighthouse']
+              });
+              console.log('Created new Lighthouse issue');
+            }
+
+      - name: Summary
+        run: |
+          echo "### Lighthouse Results Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Category | Score |" >> $GITHUB_STEP_SUMMARY
+          echo "|----------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Performance | ${{ steps.parse_results.outputs.performance || 'N/A' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Accessibility | ${{ steps.parse_results.outputs.accessibility || 'N/A' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Best Practices | ${{ steps.parse_results.outputs.best_practices || 'N/A' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| SEO | ${{ steps.parse_results.outputs.seo || 'N/A' }} |" >> $GITHUB_STEP_SUMMARY

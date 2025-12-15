@@ -124,18 +124,30 @@ No CMS, database, or user authentication needed.
 
 GitHub Actions workflow triggered on push/PR to `main`:
 
-1. Install dependencies (with caching)
-2. Security audit (fails on high/critical vulnerabilities)
-3. Lint & format check (ESLint, Prettier, TypeScript)
-4. Run all tests with coverage
-5. Production build
-6. Deploy to DreamHost (main branch only, after tests pass)
+1. Check for docs-only changes (skips build if only .md/.txt files changed)
+2. Install dependencies (with caching)
+3. Security audit (fails on high/critical vulnerabilities)
+4. Lint, format, and type checks (run in parallel)
+5. Run all tests with coverage
+6. Production build (with caching)
+7. Deploy to both sites in parallel (main branch only, after tests pass):
+   - **Primary**: bouncingleaf.com
+   - **Secondary**: quietwoodspath.com
+
+**Optimizations**:
+- Docs-only changes skip the entire build pipeline
+- Quality checks run in parallel (type-check, lint, format)
+- Build artifacts are cached for faster incremental builds
+- Both sites deploy simultaneously from the same build artifact
 
 **Required GitHub Secrets**:
-- `DREAMHOST_HOST`
-- `DREAMHOST_USER`
-- `DREAMHOST_SSH_KEY` or `DREAMHOST_PASSWORD`
-- `DREAMHOST_DEPLOY_PATH`
+- `DREAMHOST_SSH_HOST` - DreamHost server hostname
+- `DREAMHOST_BL_SSH_USER` - SSH user for bouncingleaf.com
+- `DREAMHOST_BL_SSH_PRIVATE_KEY` - SSH key for bouncingleaf.com
+- `DREAMHOST_BL_REMOTE_PATH` - Deploy path for bouncingleaf.com
+- `DREAMHOST_QWP_SSH_USER` - SSH user for quietwoodspath.com
+- `DREAMHOST_QWP_SSH_PRIVATE_KEY` - SSH key for quietwoodspath.com
+- `DREAMHOST_QWP_REMOTE_PATH` - Deploy path for quietwoodspath.com
 
 ## Performance & Accessibility
 
