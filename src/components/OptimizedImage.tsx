@@ -5,6 +5,7 @@ interface OptimizedImageProps {
   alt: string
   className?: string
   loading?: 'lazy' | 'eager'
+  fetchpriority?: 'high' | 'low' | 'auto'
   width?: number
   height?: number
   style?: React.CSSProperties
@@ -27,6 +28,7 @@ export default function OptimizedImage({
   alt,
   className = '',
   loading = 'lazy',
+  fetchpriority,
   width,
   height,
   style,
@@ -43,6 +45,7 @@ export default function OptimizedImage({
         alt={alt}
         className={className}
         loading={loading}
+        fetchPriority={fetchpriority}
         width={width}
         height={height}
         style={style}
@@ -67,6 +70,7 @@ export default function OptimizedImage({
         alt={alt}
         className={className}
         loading={loading}
+        fetchPriority={fetchpriority}
         width={width}
         height={height}
         style={style}

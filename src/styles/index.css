@@ -19,6 +19,7 @@
       'Helvetica Neue',
       Arial,
       sans-serif;
+    font-display: optional;
   }
 
   h1,
@@ -31,6 +32,7 @@
     font-family:
       'Garamond', 'Minion Pro', 'Adobe Garamond Pro', 'Cormorant Garamond',
       Georgia, 'Times New Roman', serif;
+    font-display: optional;
   }
 
   p {
