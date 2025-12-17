@@ -696,28 +696,19 @@ The CI pipeline (`.github/workflows/ci.yml`) automatically:
 4. ✅ Runs linting, formatting, and type checks in parallel
 5. ✅ Runs tests with coverage
 6. ✅ Builds production bundle (with caching)
-7. ✅ Deploys to both sites in parallel (main branch only):
-   - **Primary**: bouncingleaf.com
-   - **Secondary**: quietwoodspath.com
+7. ✅ Deploys to bouncingleaf.com (main branch only)
 
 ### Deployment Secrets (GitHub)
-Required secrets in repository settings for dual deployment:
+Required secrets in repository settings:
 
-**Primary Site (bouncingleaf.com):**
+**Site Deployment:**
 - `DREAMHOST_BL_SSH_USER` - SSH username for bouncingleaf.com
 - `DREAMHOST_BL_SSH_PRIVATE_KEY` - SSH private key for bouncingleaf.com
 - `DREAMHOST_BL_REMOTE_PATH` - Remote path (e.g., `/home/user/bouncingleaf.com`)
-
-**Secondary Site (quietwoodspath.com):**
-- `DREAMHOST_QWP_SSH_USER` - SSH username for quietwoodspath.com
-- `DREAMHOST_QWP_SSH_PRIVATE_KEY` - SSH private key for quietwoodspath.com
-- `DREAMHOST_QWP_REMOTE_PATH` - Remote path (e.g., `/home/user/quietwoodspath.com`)
-
-**Shared:**
 - `DREAMHOST_SSH_HOST` - DreamHost server hostname (e.g., `server.dreamhost.com`)
 
-**Deployment Strategy:**
-Both sites deploy in parallel from the same build artifact, ensuring identical content on both domains. This allows testing on quietwoodspath.com while the primary site (bouncingleaf.com) remains stable.
+**Deployment Process:**
+The site automatically deploys to bouncingleaf.com when changes are pushed to the main branch, after all tests and quality checks pass.
 
 ---
 
@@ -811,9 +802,7 @@ npm run test:e2e        # Playwright E2E tests
 
 **Setup Steps:**
 1. Sign up for monitoring service
-2. Add both sites:
-   - https://bouncingleaf.com
-   - https://quietwoodspath.com
+2. Add site: https://bouncingleaf.com
 3. Configure alert preferences (email/SMS/Slack)
 4. Set check interval (5 minutes recommended)
 
@@ -981,6 +970,12 @@ bouncingleafdotcom/
 ---
 
 ## Version History
+
+- **2025-12-17**: Removed quietwoodspath.com deployment
+  - Simplified CI/CD pipeline to deploy only to bouncingleaf.com
+  - Updated Lighthouse checks to monitor bouncingleaf.com
+  - Removed all references to dual deployment from documentation
+  - Streamlined deployment secrets (removed QWP secrets)
 
 - **2025-12-17**: Added Analytics & Monitoring Section
   - Documented Cloudflare Web Analytics setup (privacy-friendly, no cookies)

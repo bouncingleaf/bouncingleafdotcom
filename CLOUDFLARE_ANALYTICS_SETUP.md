@@ -90,7 +90,7 @@ git commit -m "Add Cloudflare Web Analytics"
 git push
 ```
 
-The site will automatically deploy to both bouncingleaf.com and quietwoodspath.com.
+The site will automatically deploy to bouncingleaf.com.
 
 ### Step 6: Verify It's Working
 
