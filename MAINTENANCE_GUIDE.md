@@ -16,6 +16,7 @@ This document provides comprehensive guidelines for maintaining code quality, se
 9. [Image Optimization](#image-optimization)
 10. [Build & Deployment](#build--deployment)
 11. [Testing](#testing)
+12. [Analytics & Monitoring](#analytics--monitoring)
 
 ---
 
@@ -757,6 +758,128 @@ npm run test:e2e        # Playwright E2E tests
 
 ---
 
+## Analytics & Monitoring
+
+### Website Analytics
+
+**Current Setup:** Cloudflare Web Analytics (optional, privacy-friendly)
+
+**Key Features:**
+- ✅ **No cookies** - No consent banner required
+- ✅ **Privacy-first** - No personal data collection
+- ✅ **GDPR/CCPA compliant** - No user tracking
+- ✅ **Free forever** - No cost
+- ✅ **Lightweight** - <1KB script
+
+**Setup Instructions:** See `CLOUDFLARE_ANALYTICS_SETUP.md` for complete guide.
+
+**What You Can Track:**
+- Page views and unique visitors
+- Most popular pages
+- Traffic sources (referrers)
+- Geographic distribution
+- Browser and device types
+- Page load performance
+
+**Accessing Analytics:**
+1. Log in to Cloudflare Dashboard
+2. Go to "Analytics & Logs" → "Web Analytics"
+3. Select your site
+
+**Privacy Guarantees:**
+- No individual user tracking
+- No IP addresses stored
+- No cross-site tracking
+- No cookies or local storage
+- Data aggregated only
+
+### Uptime Monitoring
+
+**Recommended Tools:**
+
+**UptimeRobot (Free tier)**
+- Monitor up to 50 sites for free
+- Checks every 5 minutes
+- Email/SMS alerts
+- Status page option
+- Setup: https://uptimerobot.com/
+
+**Better Uptime (Paid)**
+- Premium monitoring service
+- Excellent UX and alerting
+- Incident management
+
+**Setup Steps:**
+1. Sign up for monitoring service
+2. Add both sites:
+   - https://bouncingleaf.com
+   - https://quietwoodspath.com
+3. Configure alert preferences (email/SMS/Slack)
+4. Set check interval (5 minutes recommended)
+
+### Performance Monitoring
+
+**Already Implemented:**
+- ✅ Weekly Lighthouse checks via GitHub Actions
+- ✅ Automatic GitHub issues if scores drop below 90
+- ✅ Monitors: Performance, Accessibility, Best Practices, SEO
+
+**Manual Performance Checks:**
+```bash
+# Local Lighthouse audit
+npm run build
+npm run preview
+npx @lhci/cli autorun --collect.url=http://localhost:4173
+
+# Check production site
+# Visit: https://pagespeed.web.dev/
+# Enter: https://bouncingleaf.com
+```
+
+### Error Monitoring (Optional)
+
+**Consider adding Sentry for production error tracking:**
+
+**Benefits:**
+- Catches JavaScript errors in production
+- Stack traces with context
+- Free tier: 5,000 events/month
+- Integrates with ErrorBoundary
+
+**Setup (if desired):**
+1. Sign up at https://sentry.io/
+2. Create new project (React)
+3. Install: `npm install @sentry/react`
+4. Add to `src/main.tsx`:
+   ```typescript
+   import * as Sentry from '@sentry/react'
+
+   Sentry.init({
+     dsn: 'YOUR_DSN_HERE',
+     environment: import.meta.env.MODE,
+     tracesSampleRate: 0.1,
+   })
+   ```
+5. Wrap app with Sentry ErrorBoundary
+
+**Note:** Current ErrorBoundary already catches React errors and logs them to console. Sentry adds remote tracking.
+
+### Monitoring Dashboard Checklist
+
+**Weekly checks:**
+- ✅ Review analytics for traffic trends
+- ✅ Check uptime monitoring (any downtime?)
+- ✅ Review Lighthouse GitHub issues
+- ✅ Check for any error spikes (if using Sentry)
+
+**Monthly checks:**
+- ✅ Review most popular pages
+- ✅ Check performance trends
+- ✅ Verify monitoring is still active
+- ✅ Review security audit issues
+
+---
+
 ## Quick Reference: Before Every Commit
 
 ```bash
@@ -858,6 +981,14 @@ bouncingleafdotcom/
 ---
 
 ## Version History
+
+- **2025-12-17**: Added Analytics & Monitoring Section
+  - Documented Cloudflare Web Analytics setup (privacy-friendly, no cookies)
+  - Added uptime monitoring recommendations (UptimeRobot)
+  - Documented performance monitoring (Lighthouse automation already implemented)
+  - Optional error monitoring with Sentry
+  - Privacy and compliance guidance (no cookie banner needed)
+  - Created CLOUDFLARE_ANALYTICS_SETUP.md with detailed setup guide
 
 - **2025-12-15**: Added Automated Dependency & Security Management
   - Dependabot configuration for automated dependency updates (weekly npm, monthly Actions)
