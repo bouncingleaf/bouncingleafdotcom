@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   lighthouse:
-    name: Weekly Lighthouse audit
+    name: Lighthouse audit for bouncingleaf.com
     runs-on: ubuntu-latest
 
     steps:
@@ -27,10 +27,10 @@ jobs:
       - name: Install Lighthouse CI
         run: npm install -g @lhci/cli
 
-      - name: Run Lighthouse on quietwoodspath.com
-        id: lighthouse_qwp
+      - name: Run Lighthouse on bouncingleaf.com
+        id: lighthouse
         run: |
-          lhci autorun --collect.url=https://quietwoodspath.com \
+          lhci autorun --collect.url=https://bouncingleaf.com \
             --collect.numberOfRuns=3 \
             --collect.settings.preset=desktop \
             --upload.target=temporary-public-storage
@@ -81,7 +81,7 @@ jobs:
             const title = '⚡ Lighthouse: Performance scores below target (90)';
             const body = `## Lighthouse Performance Report
 
-            Site: https://quietwoodspath.com
+            Site: https://bouncingleaf.com
             Date: ${new Date().toISOString().split('T')[0]}
 
             ### Scores
@@ -98,7 +98,7 @@ jobs:
             One or more Lighthouse scores have fallen below the target threshold of 90.
 
             **Next steps:**
-            1. Visit [PageSpeed Insights](https://pagespeed.web.dev/) and run a detailed audit on quietwoodspath.com
+            1. Visit [PageSpeed Insights](https://pagespeed.web.dev/) and run a detailed audit on bouncingleaf.com
             2. Review specific recommendations for the failing categories
             3. Implement fixes based on the audit suggestions
             4. Test changes locally before deploying

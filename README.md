@@ -111,14 +111,14 @@ bouncingleafdotcom/
 
 ## Deployment
 
-The site automatically deploys to **both bouncingleaf.com and quietwoodspath.com** via GitHub Actions when pushing to the `main` branch. Both sites deploy in parallel from the same build artifact.
+The site automatically deploys to **bouncingleaf.com** via GitHub Actions when pushing to the `main` branch.
 
 The CI pipeline includes:
 - Security checks (blocks on high/critical vulnerabilities)
 - Parallel linting, formatting, and type checks
 - Test suite with coverage
 - Production build with caching
-- Dual deployment to both DreamHost sites simultaneously
+- Deployment to DreamHost via rsync over SSH
 
 ## License
 

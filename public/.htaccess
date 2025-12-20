@@ -54,6 +54,24 @@ ErrorDocument 404 /index.html
   Deny from all
 </FilesMatch>
 
+# Block access to source maps (can reveal source code)
+<FilesMatch "\.map$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# Block access to package files (reveals dependencies)
+<FilesMatch "(^package\.json$|^package-lock\.json$|^composer\.json$|^composer\.lock$)">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# Block access to common config files
+<FilesMatch "(^tsconfig\.json$|^vite\.config\.|^\.eslintrc|^\.prettierrc)">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
 # ==========================================
 # PERFORMANCE OPTIMIZATIONS
 # ==========================================
