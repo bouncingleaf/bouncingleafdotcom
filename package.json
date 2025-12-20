@@ -23,8 +23,8 @@
     "prepare": "bash scripts/install-hooks.sh"
   },
   "dependencies": {
-    "react": "^19.2.1",
-    "react-dom": "^19.2.1",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "react-photo-album": "^3.0.2",
     "react-router-dom": "^7.10.1"
   },
