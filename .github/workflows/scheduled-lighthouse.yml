@@ -70,7 +70,7 @@ jobs:
 
       - name: Create issue for low scores
         if: steps.parse_results.outputs.below_threshold == 'true'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const perf = ${{ steps.parse_results.outputs.performance || 0 }};
