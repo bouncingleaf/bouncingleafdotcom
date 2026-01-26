@@ -43,11 +43,19 @@ jobs:
           REPORT_PATH=".lighthouseci"
 
           if [ -d "$REPORT_PATH" ]; then
-            # Extract scores from the latest report
-            PERFORMANCE=$(jq '.categories.performance.score * 100' $(ls -t $REPORT_PATH/*.json | head -1))
-            ACCESSIBILITY=$(jq '.categories.accessibility.score * 100' $(ls -t $REPORT_PATH/*.json | head -1))
-            BEST_PRACTICES=$(jq '.categories["best-practices"].score * 100' $(ls -t $REPORT_PATH/*.json | head -1))
-            SEO=$(jq '.categories.seo.score * 100' $(ls -t $REPORT_PATH/*.json | head -1))
+            # Extract scores from the latest report (lhr-*.json files, not links.json or manifest.json)
+            REPORT_FILE=$(ls -t $REPORT_PATH/lhr-*.json 2>/dev/null | head -1)
+
+            if [ -z "$REPORT_FILE" ]; then
+              echo "No Lighthouse report files found"
+              echo "below_threshold=false" >> $GITHUB_OUTPUT
+              exit 0
+            fi
+
+            PERFORMANCE=$(jq '.categories.performance.score * 100' "$REPORT_FILE")
+            ACCESSIBILITY=$(jq '.categories.accessibility.score * 100' "$REPORT_FILE")
+            BEST_PRACTICES=$(jq '.categories["best-practices"].score * 100' "$REPORT_FILE")
+            SEO=$(jq '.categories.seo.score * 100' "$REPORT_FILE")
 
             echo "performance=$PERFORMANCE" >> $GITHUB_OUTPUT
             echo "accessibility=$ACCESSIBILITY" >> $GITHUB_OUTPUT
