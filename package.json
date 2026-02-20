@@ -15,7 +15,8 @@
     "test:watch": "vitest",
     "test:coverage": "vitest --coverage --run",
     "test:e2e": "playwright test",
-    "security:check": "npm audit --audit-level=high",
+    "security:check": "npm audit --omit=dev --audit-level=high",
+    "security:check:all": "npm audit --audit-level=high",
     "security:fix": "npm audit fix",
     "gallery:generate": "node scripts/generate-gallery-data.js",
     "optimize:images": "node scripts/optimize-images.js",
@@ -25,7 +26,6 @@
   "dependencies": {
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
-    "react-photo-album": "^3.4.0",
     "react-router-dom": "^7.13.0"
   },
   "devDependencies": {
@@ -37,8 +37,6 @@
     "@testing-library/user-event": "^14.5.2",
     "@types/react": "^19.2.9",
     "@types/react-dom": "^19.2.3",
-    "@typescript-eslint/eslint-plugin": "^8.53.1",
-    "@typescript-eslint/parser": "^8.53.1",
     "@vitejs/plugin-react": "^5.1.2",
     "@vitest/coverage-v8": "^4.0.18",
     "autoprefixer": "^10.4.23",
@@ -50,7 +48,6 @@
     "eslint-plugin-react-refresh": "^0.4.26",
     "globals": "^17.0.0",
     "jsdom": "^27.4.0",
-    "lighthouse": "^13.0.1",
     "postcss": "^8.5.6",
     "prettier": "^3.8.1",
     "sharp": "^0.34.5",

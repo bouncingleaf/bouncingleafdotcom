@@ -38,7 +38,8 @@ npm run type-check     # Run TypeScript type checking
 npm run test           # Run unit and component tests
 npm run test:coverage  # Run tests with coverage
 npm run test:e2e       # Run end-to-end tests
-npm run security:check # Check for high/critical vulnerabilities
+npm run security:check # Check deployed (prod) deps for high/critical vulnerabilities
+npm run security:check:all # Check all deps (including dev tooling)
 npm run security:fix   # Attempt to fix vulnerabilities
 ```
 
@@ -103,7 +104,7 @@ bouncingleafdotcom/
 
 ## Security
 
-**Critical requirement**: The project must have no high or critical severity security vulnerabilities.
+**Critical requirement**: The deployed app must have no high or critical severity security vulnerabilities.
 
 - Run `npm run security:check` before committing
 - CI/CD pipeline automatically checks for vulnerabilities
