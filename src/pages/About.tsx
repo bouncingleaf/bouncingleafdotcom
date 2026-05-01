@@ -14,10 +14,8 @@ function About() {
           paints, Pigma Micron pens of various sizes, and Uni Posca paint pens.
         </p>
         <p>
-          I also like paper. My go-to is 12x12" 110 lb cardstock that is smooth
-          on one side and linen on the other, but my favorite is a good Bristol
-          smooth. I've tried digital art, but it's just not the same. Something
-          about applying ink to paper is so satisfying.
+          I also like paper. I've tried digital art, but it's just not the same.
+          Something about applying ink to paper is so satisfying.
         </p>
         <p>
           When I'm not making a mess with the aforementioned, I like to look at
