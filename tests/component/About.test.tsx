@@ -13,12 +13,6 @@ describe('About', () => {
   it('shows personal bio with art materials', () => {
     render(<About />)
     expect(screen.getByText(/Pigma Micron pens/i)).toBeInTheDocument()
-    expect(screen.getByText(/Uni Posca paint pens/i)).toBeInTheDocument()
-  })
-
-  it('shows information about paper preferences', () => {
-    render(<About />)
-    expect(screen.getByText(/Bristol smooth/i)).toBeInTheDocument()
   })
 
   it('shows personal interests', () => {

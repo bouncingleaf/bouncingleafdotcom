@@ -72,7 +72,8 @@ describe('ErrorBoundary', () => {
     // Verify console.error was called with error details
     expect(consoleErrorSpy).toHaveBeenCalled()
     const errorCalls = consoleErrorSpy.mock.calls.filter(
-      (call) => call[0] === 'Error caught by boundary:'
+      (call: Parameters<typeof console.error>) =>
+        call[0] === 'Error caught by boundary:'
     )
     expect(errorCalls.length).toBeGreaterThan(0)
   })
