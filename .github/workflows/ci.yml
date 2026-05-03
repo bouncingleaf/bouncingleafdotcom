@@ -14,13 +14,15 @@ jobs:
   test:
     name: Run security checks, lint, tests, and build
     runs-on: ubuntu-latest
+    outputs:
+      run_tests: ${{ steps.docs_check.outputs.run_tests }}
     env:
       BUILD_DIR: dist
       HTACCESS_PATH: public/.htaccess
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
         with:
           fetch-depth: 2  # Need history for docs-only check
 
@@ -45,14 +47,14 @@ jobs:
 
       - name: Setup Node.js
         if: steps.docs_check.outputs.run_tests == 'true'
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v4
         with:
           node-version: '22'
           cache: 'npm'
 
       - name: Restore build cache
         if: steps.docs_check.outputs.run_tests == 'true'
-        uses: actions/cache@v5
+        uses: actions/cache@v4
         with:
           path: |
             dist
@@ -96,7 +98,7 @@ jobs:
 
       - name: Upload build artifact (tarball)
         if: steps.docs_check.outputs.run_tests == 'true'
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v4
         with:
           name: site-dist
           path: site-dist.tar.gz
@@ -105,11 +107,11 @@ jobs:
     name: Deploy to bouncingleaf.com
     runs-on: ubuntu-latest
     needs: test
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && needs.test.outputs.run_tests == 'true'
 
     steps:
       - name: Download build artifact (tarball)
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v4
         env:
           NODE_OPTIONS: '--trace-deprecation'
         with:
