@@ -1,0 +1,1247 @@
+[
+  {
+    "artist": "Lady Gaga",
+    "album": "Abracadabra - Single",
+    "song": "Abracadabra",
+    "genre": ["pop", "electropop"],
+    "who": ["Carla", "Cheryl"],
+    "spotify": "https://open.spotify.com/track/5ZLUm9eab8y3tqQ1OhQSHI",
+    "appleMusic": "https://music.apple.com/us/song/abracadabra/1793869710",
+    "youtube": "https://www.youtube.com/watch?v=vBynw9Isr28"
+  },
+  {
+    "artist": "Harry Styles",
+    "album": "Kiss All The Time. Disco, Occasionally_",
+    "song": "American Girls",
+    "genre": ["indie-pop"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/7gtG45ieyQzKtNKobfLd49",
+    "appleMusic": "https://music.apple.com/us/song/american-girls/1870984036",
+    "youtube": "https://www.youtube.com/watch?v=o6jQo3-iCao"
+  },
+  {
+    "artist": "ROSÉ & Bruno Mars",
+    "album": "APT. - Single",
+    "song": "APT.",
+    "genre": ["pop-rock", "k-pop"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/5vWqj0WYhK4vC21nNOvyoD",
+    "appleMusic": "https://music.apple.com/us/song/apt/1773452221",
+    "youtube": "https://www.youtube.com/watch?v=ekr2nIex040"
+  },
+  {
+    "artist": "Maffio & Christian Alicea ",
+    "album": "Bailame Con Actitud (feat. El Revulú) - Single",
+    "song": "Bailame Con Actitud (feat. El Revulú)",
+    "genre": ["salsa"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/2ogw5CX5Pxdr6MXYUYcjd5",
+    "appleMusic": "https://music.apple.com/us/album/bailame-con-actitud-blue-suede-shoes-feat-el-revul%C3%BA/1700518531",
+    "youtube": "https://www.youtube.com/watch?v=XgxR4JhlsBs"
+  },
+  {
+    "artist": "Chayanne",
+    "album": "Bailando Bachata - Single",
+    "song": "Bailando Bachata",
+    "genre": ["bachata"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/0nKu6ysQjldXxABnxMu7kL",
+    "appleMusic": "https://music.apple.com/us/song/bailando-bachata/1687564878",
+    "youtube": "https://www.youtube.com/watch?v=dsLjyLn859g"
+  },
+  {
+    "artist": "Juan Magán",
+    "album": "Bailando por Ahí - Single",
+    "song": "Bailando por Ahí",
+    "genre": ["electro-latino"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/3BqUQcmNVzYZc2GvM7s3f4",
+    "appleMusic": "https://music.apple.com/us/album/bailando-por-ah%C3%AD-single/436873962"
+  },
+  {
+    "artist": "Guaco",
+    "album": "Presente Continuo",
+    "song": "Baja",
+    "genre": ["latin-pop", "salsa"],
+    "who": ["Angelica"],
+    "spotify": "https://open.spotify.com/track/1xZgrsRZKo93fiqhUvms8E",
+    "appleMusic": "https://music.apple.com/us/song/baja/1551260669",
+    "youtube": "https://www.youtube.com/watch?v=elrjzVLmJw8"
+  },
+  {
+    "artist": "Shaboozey",
+    "album": "Where I've Been, Isn't Where I'm Going",
+    "song": "A Bar Song (Tipsy)",
+    "genre": ["country", "pop"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/5fZJQrFKWQLb7FpJXZ1g7K",
+    "appleMusic": "https://music.apple.com/us/song/a-bar-song-tipsy/1737085899",
+    "youtube": "https://www.youtube.com/watch?v=qyQY3SDuhSM"
+  },
+  {
+    "artist": "Carlos Vives, Mau y Ricky & Lucy Vives",
+    "album": "Besos en Cualquier Horario - Single",
+    "song": "Besos en Cualquier Horario",
+    "genre": ["latin-pop", "cumbia"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/3jmcOU72m5T7B4DaUYALuf",
+    "appleMusic": "https://music.apple.com/us/album/besos-en-cualquier-horario-single/1578749675",
+    "youtube": "https://www.youtube.com/watch?v=oYG6vaOQmXw"
+  },
+  {
+    "artist": "Tropkillaz, J Balvin & Anitta",
+    "album": "Bola Rebola (feat. Mc Zaac) - Single",
+    "song": "Bola Rebola (feat. Mc Zaac)",
+    "genre": ["funk-carioca", "reggaeton"],
+    "who": ["Cheryl", "Petya"],
+    "spotify": "https://open.spotify.com/track/1OUPXna2MCgAt3VNmXJBtg",
+    "appleMusic": "https://music.apple.com/us/album/bola-rebola-feat-mc-zaac-single/1453081197",
+    "youtube": "https://www.youtube.com/watch?v=VHidQlr8Rw4"
+  },
+  {
+    "artist": "Zack Knight & Jasmin Walia",
+    "album": "Bom Diggy - Single",
+    "song": "Bom Diggy",
+    "genre": ["bhangra", "pop"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/7Dhy1R9NmD96wfr7VJEN37",
+    "appleMusic": "https://music.apple.com/us/album/bom-diggy-single/1273803797",
+    "youtube": "https://www.youtube.com/watch?v=lEgTtQFMjWw"
+  },
+  {
+    "artist": "Max Pizzolante",
+    "album": "Cara E' tabla - Single",
+    "song": "Cara E' tabla",
+    "genre": ["salsa", "tropical"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/5gSIU7fahHnb5sFxqtXU2H",
+    "appleMusic": "https://music.apple.com/us/album/cara-e-tabla-single/1659625421",
+    "youtube": "https://www.youtube.com/watch?v=VdjPmCleNe8"
+  },
+  {
+    "artist": "Ed Sheeran",
+    "album": "÷ (Deluxe)",
+    "song": "Castle on the Hill",
+    "genre": ["pop-rock", "folk-pop"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/6PCUP3dWmTjcTtXY02oFdT",
+    "appleMusic": "https://music.apple.com/us/song/castle-on-the-hill/1193701328",
+    "youtube": "https://www.youtube.com/watch?v=K0ibBPhiaG0"
+  },
+  {
+    "artist": "Lady Drum",
+    "album": "Chomino Loco - Single",
+    "song": "Chomino Loco",
+    "genre": ["latin-pop"],
+    "who": ["Carla"],
+    "appleMusic": "https://music.apple.com/us/album/chomino-loco-single/1580419196",
+    "spotify": "https://open.spotify.com/track/5xxOG26atHZVZNc5epxEGZ",
+    "youtube": "https://www.youtube.com/watch?v=n1stgM1SUco"
+  },
+  {
+    "artist": "Jason Derulo and Inna",
+    "album": "The Last Dance (Part 1)",
+    "song": "Complicated",
+    "genre": ["pop"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/13sOS79roR7WPztASvq5Lg",
+    "appleMusic": "https://music.apple.com/us/album/the-last-dance-part-1/1867897420",
+    "youtube": "https://www.youtube.com/watch?v=U3CIMZgCs0s"
+  },
+  {
+    "artist": "Daddy Yankee",
+    "album": "Con Calma (feat. Snow) - Single",
+    "song": "Con Calma (feat. Snow)",
+    "genre": ["reggaeton", "dancehall"],
+    "who": ["Angelica"],
+    "spotify": "https://open.spotify.com/track/5w9c2J52mkdntKOmRLeM2m",
+    "appleMusic": "https://music.apple.com/us/song/con-calma-feat-snow/1449106558",
+    "youtube": "https://www.youtube.com/watch?v=DiItGE3eAyQ"
+  },
+  {
+    "artist": "Shocktraderz, Siddhartha El Primero & Pesa Bazz",
+    "album": "Congozuela - Single",
+    "song": "Congozuela",
+    "genre": ["dembow"],
+    "who": ["Angelica"],
+    "spotify": "https://open.spotify.com/track/3ApxneqWnHh89ZbF5g2DjJ",
+    "appleMusic": "https://music.apple.com/us/song/congozuela/1833492295",
+    "youtube": "https://www.youtube.com/watch?v=gfv92Md9PkI"
+  },
+  {
+    "artist": "Bizarrap & Daddy Yankee",
+    "album": "Daddy Yankee_ Bzrp Music Sessions, Vol. 66 - Single",
+    "song": "Daddy Yankee: Bzrp Music Sessions, Vol. 66",
+    "genre": ["reggaeton", "latin-pop"],
+    "who": ["Angelica"],
+    "spotify": "https://open.spotify.com/track/2uPMsTEKx79gJ8rB3AcT0v",
+    "appleMusic": "https://music.apple.com/us/song/daddy-yankee-bzrp-music-sessions-vol-0-66/1850801720",
+    "youtube": "https://www.youtube.com/watch?v=XyPkY6VT4zw"
+  },
+  {
+    "artist": "Drew Holcomb & The Neighbors & The National Parks",
+    "album": "Dance with Everybody - Single",
+    "song": "Dance with Everybody",
+    "genre": ["folk", "pop-rock"],
+    "who": ["Karen"],
+    "spotify": "https://open.spotify.com/track/7qNIz2zkEnSjnDPuo10HEr",
+    "appleMusic": "https://music.apple.com/us/album/dance-with-everybody-single/1636763239",
+    "youtube": "https://www.youtube.com/watch?v=EGC-36JIvyY"
+  },
+  {
+    "artist": "Jason Derulo",
+    "album": "The Last Dance (Part 1)",
+    "song": "DELETE",
+    "genre": ["dance-pop", "electropop"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/2QjiEGEJKFWiyxl9OIsxQU",
+    "appleMusic": "https://music.apple.com/us/song/delete/1867897440",
+    "youtube": "https://www.youtube.com/watch?v=Ki9SYiV3RnM"
+  },
+  {
+    "artist": "Kendji Girac & Soolking",
+    "album": "Desperado - Single",
+    "song": "Desperado",
+    "genre": ["french-pop", "latin-pop"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/6z8HcqK8mpiWHnTNmYbxBH",
+    "appleMusic": "https://music.apple.com/us/album/desperado-single/1668178877",
+    "youtube": "https://www.youtube.com/watch?v=hYHGc3SCX6o"
+  },
+  {
+    "artist": "Ed Sheeran",
+    "album": "x (10th Anniversary Edition)",
+    "song": "Don't",
+    "genre": ["pop", "r&b"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/1huvTbEYtgltjQRXzrNKGi",
+    "appleMusic": "https://music.apple.com/us/song/dont/858517166",
+    "youtube": "https://www.youtube.com/watch?v=iD2rhdFRehU"
+  },
+  {
+    "artist": "Dua Lipa",
+    "album": "Don't Start Now - Single",
+    "song": "Don't Start Now",
+    "genre": ["dance-pop"],
+    "who": ["Angelica"],
+    "spotify": "https://open.spotify.com/track/3PfIrDoz19wz7qK7tYeu62",
+    "appleMusic": "https://music.apple.com/us/song/dont-start-now/1484636829",
+    "youtube": "https://www.youtube.com/watch?v=oygrmJFKYZY"
+  },
+  {
+    "artist": "Sean Paul",
+    "album": "Dynamite (feat. Sia) - Single",
+    "song": "Dynamite (feat. Sia)",
+    "genre": ["dancehall", "pop"],
+    "who": ["Petya"],
+    "spotify": "https://open.spotify.com/track/4L3XaCtU2zf49PztjCrlF5",
+    "appleMusic": "https://music.apple.com/us/album/dynamite-feat-sia-single/1589462208",
+    "youtube": "https://www.youtube.com/watch?v=rilT3TOGS54"
+  },
+  {
+    "artist": "Elle King",
+    "album": "Love Stuff",
+    "song": "Ex's & Oh's",
+    "genre": ["blues-rock", "pop-rock"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/5XpfxhctlaIxffplyqy80o",
+    "appleMusic": "https://music.apple.com/us/song/exs-ohs/941366737",
+    "youtube": "https://www.youtube.com/watch?v=0uLI6BnVh6w"
+  },
+  {
+    "artist": "Iggy Azalea",
+    "album": "The New Classic (Deluxe Version)",
+    "song": "Fancy (feat. Charli XCX)",
+    "genre": ["hip-hop", "trap-pop"],
+    "who": ["BodyPump"],
+    "spotify": "https://open.spotify.com/track/3W3KtDwAIg3mAruSpnfG3Q",
+    "appleMusic": "https://music.apple.com/us/album/fancy-feat-charli-xcx/1444617189",
+    "youtube": "https://www.youtube.com/watch?v=Bkj_UrwhaQo"
+  },
+  {
+    "artist": "Pitbull",
+    "album": "Globalization",
+    "song": "Fireball (feat. John Ryan)",
+    "genre": ["latin-pop"],
+    "who": ["Angelica"],
+    "spotify": "https://open.spotify.com/track/4Y7XAxTANhu3lmnLAzhWJW",
+    "appleMusic": "https://music.apple.com/us/album/fireball-feat-john-ryan-single/902800342",
+    "youtube": "https://www.youtube.com/watch?v=HMqgVXSvwGo"
+  },
+  {
+    "artist": "Ed Sheeran",
+    "album": "÷ (Deluxe)",
+    "song": "Galway Girl",
+    "genre": ["folk-pop", "celtic"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/0afhq8XCExXpqazXczTSve",
+    "appleMusic": "https://music.apple.com/us/song/galway-girl/1193701436",
+    "youtube": "https://www.youtube.com/watch?v=87gWaABqGYs"
+  },
+  {
+    "artist": "BLACKPINK",
+    "album": "THE GIRLS (BLACKPINK THE GAME OST) - Single",
+    "song": "THE GIRLS (BLACKPINK THE GAME OST)",
+    "genre": ["k-pop", "pop"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/1mFpMoeZfkIqtqW2AfQ8ba",
+    "appleMusic": "https://music.apple.com/us/song/the-girls-blackpink-the-game-ost/1703682348",
+    "youtube": "https://www.youtube.com/watch?v=cSqOY5nktfg"
+  },
+  {
+    "artist": "Fergie",
+    "album": "The Dutchess",
+    "song": "Glamorous (feat. Ludacris)",
+    "genre": ["hip-hop", "pop"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/4N0tDOF2bo9JEpSqLNlpjq",
+    "appleMusic": "https://music.apple.com/us/song/glamorous-feat-ludacris/1442882896",
+    "youtube": "https://www.youtube.com/watch?v=q0SyUgw98tE"
+  },
+  {
+    "artist": "LÒNIS & Daphne Willis",
+    "album": "Good to Go - Single",
+    "song": "Good to Go",
+    "genre": ["pop", "funk"],
+    "who": ["Angelica"],
+    "spotify": "https://open.spotify.com/track/7apaVSk8pGOQxqXiNKUIQM",
+    "appleMusic": "https://music.apple.com/us/album/good-to-go-single/1499235738",
+    "youtube": "https://www.youtube.com/watch?v=K0aoGNDA0Gs"
+  },
+  {
+    "artist": "Salvi, Max Pizzolante & P3SO",
+    "album": "Gozando - Single",
+    "song": "Gozando",
+    "genre": ["electro-latino", "salsa"],
+    "who": ["Angelica"],
+    "spotify": "https://open.spotify.com/track/6d5aSZp2sqT1nejgErBvIY",
+    "appleMusic": "https://music.apple.com/us/album/gozando-single/1743042703",
+    "youtube": "https://www.youtube.com/watch?v=dbRJuqtcYXs"
+  },
+  {
+    "artist": "Machel Montano",
+    "album": "Monk Monté",
+    "song": "Great Parade (feat. Patrice Roberts)",
+    "genre": ["soca"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/1JLbKn1c8c6C3gzaRP9y2X",
+    "youtube": "https://www.youtube.com/watch?v=Z4QKAjpq4aM"
+  },
+  {
+    "artist": "Dolly Style",
+    "album": "Habibi - Single",
+    "song": "Habibi",
+    "genre": ["dance-pop"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/1githXSs5WbmfZ8fTZBR30",
+    "appleMusic": "https://music.apple.com/us/song/habibi/1488434071",
+    "youtube": "https://www.youtube.com/watch?v=dnKSu35G230"
+  },
+  {
+    "artist": "Gente de Zona & Maffio",
+    "album": "Háblame de Miami - Single",
+    "song": "Háblame de Miami",
+    "genre": ["reggaeton"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/4BIKCqX1P2aMNKYem3ccTy",
+    "appleMusic": "https://music.apple.com/us/album/h%C3%A1blame-de-miami-single/1588493200",
+    "youtube": "https://www.youtube.com/watch?v=Z3cbSIQDU3M"
+  },
+  {
+    "artist": "Fitz and The Tantrums",
+    "album": "Fitz & the Tantrums (Deluxe)",
+    "song": "HandClap",
+    "genre": ["indie-pop"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/7j56HrjR9cGzvekvZY3Faz",
+    "appleMusic": "https://music.apple.com/us/song/handclap/1262463311",
+    "youtube": "https://www.youtube.com/watch?v=Y2V6yjjPbX0"
+  },
+  {
+    "artist": "Jason Derulo",
+    "album": "Hands On Me (feat. Meghan Trainor) - Single",
+    "song": "Hands On Me (feat. Meghan Trainor)",
+    "genre": ["pop", "r&b"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/5dp6w04qEvpgthExVg8kyG",
+    "appleMusic": "https://music.apple.com/us/song/hands-on-me-feat-meghan-trainor/1710642001",
+    "youtube": "https://www.youtube.com/watch?v=xxqJozlPHY0"
+  },
+  {
+    "artist": "Christian Alicea",
+    "album": "Hello, What's Up - Single",
+    "song": "Hello, What's Up",
+    "genre": ["salsa", "pop"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/11GVewr1WRV4CFJtgrL5mK",
+    "appleMusic": "https://music.apple.com/us/album/hello-whats-up-single/1796038915",
+    "youtube": "https://www.youtube.com/watch?v=YgYCtVrkmMQ"
+  },
+  {
+    "artist": "Nathan Dawe & Abi Flynn",
+    "album": "Here In Your Arms - Single",
+    "song": "Here In Your Arms",
+    "genre": ["dance-pop"],
+    "who": ["BodyPump"],
+    "spotify": "https://open.spotify.com/track/177kCDBuL5HQwdi6peCaUx",
+    "appleMusic": "https://music.apple.com/us/album/here-in-your-arms-single/1795659543",
+    "youtube": "https://www.youtube.com/watch?v=5DFSqZiN1tk"
+  },
+  {
+    "artist": "Paul Russell",
+    "album": "Miracle Mile",
+    "song": "High Maintenance",
+    "genre": ["hip-hop"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/3oQKBlSqe5pEebJ69ZEXAU",
+    "appleMusic": "https://music.apple.com/us/song/high-maintenance/1872497656",
+    "youtube": "https://www.youtube.com/watch?v=Qsq3coJsT1I"
+  },
+  {
+    "artist": "Shakira",
+    "album": "Oral Fixation, Vol. 2 (Expanded Edition)",
+    "song": "Hips Don't Lie (feat. Wyclef Jean)",
+    "genre": ["latin-pop", "salsa"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/3d0WouFnFmr0K3kjeza3fF",
+    "appleMusic": "https://music.apple.com/us/song/hips-dont-lie-feat-wyclef-jean/212559797",
+    "youtube": "https://www.youtube.com/watch?v=DUT5rEU6pqM"
+  },
+  {
+    "artist": "Ed Sheeran",
+    "album": "No.6 Collaborations Project",
+    "song": "I Don't Care",
+    "genre": ["pop", "electropop"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/6hvRoJ0BTZywxu8UCPBkzx",
+    "appleMusic": "https://music.apple.com/us/song/i-dont-care/1464549844",
+    "youtube": "https://www.youtube.com/watch?v=y83x7MgzWOA"
+  },
+  {
+    "artist": "David Guetta & OneRepublic",
+    "album": "I Don't Wanna Wait - Single",
+    "song": "I Don't Wanna Wait",
+    "genre": ["dance-pop", "electropop", "electro-house"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/331l3xABO0HMr1Kkyh2LZq",
+    "appleMusic": "https://music.apple.com/us/song/i-dont-wanna-wait/1868378395",
+    "youtube": "https://www.youtube.com/watch?v=dSDbwfXX5_I"
+  },
+  {
+    "artist": "Pitbull",
+    "album": "I Feel Good (feat. Anthony Watts & DJWS) - Single",
+    "song": "I Feel Good (feat. Anthony Watts & DJWS)",
+    "genre": ["hip-hop", "dance-pop"],
+    "who": ["Lisa"],
+    "spotify": "https://open.spotify.com/track/2hZTeA6c94dBoiuGcBv3R0",
+    "appleMusic": "https://music.apple.com/us/album/i-feel-good-feat-anthony-watts-djws-single/1577450104",
+    "youtube": "https://www.youtube.com/watch?v=JmU16BbDmNM"
+  },
+  {
+    "artist": "Bruno Mars",
+    "album": "The Romantic",
+    "song": "I Just Might",
+    "genre": ["funk", "soul", "pop"],
+    "who": ["Cheryl", "Carla", "Karen"],
+    "spotify": "https://open.spotify.com/track/12bYYQaLqHliSXvRIYlq8G",
+    "appleMusic": "https://music.apple.com/us/song/i-just-might/1866732800",
+    "youtube": "https://www.youtube.com/watch?v=mrV8kK5t0V8"
+  },
+  {
+    "artist": "Juan Luis Guerra 4.40",
+    "album": "Literal",
+    "song": "I Love You More",
+    "genre": ["merengue", "bachata"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/1BVnAMf782HlV4HIPliHr8",
+    "appleMusic": "https://music.apple.com/us/song/i-love-you-more/1459450863",
+    "youtube": "https://www.youtube.com/watch?v=dUOC-ryYtQI"
+  },
+  {
+    "artist": "Jennifer Lopez",
+    "album": "LOVE? (Deluxe Edition)",
+    "song": "I'm Into You (feat. Lil Wayne)",
+    "genre": ["pop", "r&b"],
+    "who": ["Petya"],
+    "spotify": "https://open.spotify.com/track/6qfvPwXm2ZPnAlSeTlDsHa",
+    "appleMusic": "https://music.apple.com/us/song/im-into-you-feat-lil-wayne/1443130046",
+    "youtube": "https://www.youtube.com/watch?v=TcfqknZamME"
+  },
+  {
+    "artist": "Destiny's Child",
+    "album": "Survivor (International Edition)",
+    "song": "Independent Women, Pt. 1",
+    "genre": ["r&b", "hip-hop", "soul"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/69XUpOpjzDKcfdxqZebGiI",
+    "appleMusic": "https://music.apple.com/us/song/independent-women-pt-1/1301495398",
+    "youtube": "https://www.youtube.com/watch?v=0lPQZni7I18"
+  },
+  {
+    "artist": "Micah Palace",
+    "album": "JELLY ROLL - Single",
+    "song": "JELLY ROLL",
+    "genre": ["country", "hip-hop"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/3gRhRWBOfpaJCuOH57sjE1",
+    "appleMusic": "https://music.apple.com/us/album/jelly-roll-single/1878507060",
+    "youtube": "https://www.youtube.com/watch?v=Kce_Ctt1MUw"
+  },
+  {
+    "artist": "Compilations",
+    "album": "Platinum Hits",
+    "song": "Kiss the Sky",
+    "genre": ["electropop", "pop"],
+    "who": ["Petya"],
+    "spotify": "https://open.spotify.com/track/1FGXVdJ5SKjf8iGuzv6e0m",
+    "appleMusic": "https://music.apple.com/us/song/kiss-the-sky/1135139148",
+    "youtube": "https://www.youtube.com/watch?v=8cnoj88-mgY"
+  },
+  {
+    "artist": "Ricky Martin",
+    "album": "A Quien Quiera Escuchar (Deluxe Edition)",
+    "song": "La Mordidita (feat. Yotuel)",
+    "genre": ["latin-pop", "reggaeton"],
+    "who": ["Petya"],
+    "spotify": "https://open.spotify.com/track/00i0O74dXdaKKdCrqHnfXm",
+    "appleMusic": "https://music.apple.com/us/song/la-mordidita-feat-yotuel/953329401",
+    "youtube": "https://www.youtube.com/watch?v=lBztnahrOFw"
+  },
+  {
+    "artist": "KAROL G",
+    "album": "La Vida Es Una (From Puss in Boots_ The Last Wish) - Single",
+    "song": "La Vida Es Una (From Puss in Boots: The Last Wish)",
+    "genre": ["reggaeton", "pop"],
+    "who": ["Petya"],
+    "spotify": "https://open.spotify.com/track/35HgzqAoEZ28Ovq7kb9nDz",
+    "appleMusic": "https://music.apple.com/us/song/la-vida-es-una-from-puss-in-boots-the-last-wish/1653447536",
+    "youtube": "https://www.youtube.com/watch?v=fgSAoWmqccI"
+  },
+  {
+    "artist": "Jake Banfield",
+    "album": "Open Bars",
+    "song": "Lasso",
+    "genre": ["country", "pop"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/3avjQYeEgR9ko93lnMy2m9",
+    "appleMusic": "https://music.apple.com/us/song/lasso/1803471853",
+    "youtube": "https://www.youtube.com/watch?v=fKah7Evrb1Y"
+  },
+  {
+    "artist": "KOYOTIE",
+    "album": "KOYOTIE - EP",
+    "song": "Let's Work",
+    "genre": ["pop", "electropop"],
+    "who": ["Karen"],
+    "spotify": "https://open.spotify.com/track/0KdLWjCexw25uLLjXQwtZ5",
+    "appleMusic": "https://music.apple.com/ca/album/koyotie-ep/1267049830",
+    "youtube": "https://www.youtube.com/watch?v=pQhhHnppy3w"
+  },
+  {
+    "artist": "GIMS & Lossa",
+    "album": "LOCO - Single",
+    "song": "LOCO",
+    "genre": ["afropop", "french-pop"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/36sechlCLEmV6QHNt8ryrF",
+    "appleMusic": "https://music.apple.com/us/song/loco/1732309721",
+    "youtube": "https://www.youtube.com/watch?v=RBbAc9mHMn4"
+  },
+  {
+    "artist": "MAX & JAY (ENHYPEN)",
+    "album": "LOVE INSANE - Single",
+    "song": "LOVE INSANE",
+    "genre": ["k-pop", "pop"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/3IglY1ukGerwdCA0FVWY2i",
+    "appleMusic": "https://music.apple.com/us/song/love-insane/1822209400",
+    "youtube": "https://www.youtube.com/watch?v=LXyDbMdkYyg"
+  },
+  {
+    "artist": "Oryane & Sean Paul",
+    "album": "Love Mi Ladies - Single",
+    "song": "Love Mi Ladies",
+    "genre": ["dancehall", "pop"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/5wsvBBUsESP23lRU8jSTt1",
+    "appleMusic": "https://music.apple.com/us/album/love-mi-ladies-single/1490899392",
+    "youtube": "https://www.youtube.com/watch?v=_SxdIiBGl50"
+  },
+  {
+    "artist": "Fer Ariza & Nacho",
+    "album": "Love Pa Ti No Hay - Single",
+    "song": "LOVE PA TI NO HAY",
+    "genre": ["latin-pop"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/67MBhIes3QKhQDuZWKHKBw",
+    "appleMusic": "https://music.apple.com/us/song/love-pa-ti-no-hay/1821938728",
+    "youtube": "https://www.youtube.com/watch?v=YZyqT-6Y_dU"
+  },
+  {
+    "artist": "DJTEXX",
+    "album": "Love Potion 666 - Single",
+    "song": "Love Potion 666",
+    "genre": ["country"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/37ZTT8nZXSXZbE2oznR5A8",
+    "appleMusic": "https://music.apple.com/us/song/love-potion-666/1844433561",
+    "youtube": "https://www.youtube.com/watch?v=UmP_H0df62w"
+  },
+  {
+    "artist": "Sean Paul & David Guetta",
+    "album": "Mad Love (feat. Becky G) - Single",
+    "song": "Mad Love (feat. Becky G)",
+    "genre": ["dancehall", "pop"],
+    "who": ["Petya"],
+    "spotify": "https://open.spotify.com/track/6y68QK2SwC38YxsbxHrA8I",
+    "appleMusic": "https://music.apple.com/us/album/mad-love-feat-becky-g-single/1444873024",
+    "youtube": "https://www.youtube.com/watch?v=mlf4bidp2yc"
+  },
+  {
+    "artist": "Don Omar",
+    "album": "FOREVER KING",
+    "song": "Magdalena",
+    "genre": ["reggaeton", "latin-pop"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/11CXuBRdYLNL5RlR9XAMns",
+    "appleMusic": "https://music.apple.com/us/song/magdalena/1691406975",
+    "youtube": "https://www.youtube.com/watch?v=3i2DEIjhtfA"
+  },
+  {
+    "artist": "Abraham Mateo",
+    "album": "Maníaca - Single",
+    "song": "Maníaca",
+    "genre": ["latin-pop", "synth-pop"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/1sGknF0rpOXOCEeVc93WMR",
+    "appleMusic": "https://music.apple.com/us/song/man%C3%ADaca/1686474300",
+    "youtube": "https://www.youtube.com/watch?v=MzBlHP2e8Ww"
+  },
+  {
+    "artist": "Gente de Zona",
+    "album": "Más Macarena (feat. Los del Río) - Single",
+    "song": "Más Macarena (feat. Los del Río)",
+    "genre": ["latin-pop"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/5nRiLHGLQdXP5JtrQ2x5zk",
+    "appleMusic": "https://music.apple.com/us/song/m%C3%A1s-macarena-feat-los-del-r%C3%ADo/1133680753",
+    "youtube": "https://www.youtube.com/watch?v=8BMnz4i2dM8"
+  },
+  {
+    "artist": "sndy & DJ Melex",
+    "album": "SNDY Music Flow 2",
+    "song": "Mate Rire (Salsa Boogaloo)",
+    "genre": ["salsa", "boogaloo"],
+    "who": ["Carla"],
+    "appleMusic": "https://music.apple.com/pl/song/mate-rire-salsa-boogaloo/1833638098",
+    "spotify": "https://open.spotify.com/track/6rvRlZ9FGim4Qgf2DvfaIj",
+    "youtube": "https://www.youtube.com/watch?v=L77X293OESA"
+  },
+  {
+    "artist": "Will Smith",
+    "album": "Greatest Hits",
+    "song": "Miami",
+    "genre": ["hip-hop"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/3ajvbe39YUHY5UtFlmvBmy",
+    "appleMusic": "https://music.apple.com/us/song/miami/206201782",
+    "youtube": "https://www.youtube.com/watch?v=IwBS6QGsH_4"
+  },
+  {
+    "artist": "Mike Morato",
+    "album": "Mirando al Cielo - Single",
+    "song": "Mirando al Cielo",
+    "genre": ["latin-pop", "reggaeton"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/2YDRDKY4N5f7k1KoWGqUdz",
+    "youtube": "https://www.youtube.com/watch?v=pMTjjpgJ8T4"
+  },
+  {
+    "artist": "DJ Laz",
+    "album": "Move Shake Drop Remix - Single",
+    "song": "Move Shake Drop Remix",
+    "genre": ["reggaeton", "hip-hop"],
+    "who": ["Petya"],
+    "spotify": "https://open.spotify.com/track/7IGRQCDdDio9agGylR5A4T",
+    "appleMusic": "https://music.apple.com/us/album/move-shake-drop-remix-single/735216817",
+    "youtube": "https://www.youtube.com/watch?v=-sxTpWOQn80"
+  },
+  {
+    "artist": "Ricky Martin",
+    "album": "Mr. Put It Down (feat. Pitbull) - Single",
+    "song": "Mr. Put It Down (feat. Pitbull)",
+    "genre": ["dance-pop"],
+    "who": ["Petya"],
+    "spotify": "https://open.spotify.com/track/3qCs3Lz87cRnSCtcOfuxAE",
+    "appleMusic": "https://music.apple.com/us/song/mr-put-it-down-feat-pitbull/974369533",
+    "youtube": "https://www.youtube.com/watch?v=tTcQTWHIsAU"
+  },
+  {
+    "artist": "Oscar y Alain",
+    "album": "Mucha Cha Cha - Single",
+    "song": "Mucha Cha Cha",
+    "genre": ["latin-pop"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/0CBHRdZWzCn3hechmBLapO",
+    "appleMusic": "https://music.apple.com/us/song/mucha-cha-cha/1437153782",
+    "youtube": "https://www.youtube.com/watch?v=qSwHwb1YJvM"
+  },
+  {
+    "artist": "Juan Magán, Deorro & MAKJ",
+    "album": "Muñequita Linda (feat. YFN Lucci) - Single",
+    "song": "Muñequita Linda (feat. YFN Lucci)",
+    "genre": ["electro-house", "latin-pop"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/6lF737C5emiQU8RLby9WeL",
+    "appleMusic": "https://music.apple.com/us/album/mu%C3%B1equita-linda-feat-yfn-lucci-single/1442728848",
+    "youtube": "https://www.youtube.com/watch?v=4ZlV99CAc_A"
+  },
+  {
+    "artist": "Sam Tinnesz & LiTTiE",
+    "album": "New Kinda Feeling - Single",
+    "song": "New Kinda Feeling",
+    "genre": ["pop"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/1yvUdBCzugm8Xt4MI6EQbK",
+    "appleMusic": "https://music.apple.com/us/album/new-kinda-feeling-single/1784915302",
+    "youtube": "https://www.youtube.com/watch?v=B-L-ioNQEjc"
+  },
+  {
+    "artist": "Meghan Trainor",
+    "album": "Thank You (Deluxe Version)",
+    "song": "NO",
+    "genre": ["dance-pop", "r&b"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/0NmeI6UpRE27dxxgosD5n9",
+    "appleMusic": "https://music.apple.com/us/song/no/1229163693",
+    "youtube": "https://www.youtube.com/watch?v=pGCMLG1K8Rc"
+  },
+  {
+    "artist": "Bad Bunny",
+    "album": "deBÍ TiRAR MáS FOToS",
+    "song": "NUEVAYoL",
+    "genre": ["latin-trap", "reggaeton"],
+    "who": ["Cheryl", "Karen"],
+    "spotify": "https://open.spotify.com/track/5TFD2bmFKGhoCRbX61nXY5",
+    "appleMusic": "https://music.apple.com/us/song/nuevayol/1787022572",
+    "youtube": "https://www.youtube.com/watch?v=s4ftEdW2wdo"
+  },
+  {
+    "artist": "Bruno Mars",
+    "album": "The Romantic",
+    "song": "On My Soul",
+    "genre": ["r&b", "soul", "pop"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/4i4BVY2JiH4mDSLIBdNGKD",
+    "appleMusic": "https://music.apple.com/us/song/on-my-soul/1866733077",
+    "youtube": "https://www.youtube.com/watch?v=gpc5c5PMQiw"
+  },
+  {
+    "artist": "Jennifer Lopez",
+    "album": "LOVE? (Deluxe Edition)",
+    "song": "On the Floor (feat. Pitbull)",
+    "genre": ["pop", "electro-house"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/3C0nOe05EIt1390bVABLyN",
+    "appleMusic": "https://music.apple.com/us/song/on-the-floor-feat-pitbull/1440622264",
+    "youtube": "https://www.youtube.com/watch?v=t4H_Zoh7G5A"
+  },
+  {
+    "artist": "Jonas Brothers",
+    "album": "Happiness Begins",
+    "song": "Only Human",
+    "genre": ["dance-pop", "reggae-pop"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/1u7MlabEeV0XBf8bAW44QW",
+    "appleMusic": "https://music.apple.com/us/song/only-human/1461478402",
+    "youtube": "https://www.youtube.com/watch?v=kBNt8hYvn8A"
+  },
+  {
+    "artist": "Compilations",
+    "album": "Soca Universe 2020",
+    "song": "Pick a Side",
+    "genre": ["soca"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/4ClQ4Iykr2P0aYJl5XkTwN",
+    "appleMusic": "https://music.apple.com/us/album/soca-universe-2020/1653607719",
+    "youtube": "https://www.youtube.com/watch?v=alPTr_CtQxU"
+  },
+  {
+    "artist": "Fifth Harmony & Pitbull",
+    "album": "Por Favor (Spanglish Version) - Single",
+    "song": "Por Favor (Spanglish Version)",
+    "genre": ["latin-pop", "reggaeton"],
+    "who": ["Petya"],
+    "spotify": "https://open.spotify.com/track/2vHDurkzJ8dhCzoPzqiE2C",
+    "appleMusic": "https://music.apple.com/us/song/por-favor-spanglish-version/1300462668",
+    "youtube": "https://www.youtube.com/watch?v=uZ1M3DkKCEI"
+  },
+  {
+    "artist": "Compilations",
+    "album": "Puras Cumbias Originales - 16 Dinamitazos",
+    "song": "Que Nadie Sepa Mi Sufrir",
+    "genre": ["cumbia"],
+    "who": ["Angelica"],
+    "spotify": "https://open.spotify.com/track/0YUdqtxNhcYKgTYLgYbI7E",
+    "appleMusic": "https://music.apple.com/us/album/que-nadie-sepa-mi-sufrir/748984101",
+    "youtube": "https://www.youtube.com/watch?v=lEd2Dpe_sl4"
+  },
+  {
+    "artist": "Laritza Bacallao",
+    "album": "Sólo Se Vive Una Vez",
+    "song": "Que Suenen Los Tambores",
+    "genre": ["salsa"],
+    "who": ["Angelica"],
+    "spotify": "https://open.spotify.com/track/13X5B65FRBO9JkLOkVeId0",
+    "appleMusic": "https://music.apple.com/us/song/que-suenen-los-tambores/900162173",
+    "youtube": "https://www.youtube.com/watch?v=3LdsFHbqzts"
+  },
+  {
+    "artist": "Taylor Swift",
+    "album": "Reputation",
+    "song": "...Ready For It?",
+    "genre": ["electropop", "synth-pop"],
+    "who": ["Angelica"],
+    "spotify": "https://open.spotify.com/track/2yLa0QULdQr0qAIvVwN6B5",
+    "appleMusic": "https://music.apple.com/us/song/ready-for-it/1440934248",
+    "youtube": "https://www.youtube.com/watch?v=xXkkvGaXXpg"
+  },
+  {
+    "artist": "Daddy Yankee",
+    "album": "Barrio Fino (En Directo) [Bonus Track Version]",
+    "song": "Rompe (En Directo)",
+    "genre": ["reggaeton"],
+    "who": ["Angelica"],
+    "spotify": "https://open.spotify.com/track/4Xtlw8oXkIOvzV7crUBKeZ",
+    "appleMusic": "https://music.apple.com/us/album/barrio-fino-en-directo-bonus-track-version/1444064458",
+    "youtube": "https://www.youtube.com/watch?v=gqMkPBVKTCk"
+  },
+  {
+    "artist": "Daddy Yankee",
+    "album": "LEGENDADDY",
+    "song": "RUMBATÓN",
+    "genre": ["reggaeton", "dembow"],
+    "who": ["?"],
+    "spotify": "https://open.spotify.com/track/3XjN0mvFkQp1FMVM9Ro5hm",
+    "appleMusic": "https://music.apple.com/us/song/rumbat%C3%B3n/1614983837",
+    "youtube": "https://www.youtube.com/watch?v=t7gsVuW8AtY"
+  },
+  {
+    "artist": "King Flexx",
+    "album": "All Out - EP",
+    "song": "Run It Up",
+    "genre": ["hip-hop"],
+    "who": ["BodyPump"],
+    "spotify": "https://open.spotify.com/track/1EBZ0qnOCX4KQltUeI4hwo",
+    "appleMusic": "https://music.apple.com/us/song/run-it-up/1458832165",
+    "youtube": "https://www.youtube.com/watch?v=kpkfbutRDoM"
+  },
+  {
+    "artist": "Bruno Mars",
+    "album": "Doo-Wops & Hooligans (Deluxe)",
+    "song": "Runaway Baby",
+    "genre": ["funk", "rock-and-roll"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/5MMLS3xm12D7N26xlfFApr",
+    "appleMusic": "https://music.apple.com/us/song/runaway-baby/576655097",
+    "youtube": "https://www.youtube.com/watch?v=HIgvP7B3Hg8"
+  },
+  {
+    "artist": "Ed Sheeran",
+    "album": "Play",
+    "song": "Sapphire",
+    "genre": ["folk-pop"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/4Q0qVhFQa7j6jRKzo3HDmP",
+    "appleMusic": "https://music.apple.com/us/song/sapphire/1811175544",
+    "youtube": "https://www.youtube.com/watch?v=JgDNFQ2RaLQ"
+  },
+  {
+    "artist": "Jason Derulo",
+    "album": "The Last Dance (Part 1)",
+    "song": "Sexy For Me",
+    "genre": ["pop", "r&b"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/6b9OaVk0TxWsHMH0OjWLMO",
+    "appleMusic": "https://music.apple.com/us/song/sexy-for-me/1867897421",
+    "youtube": "https://www.youtube.com/watch?v=9ST-eBNL0NU"
+  },
+  {
+    "artist": "DJ Snake, Ozuna, Megan Thee Stallion & LISA",
+    "album": "SG - Single",
+    "song": "SG",
+    "genre": ["latin-trap", "reggaeton"],
+    "who": ["Petya"],
+    "spotify": "https://open.spotify.com/track/7K5tOFxje8nlunmexOmWgo",
+    "appleMusic": "https://music.apple.com/us/song/sg/1590929705",
+    "youtube": "https://www.youtube.com/watch?v=tJXPfNDVF4I"
+  },
+  {
+    "artist": "Meghan Trainor",
+    "album": "Toy With Me",
+    "song": "Shimmer",
+    "genre": ["dance-pop"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/3UOnrnhbfDxh0ORHCQ3DxZ",
+    "appleMusic": "https://music.apple.com/us/song/shimmer/1852006243",
+    "youtube": "https://www.youtube.com/watch?v=VBqUGKcAfNA"
+  },
+  {
+    "artist": "Ed Sheeran",
+    "album": "=",
+    "song": "Shivers",
+    "genre": ["pop"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/50nfwKoDiSYg8zOCREWAm5",
+    "appleMusic": "https://music.apple.com/us/song/shivers/1581087034",
+    "youtube": "https://www.youtube.com/watch?v=Il0S8BoucSA"
+  },
+  {
+    "artist": "Alvaro Soler",
+    "album": "Eterno Agosto",
+    "song": "Sofia",
+    "genre": ["latin-pop"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/3oSfte1Dth6wL5h6b45YgY",
+    "appleMusic": "https://music.apple.com/us/song/sofia/1720299674",
+    "youtube": "https://www.youtube.com/watch?v=GqIWKUEjO_4"
+  },
+  {
+    "artist": "Gente de Zona",
+    "album": "Sol y Arena - Single",
+    "song": "Sol y Arena",
+    "genre": ["salsa", "tropical"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/3UfFeBvJ4Q69FpmkQFYO9n",
+    "appleMusic": "https://music.apple.com/us/album/sol-y-arena-single/1843217879",
+    "youtube": "https://www.youtube.com/watch?v=KjAr21JIws8"
+  },
+  {
+    "artist": "Bruno Mars",
+    "album": "The Romantic",
+    "song": "Something Serious",
+    "genre": ["funk", "soul"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/0PV4VQCmE6Ujssr1bnswdF",
+    "appleMusic": "https://music.apple.com/us/song/something-serious/1866733078",
+    "youtube": "https://www.youtube.com/watch?v=Bsc_qpFplJM"
+  },
+  {
+    "artist": "Daddy Yankee",
+    "album": "Sonríele - Single",
+    "song": "Sonríele",
+    "genre": ["reggaeton", "pop"],
+    "who": ["Angelica"],
+    "spotify": "https://open.spotify.com/track/1ibAbmVpngm3LQGvAWqZXX",
+    "appleMusic": "https://music.apple.com/us/song/sonr%C3%ADele/1824538307",
+    "youtube": "https://www.youtube.com/watch?v=eJJREqUAE2U"
+  },
+  {
+    "artist": "Jason Derulo & Michael Bublé",
+    "album": "Spicy Margarita (feat. Maria Becerra) - Single",
+    "song": "Spicy Margarita (feat. Maria Becerra)",
+    "genre": ["dance-pop", "latin-pop"],
+    "who": ["Petya"],
+    "spotify": "https://open.spotify.com/track/6wpT1Xzpspt3Hisfx12URD",
+    "appleMusic": "https://music.apple.com/us/album/spicy-margarita-feat-maria-becerra-single/1743304129",
+    "youtube": "https://www.youtube.com/watch?v=HQdeG7-x9vY"
+  },
+  {
+    "artist": "Tate McRae",
+    "album": "So Close To What",
+    "song": "Sports car",
+    "genre": ["pop", "electropop"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/5UJbgR4XF4y1DvbkxEqe8S",
+    "appleMusic": "https://music.apple.com/us/song/sports-car/1779319634",
+    "youtube": "https://www.youtube.com/watch?v=7InTkBxPtK4"
+  },
+  {
+    "artist": "Jorge Luis Chacín",
+    "album": "Suéltala (feat. Samy Hawk) - Single",
+    "song": "Suéltala (feat. Samy Hawk)",
+    "genre": ["latin-pop", "merengue", "reggaeton"],
+    "who": ["Angelica"],
+    "spotify": "https://open.spotify.com/track/39NGmCWvdbz16Rn2ojJPXB",
+    "appleMusic": "https://music.apple.com/us/song/su%C3%A9ltala-feat-samy-hawk/1497755394",
+    "youtube": "https://www.youtube.com/watch?v=BhnLw2mOaBU"
+  },
+  {
+    "artist": "Play-N-Skillz, MONSTA X & Lil Jon",
+    "album": "Swing (feat. Bun B & Symba) - Single",
+    "song": "Swing (feat. Bun B & Symba)",
+    "genre": ["hip-hop", "pop"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/5WfMg2QraqveYpt5pNJD6z",
+    "appleMusic": "https://music.apple.com/us/song/swing-feat-bun-b-symba/1675406765",
+    "youtube": "https://www.youtube.com/watch?v=AjX6zwIq7v8"
+  },
+  {
+    "artist": "Ed Sheeran",
+    "album": "Play (The Remixes) - EP",
+    "song": "Symmetry (feat. Karan Aujla) [Remix]",
+    "genre": ["bhangra", "pop"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/6Pd2kxiyTsbKdEAI1ghXg6",
+    "appleMusic": "https://music.apple.com/us/song/symmetry-feat-karan-aujla-remix/1845342783",
+    "youtube": "https://www.youtube.com/watch?v=32sPcsb9ClQ"
+  },
+  {
+    "artist": "Xavier Solis & Tonx",
+    "album": "Te Acuerdas? - Single",
+    "song": "Te Acuerdas?",
+    "genre": ["bachata"],
+    "who": ["Karen"],
+    "spotify": "https://open.spotify.com/album/3jhr6e6T71lQSzu2W8cZ6Z",
+    "appleMusic": "https://music.apple.com/us/song/te-acuerdas/1818451128",
+    "youtube": "https://www.youtube.com/watch?v=-b7N2zv1qSk"
+  },
+  {
+    "artist": "Maria Becerra",
+    "album": "FAST X (Original Motion Picture Soundtrack)",
+    "song": "Te Cura",
+    "genre": ["reggaeton", "latin-pop"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/0EJX0UsCawee0fnogJMGlp",
+    "appleMusic": "https://music.apple.com/us/song/te-cura/1690504078",
+    "youtube": "https://www.youtube.com/watch?v=4cXhWNHOC9w"
+  },
+  {
+    "artist": "Maluma",
+    "album": "11_11",
+    "song": "Te Quiero",
+    "genre": ["salsa"],
+    "who": ["?"],
+    "spotify": "https://open.spotify.com/track/71WrR2qgwisH0tJZnI5xiQ",
+    "appleMusic": "https://music.apple.com/us/song/te-quiero/1461912708",
+    "youtube": "https://www.youtube.com/watch?v=X03jyNieunA"
+  },
+  {
+    "artist": "SP Polanco & Karlos Rosé",
+    "album": "Te Sigo Extrañando - Single",
+    "song": "Te Sigo Extrañando",
+    "genre": ["bachata"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/7tTAIa9NxpcTNfNcOGJrcH",
+    "appleMusic": "https://music.apple.com/us/song/te-sigo-extra%C3%B1ando/1854207094",
+    "youtube": "https://www.youtube.com/watch?v=j_MlGMbal0c"
+  },
+  {
+    "artist": "Inna",
+    "album": "Everything Or Nothing #DQH2 - EP",
+    "song": "Tequila",
+    "genre": ["dance-pop", "electro-house"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/3OONvR6HW8rdXNDGYO81Ru",
+    "appleMusic": "https://music.apple.com/us/song/tequila/1755709403",
+    "youtube": "https://www.youtube.com/watch?v=3X08UfKOE-M"
+  },
+  {
+    "artist": "Shawn Mendes",
+    "album": "Illuminate (Deluxe)",
+    "song": "There's Nothing Holdin' Me Back",
+    "genre": ["pop-rock"],
+    "who": ["Angelica"],
+    "spotify": "https://open.spotify.com/track/7JJmb5XwzOO8jgpou264Ml",
+    "appleMusic": "https://music.apple.com/us/song/theres-nothing-holdin-me-back/1440892573",
+    "youtube": "https://www.youtube.com/watch?v=dT2owtxkU8k"
+  },
+  {
+    "artist": "Sachin-Jigar, Rashmeet Kaur, Ash King & Amitabh Bhattacharya",
+    "album": "Thumkeshwari (From _Bhediya_) - Single",
+    "song": "Thumkeshwari (From Bhediya)",
+    "genre": ["Bollywood", "folk"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/6LN9PyBfR0Im2CPFi6sy4d",
+    "appleMusic": "https://music.apple.com/us/song/thumkeshwari-from-bhediya/1651994123",
+    "youtube": "https://www.youtube.com/watch?v=HVprtUEIIPk"
+  },
+  {
+    "artist": "HANA",
+    "album": "ROSE - Single",
+    "song": "Tiger",
+    "genre": ["pop", "j-pop"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/20VZXnRzvcS0qVMOThjjmM",
+    "appleMusic": "https://music.apple.com/us/song/tiger/1808822211",
+    "youtube": "https://www.youtube.com/watch?v=DX_zuR10ZVY"
+  },
+  {
+    "artist": "Nelly",
+    "album": "Sweat",
+    "song": "Tilt Ya Head Back (feat. Christina Aguilera)",
+    "genre": ["hip-hop", "r&b"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/4UgLPUCKgERZdnNG0On08D",
+    "appleMusic": "https://music.apple.com/us/song/tilt-ya-head-back-feat-christina-aguilera/1442782809",
+    "youtube": "https://www.youtube.com/watch?v=D9Yc3pv-uI0"
+  },
+  {
+    "artist": "KAROL G",
+    "album": "Tropicoqueta",
+    "song": "Tropicoqueta",
+    "genre": ["latin-pop", "tropical"],
+    "who": ["Angelica"],
+    "spotify": "https://open.spotify.com/track/3l8zyeHnG8u2q7H4FQyVtS",
+    "appleMusic": "https://music.apple.com/us/album/tropicoqueta/1819544141",
+    "youtube": "https://www.youtube.com/watch?v=ZImqb9l2hkw"
+  },
+  {
+    "artist": "Ozuna",
+    "album": "OzuTochi",
+    "song": "Un Lio (feat. Omega)",
+    "genre": ["merengue"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/1hBwUHPMaIhickdfy6ShEN",
+    "appleMusic": "https://music.apple.com/us/song/un-lio-feat-omega/1646180879",
+    "youtube": "https://www.youtube.com/watch?v=709yPgLgp7Y"
+  },
+  {
+    "artist": "Kendji Girac",
+    "album": "Un, Dos, Tres - Single",
+    "song": "Un, Dos, Tres",
+    "genre": ["latin-pop"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/3r3HsVpmp5jXT6o8CV8Z43",
+    "appleMusic": "https://music.apple.com/us/song/un-dos-tres/1839336280",
+    "youtube": "https://www.youtube.com/watch?v=FOgTctWSoOg"
+  },
+  {
+    "artist": "Micah Palace",
+    "album": "VAMOS A LUCHAR - Single",
+    "song": "VAMOS A LUCHAR",
+    "genre": ["latin-pop"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/683gSB2cng98Tnju8HQvEv",
+    "appleMusic": "https://music.apple.com/us/album/vamos-a-luchar-feat-adonys10-single/1870527872",
+    "youtube": "https://www.youtube.com/watch?v=Hqa60UzCRzs"
+  },
+  {
+    "artist": "Machel Montano",
+    "album": "Waiting on the Stage (feat. Badjohn Republic) - Single",
+    "song": "Waiting on the Stage (feat. Badjohn Republic)",
+    "genre": ["soca"],
+    "who": ["?"],
+    "spotify": "https://open.spotify.com/track/3DvMfAP9em7JdYBnBvWdkc",
+    "appleMusic": "https://music.apple.com/us/album/waiting-on-the-stage-feat-badjohn-republic-single/1702080069",
+    "youtube": "https://www.youtube.com/watch?v=fe6onk98K0w"
+  },
+  {
+    "artist": "Harry Styles",
+    "album": "Fine Line",
+    "song": "Watermelon Sugar",
+    "genre": ["pop-rock", "indie-pop"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/6UelLqGlWMcVH1E5c4H7lY",
+    "appleMusic": "https://music.apple.com/us/song/watermelon-sugar/1485802967",
+    "youtube": "https://www.youtube.com/watch?v=E07s5ZYygMg"
+  },
+  {
+    "artist": "Machel Montano & Skinny Fabulous",
+    "album": "Bring Back Riddim - Single",
+    "song": "Wave It",
+    "genre": ["soca"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/2p3T9t6WVSK9EJwURQvnSR",
+    "appleMusic": "https://music.apple.com/us/song/wave-it/1781581972",
+    "youtube": "https://www.youtube.com/watch?v=rkerc29oS6Y"
+  },
+  {
+    "artist": "Olatunji & System32",
+    "album": "Whip Whap - Single",
+    "song": "Whip Whap",
+    "genre": ["soca"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/0bJhPXavN0rFYHsf5mY1Ue",
+    "appleMusic": "https://music.apple.com/us/album/whip-whap-single/1659195555",
+    "youtube": "https://www.youtube.com/watch?v=qxHxeqP8u2U"
+  },
+  {
+    "artist": "Jason Derulo",
+    "album": "Who Hurt You - Single",
+    "song": "Who Hurt You",
+    "genre": ["dance-pop", "r&b"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/55ZGQCR6if6r6pPaHm3eyY",
+    "appleMusic": "https://music.apple.com/us/song/who-hurt-you/1837507113",
+    "youtube": "https://www.youtube.com/watch?v=_ZLDwC2nHj0"
+  },
+  {
+    "artist": "DJ Khaled",
+    "album": "Grateful",
+    "song": "Wild Thoughts (feat. Rihanna & Bryson Tiller)",
+    "genre": ["r&b", "latin-pop"],
+    "who": ["Petya"],
+    "spotify": "https://open.spotify.com/track/1OAh8uOEOvTDqkKFsKksCi",
+    "appleMusic": "https://music.apple.com/us/song/wild-thoughts-feat-rihanna-bryson-tiller/1244230126",
+    "youtube": "https://www.youtube.com/watch?v=fyaI4-5849w"
+  },
+  {
+    "artist": "Salvi & Braveboy",
+    "album": "Work It Out - Single",
+    "song": "Work It Out",
+    "genre": ["electro-house"],
+    "who": ["Carla"],
+    "youtube": "https://www.youtube.com/watch?v=4rjH8so_Ks4"
+  },
+  {
+    "artist": "Shakira & Michael Giacchino",
+    "album": "Zootopia 2 (Original Motion Picture Soundtrack)",
+    "song": "Zoo",
+    "genre": ["pop", "latin-pop"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/7o9qVPLe7MI7XhdAS1PkrN",
+    "appleMusic": "https://music.apple.com/us/song/zoo/1842202784",
+    "youtube": "https://www.youtube.com/watch?v=Kw3935PH01E"
+  },
+  {
+    "artist": "Bear Knuckle & F.HERO",
+    "album": "ZOOM (feat. เต้ย อภิวัฒน์) - Single",
+    "song": "ZOOM (feat. เต้ย อภิวัฒน์)",
+    "genre": ["hip-hop"],
+    "language": "Thai",
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/44W4nd020Mo77NTYjd5rqe",
+    "youtube": "https://www.youtube.com/watch?v=Z8v-gEpdbyo"
+  },
+  {
+    "artist": "Static & Ben El & Dana International",
+    "album": "אחלה גבר - Single",
+    "song": "אחלה גבר",
+    "genre": ["mizrahi", "pop"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/0NtcBVSU9q6ffvVcRPbxBp",
+    "appleMusic": "https://music.apple.com/us/song/%D7%90%D7%97%D7%9C%D7%94-%D7%92%D7%91%D7%A8/1628857723",
+    "youtube": "https://www.youtube.com/watch?v=BhP1dvsy95I"
+  },
+  {
+    "artist": "Static & Ben El",
+    "album": "בעה ירחים",
+    "song": "כוסות ריקות (feat. ליאור נרקיס)",
+    "genre": ["mizrahi", "pop"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/5ZaUBNWlKA0OINhaymh5Lz",
+    "appleMusic": "https://music.apple.com/us/song/%D7%9B%D7%95%D7%A1%D7%95%D7%AA-%D7%A8%D7%99%D7%A7%D7%95%D7%AA-feat-%D7%9C%D7%99%D7%90%D7%95%D7%A8-%D7%A0%D7%A8%D7%A7%D7%99%D7%A1/1575121207",
+    "youtube": "https://www.youtube.com/watch?v=7TzGriTsOwc"
+  },
+  {
+    "artist": "Ariana Grande",
+    "album": "thank u, next",
+    "song": "7 rings",
+    "genre": ["trap-pop", "hip-hop", "r&b"],
+    "who": ["Cheryl"],
+    "spotify": "https://open.spotify.com/track/6ocbgoVGwYJhOv1GgI9NsF",
+    "appleMusic": "https://music.apple.com/us/song/7-rings/1450330685",
+    "youtube": "https://www.youtube.com/watch?v=QYh6mYIJG2Y"
+  },
+  {
+    "artist": "Johnny Sky",
+    "album": "30 Minutos - Single",
+    "song": "30 Minutos",
+    "genre": ["bachata"],
+    "who": ["Carla"],
+    "spotify": "https://open.spotify.com/track/0TFHKoZwEqu6bffHeO0ME3",
+    "appleMusic": "https://music.apple.com/us/album/30-minutos-single/1834443774",
+    "youtube": "https://www.youtube.com/watch?v=ZDfGo9I8_CA"
+  }
+]
