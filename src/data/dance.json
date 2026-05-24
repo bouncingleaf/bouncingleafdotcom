@@ -22,6 +22,17 @@
     "youtube": "https://www.youtube.com/watch?v=o6jQo3-iCao"
   },
   {
+    "artist": "GIMS & Soolking",
+    "album": "APRÈS-VOUS MADAME - Single",
+    "song": "APRÈS-VOUS MADAME",
+    "genre": ["hip-hop"],
+    "who": ["Carla"],
+    "languages": ["french"],
+    "spotify": "https://open.spotify.com/track/3s7x3OMiEI7cmE8KBxIwCy",
+    "appleMusic": "https://music.apple.com/us/song/apr%C3%A8s-vous-madame/1654987186",
+    "youtube": "https://www.youtube.com/watch?v=mesIbctOueQ"
+  },
+  {
     "artist": "ROSÉ & Bruno Mars",
     "album": "APT. - Single",
     "song": "APT.",
@@ -184,6 +195,17 @@
     "spotify": "https://open.spotify.com/track/3ApxneqWnHh89ZbF5g2DjJ",
     "appleMusic": "https://music.apple.com/us/song/congozuela/1833492295",
     "youtube": "https://www.youtube.com/watch?v=gfv92Md9PkI"
+  },
+  {
+    "artist": "Jonas Brothers",
+    "album": "Happiness Begins",
+    "song": "Cool",
+    "genre": ["pop"],
+    "who": ["Carla"],
+    "languages": ["english"],
+    "spotify": "https://open.spotify.com/track/7yfi8B8opXjnRh4VZnOkz9",
+    "appleMusic": "https://music.apple.com/us/song/cool/1461478401",
+    "youtube": "https://www.youtube.com/watch?v=8_JbZvHc92U"
   },
   {
     "artist": "Bizarrap & Daddy Yankee",
@@ -403,6 +425,16 @@
     "spotify": "https://open.spotify.com/track/5dp6w04qEvpgthExVg8kyG",
     "appleMusic": "https://music.apple.com/us/song/hands-on-me-feat-meghan-trainor/1710642001",
     "youtube": "https://www.youtube.com/watch?v=xxqJozlPHY0"
+  },
+  {
+    "artist": "Meghan Trainor",
+    "album": "Toy With Me (Deluxe)",
+    "song": "Heels",
+    "genre": ["pop"],
+    "who": ["Cheryl"],
+    "languages": ["english"],
+    "appleMusic": "https://music.apple.com/us/song/heels/6763414708",
+    "youtube": "https://www.youtube.com/watch?v=qj6GLueAFAg"
   },
   {
     "artist": "Christian Alicea",
@@ -789,6 +821,17 @@
     "youtube": "https://www.youtube.com/watch?v=pGCMLG1K8Rc"
   },
   {
+    "artist": "Amira Syahira",
+    "album": "No Toques Mi Corazón - Single",
+    "song": "No Toques Mi Corazón",
+    "genre": ["latin-pop"],
+    "who": ["Carla"],
+    "languages": ["spanish"],
+    "spotify": "https://open.spotify.com/track/1K7k4TW7HjS7zTBEwBvAjt",
+    "appleMusic": "https://music.apple.com/us/song/no-toques-mi-coraz%C3%B3n/1848564552",
+    "youtube": "https://www.youtube.com/watch?v=ZVYO4IpZG8Q"
+  },
+  {
     "artist": "Bad Bunny",
     "album": "deBÍ TiRAR MáS FOToS",
     "song": "NUEVAYoL",
@@ -1062,6 +1105,17 @@
     "spotify": "https://open.spotify.com/track/5UJbgR4XF4y1DvbkxEqe8S",
     "appleMusic": "https://music.apple.com/us/song/sports-car/1779319634",
     "youtube": "https://www.youtube.com/watch?v=7InTkBxPtK4"
+  },
+  {
+    "artist": "Aitana",
+    "album": "CUARTO AZUL",
+    "song": "SUPERESTRELLA",
+    "genre": ["latin-pop"],
+    "who": ["Carla"],
+    "languages": ["spanish"],
+    "spotify": "https://open.spotify.com/track/6hpuesKPNa3WhV48O7Fa47",
+    "appleMusic": "https://music.apple.com/us/song/superestrella/1838587945",
+    "youtube": "https://www.youtube.com/watch?v=ElvzE2cPclc"
   },
   {
     "artist": "Jorge Luis Chacín",
