@@ -7,6 +7,7 @@ interface Song {
   song: string
   genre: string[]
   who: string[]
+  languages: string[]
   spotify?: string
   appleMusic?: string
   youtube?: string
@@ -23,6 +24,10 @@ const songs: Song[] = (danceData as Song[]).map((s) => ({
 const allGenres = Array.from(new Set(songs.flatMap((s) => s.genre))).sort(
   (a, b) => a.localeCompare(b)
 )
+
+const allLanguages = Array.from(
+  new Set(songs.flatMap((s) => s.languages ?? []))
+).sort((a, b) => a.localeCompare(b))
 
 function SortIcon({ active, dir }: { active: boolean; dir: SortDir }) {
   if (!active) return <span className="text-gray-300 ml-1">↕</span>
@@ -118,6 +123,9 @@ export default function Dance() {
   const [sortField, setSortField] = useState<SortField>('song')
   const [sortDir, setSortDir] = useState<SortDir>('asc')
   const [selectedGenres, setSelectedGenres] = useState<Set<string>>(new Set())
+  const [selectedLanguages, setSelectedLanguages] = useState<Set<string>>(
+    new Set()
+  )
   const [selectedWho, setSelectedWho] = useState<Set<string>>(new Set())
   const [expandedRow, setExpandedRow] = useState<number | null>(null)
 
@@ -134,6 +142,11 @@ export default function Dance() {
     if (selectedGenres.size > 0) {
       result = result.filter((s) => s.genre.some((g) => selectedGenres.has(g)))
     }
+    if (selectedLanguages.size > 0) {
+      result = result.filter((s) =>
+        (s.languages ?? []).some((l) => selectedLanguages.has(l))
+      )
+    }
     if (selectedWho.size > 0) {
       result = result.filter((s) => s.who.some((w) => selectedWho.has(w)))
     }
@@ -144,9 +157,12 @@ export default function Dance() {
       return sortDir === 'asc' ? cmp : -cmp
     })
     return result
-  }, [sortField, sortDir, selectedGenres, selectedWho])
+  }, [sortField, sortDir, selectedGenres, selectedLanguages, selectedWho])
 
-  const hasFilters = selectedGenres.size > 0 || selectedWho.size > 0
+  const hasFilters =
+    selectedGenres.size > 0 ||
+    selectedLanguages.size > 0 ||
+    selectedWho.size > 0
 
   const toggleSort = (field: SortField) => {
     if (sortField === field) {
@@ -162,6 +178,15 @@ export default function Dance() {
       const next = new Set(prev)
       if (next.has(genre)) next.delete(genre)
       else next.add(genre)
+      return next
+    })
+  }
+
+  const toggleLanguage = (language: string) => {
+    setSelectedLanguages((prev) => {
+      const next = new Set(prev)
+      if (next.has(language)) next.delete(language)
+      else next.add(language)
       return next
     })
   }
@@ -202,6 +227,29 @@ export default function Dance() {
           </div>
         </div>
 
+        {allLanguages.length > 0 && (
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">
+              Language
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {allLanguages.map((language) => (
+                <button
+                  key={language}
+                  onClick={() => toggleLanguage(language)}
+                  className={`px-3 py-1 text-sm rounded-full border transition-colors ${
+                    selectedLanguages.has(language)
+                      ? 'bg-accent-primary text-white border-accent-primary'
+                      : 'border-gray-300 text-gray-600 hover:border-accent-primary hover:text-accent-primary'
+                  }`}
+                >
+                  {language}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
         {allWho.length > 0 && (
           <div>
             <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">
@@ -236,6 +284,7 @@ export default function Dance() {
             <button
               onClick={() => {
                 setSelectedGenres(new Set())
+                setSelectedLanguages(new Set())
                 setSelectedWho(new Set())
               }}
               className="underline hover:text-gray-700"
@@ -293,6 +342,7 @@ export default function Dance() {
                 </button>
               </th>
               <th className="pb-3 pr-6 font-semibold">Genre</th>
+              <th className="pb-3 pr-6 font-semibold">Language</th>
               <th className="pb-3 pr-6 font-semibold">Who</th>
               <th className="pb-3 font-semibold">Links</th>
             </tr>
@@ -315,6 +365,18 @@ export default function Dance() {
                           className="px-2 py-0.5 text-xs rounded bg-gray-100 text-gray-600"
                         >
                           {g}
+                        </span>
+                      ))}
+                    </div>
+                  </td>
+                  <td className="py-3 pr-6">
+                    <div className="flex flex-wrap gap-1">
+                      {(song.languages ?? []).map((l) => (
+                        <span
+                          key={l}
+                          className="px-2 py-0.5 text-xs rounded bg-gray-100 text-gray-600"
+                        >
+                          {l}
                         </span>
                       ))}
                     </div>
@@ -367,6 +429,18 @@ export default function Dance() {
                       </span>
                     ))}
                   </div>
+                  {(song.languages ?? []).length > 0 && (
+                    <div className="flex flex-wrap gap-1">
+                      {(song.languages ?? []).map((l) => (
+                        <span
+                          key={l}
+                          className="px-2 py-0.5 text-xs rounded bg-gray-100 text-gray-600"
+                        >
+                          {l}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                   {whoDisplay && (
                     <div className="text-gray-600">
                       <span className="text-gray-400">Who: </span>
