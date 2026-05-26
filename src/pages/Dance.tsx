@@ -204,6 +204,18 @@ export default function Dance() {
     <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <h1 className="mb-8">Dance Music</h1>
 
+      <p className="mb-8 text-gray-600">
+        So, I'm maybe a little obsessed with the music from my Zumba classes. I
+        made myself a playlist on Apple Music, but not everyone has that... so
+        here's a copy of that playlist.
+      </p>
+
+      <p className="mb-8 text-gray-600">
+        And I have too much fun playing with AI, so of course I had to make this
+        "list" into a sortable table where you can filter on several criteria
+        literally nobody has asked me to provide. The genres are AI's best guess
+        with some corrections from me.
+      </p>
       {/* Filters */}
       <div className="mb-6 space-y-4">
         <div>
@@ -454,6 +466,32 @@ export default function Dance() {
           )
         })}
       </div>
+
+      <p className="mt-8 text-gray-600">
+        I had a few songs to add, so I asked Claude AI to research the details
+        and add them to the JSON file that this table uses. Claude spent 10-15
+        minutes looking everything up, and then told me it was writing the file
+        next.
+      </p>
+      <p className="mt-8 text-gray-600">
+        Then nothing happened. Claude was "working," supposedly, but the file
+        wasn't updating. After a few minutes I interrupted and asked what the
+        delay was.
+      </p>
+      <p className="mt-8 text-gray-600">
+        Claude told me the delay was from the research (false), and that it was
+        just about to add the songs (also false). I gave it another few minutes
+        and then interrupted it again to insist that it tell me what the delay
+        was.
+      </p>
+      <p className="mt-8 text-gray-600">
+        This time, Claude blamed ME. It had been just about to write the file,
+        it said, when I interrupted it to ask what the delay was. That, it said,
+        was why it hadn't finished writing the file yet. LOL.
+      </p>
+      <p className="mt-8 text-gray-600">
+        Then it stopped answering my questions. So I closed it. What a brat.
+      </p>
     </div>
   )
 }
