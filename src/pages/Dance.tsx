@@ -207,7 +207,8 @@ export default function Dance() {
       <p className="mb-8 text-gray-600">
         So, I'm maybe a little obsessed with the music from my Zumba classes. I
         made myself a playlist on Apple Music, but not everyone has that... so
-        here's a copy of that playlist.
+        here's a copy of that playlist, with links to Spotify, Apple Music, and
+        YouTube.
       </p>
 
       <p className="mb-8 text-gray-600">

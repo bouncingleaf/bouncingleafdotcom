@@ -73,7 +73,8 @@
     "who": ["Carla"],
     "languages": ["spanish"],
     "spotify": "https://open.spotify.com/track/3BqUQcmNVzYZc2GvM7s3f4",
-    "appleMusic": "https://music.apple.com/us/album/bailando-por-ah%C3%AD-single/436873962"
+    "appleMusic": "https://music.apple.com/us/album/bailando-por-ah%C3%AD-single/436873962",
+    "youTube": "https://www.youtube.com/watch?v=dZcb-gBiyXY"
   },
   {
     "artist": "Guaco",
@@ -129,6 +130,17 @@
     "spotify": "https://open.spotify.com/track/7Dhy1R9NmD96wfr7VJEN37",
     "appleMusic": "https://music.apple.com/us/album/bom-diggy-single/1273803797",
     "youtube": "https://www.youtube.com/watch?v=lEgTtQFMjWw"
+  },
+  {
+    "artist": "Daddy Yankee",
+    "album": "Bonita - Single",
+    "song": "Bonita",
+    "genre": ["reggaeton"],
+    "who": ["Petya"],
+    "languages": ["spanish"],
+    "spotify": "https://open.spotify.com/album/1ufDxUWa07eVx4iakS8DVO",
+    "appleMusic": "https://music.apple.com/tr/album/bonita-single/1714714950",
+    "youTube": "https://www.youtube.com/watch?v=6OQpVBnBU2I"
   },
   {
     "artist": "Max Pizzolante",
@@ -433,6 +445,7 @@
     "genre": ["pop"],
     "who": ["Cheryl"],
     "languages": ["english"],
+    "spotify": "https://open.spotify.com/track/3uyBm5DGPwNFRE4ESJWlqQ",
     "appleMusic": "https://music.apple.com/us/song/heels/6763414708",
     "youtube": "https://www.youtube.com/watch?v=qj6GLueAFAg"
   },
@@ -992,9 +1005,9 @@
     "genre": ["folk-pop"],
     "who": ["Carla"],
     "languages": ["english", "punjabi"],
-    "spotify": "",
-    "appleMusic": "",
-    "youtube": ""
+    "spotify": "https://open.spotify.com/album/6lAh6JtFaIvFshi8oz05m7",
+    "appleMusic": "https://music.apple.com/us/album/sapphire-feat-arijit-singh-single/1820880895",
+    "youtube": "https://www.youtube.com/watch?v=NzWkopFJuSw"
   },
   {
     "artist": "Jason Derulo",
@@ -1389,6 +1402,7 @@
     "languages": ["thai"],
     "who": ["Carla"],
     "spotify": "https://open.spotify.com/track/44W4nd020Mo77NTYjd5rqe",
+    "appleMusic": "https://music.apple.com/us/song/zoom-feat-%E0%B9%80%E0%B8%95-%E0%B8%A2-%E0%B8%AD%E0%B8%A0-%E0%B8%A7-%E0%B8%92%E0%B8%99/1600010673",
     "youtube": "https://www.youtube.com/watch?v=Z8v-gEpdbyo"
   },
   {
