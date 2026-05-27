@@ -1,4 +1,4 @@
-import { useState, useMemo, type ReactElement } from 'react'
+import { useState, useMemo, Fragment, type ReactElement } from 'react'
 import danceData from '../data/dance.json'
 
 interface Song {
@@ -8,6 +8,8 @@ interface Song {
   genre: string[]
   who: string[]
   languages: string[]
+  lyrics?: string
+  notes?: string
   spotify?: string
   appleMusic?: string
   youtube?: string
@@ -205,16 +207,14 @@ export default function Dance() {
       <h1 className="mb-8">Dance Music</h1>
 
       <p className="mb-8 text-gray-600">
-        So, I'm maybe a little obsessed with the music from my Zumba classes. I
-        made myself a playlist on Apple Music, but not everyone has that... so
-        here's a copy of that playlist, with links to Spotify, Apple Music, and
-        YouTube.
+        So, I love the music from Zumba classes. I made myself a playlist on
+        Apple Music. Here's a copy of that playlist, with links to Spotify,
+        Apple Music, and YouTube.
       </p>
 
       <p className="mb-8 text-gray-600">
-        And I have too much fun playing with AI, so of course I had to make this
-        "list" into a sortable table where you can filter on several criteria
-        literally nobody has asked me to provide. The genres are AI's best guess
+        Of course I had to make this "list" into a sortable and fiterable table,
+        as literally nobody has asked me for. The genres are AI's best guess
         with some corrections from me.
       </p>
       {/* Filters */}
@@ -363,44 +363,77 @@ export default function Dance() {
           <tbody>
             {displaySongs.map((song, i) => {
               const whoDisplay = song.who.filter((w) => w !== '').join(', ')
+              const hasContent = !!(song.lyrics || song.notes)
+              const isExpanded = expandedRow === i
               return (
-                <tr
-                  key={i}
-                  className="border-b border-gray-100 hover:bg-gray-50 transition-colors"
-                >
-                  <td className="py-3 pr-6 font-medium">{song.song}</td>
-                  <td className="py-3 pr-6 text-gray-600">{song.artist}</td>
-                  <td className="py-3 pr-6">
-                    <div className="flex flex-wrap gap-1">
-                      {song.genre.map((g) => (
-                        <span
-                          key={g}
-                          className="px-2 py-0.5 text-xs rounded bg-gray-100 text-gray-600"
-                        >
-                          {g}
-                        </span>
-                      ))}
-                    </div>
-                  </td>
-                  <td className="py-3 pr-6">
-                    <div className="flex flex-wrap gap-1">
-                      {(song.languages ?? []).map((l) => (
-                        <span
-                          key={l}
-                          className="px-2 py-0.5 text-xs rounded bg-gray-100 text-gray-600"
-                        >
-                          {l}
-                        </span>
-                      ))}
-                    </div>
-                  </td>
-                  <td className="py-3 pr-6 text-gray-600 text-sm">
-                    {whoDisplay}
-                  </td>
-                  <td className="py-3">
-                    <Links song={song} />
-                  </td>
-                </tr>
+                <Fragment key={i}>
+                  <tr
+                    className={`border-b border-gray-100 hover:bg-gray-50 transition-colors${hasContent ? ' cursor-pointer' : ''}`}
+                    onClick={
+                      hasContent
+                        ? () => setExpandedRow(isExpanded ? null : i)
+                        : undefined
+                    }
+                  >
+                    <td className="py-3 pr-6 font-medium">
+                      <span className="flex items-center gap-1">
+                        {song.song}
+                        {hasContent && (
+                          <span className="text-gray-300 text-xs">
+                            {isExpanded ? '▲' : '▼'}
+                          </span>
+                        )}
+                      </span>
+                    </td>
+                    <td className="py-3 pr-6 text-gray-600">{song.artist}</td>
+                    <td className="py-3 pr-6">
+                      <div className="flex flex-wrap gap-1">
+                        {song.genre.map((g) => (
+                          <span
+                            key={g}
+                            className="px-2 py-0.5 text-xs rounded bg-gray-100 text-gray-600"
+                          >
+                            {g}
+                          </span>
+                        ))}
+                      </div>
+                    </td>
+                    <td className="py-3 pr-6">
+                      <div className="flex flex-wrap gap-1">
+                        {(song.languages ?? []).map((l) => (
+                          <span
+                            key={l}
+                            className="px-2 py-0.5 text-xs rounded bg-gray-100 text-gray-600"
+                          >
+                            {l}
+                          </span>
+                        ))}
+                      </div>
+                    </td>
+                    <td className="py-3 pr-6 text-gray-600 text-sm">
+                      {whoDisplay}
+                    </td>
+                    <td className="py-3">
+                      <Links song={song} />
+                    </td>
+                  </tr>
+                  {isExpanded && hasContent && (
+                    <tr className="border-b border-gray-100 bg-gray-50">
+                      <td colSpan={6} className="pb-3 pt-1 pr-6">
+                        <div className="space-y-1 text-sm">
+                          {song.lyrics && (
+                            <p className="italic text-gray-400">
+                              {song.lyrics}
+                            </p>
+                          )}
+                          {song.notes && (
+                            <p className="text-gray-600">{song.notes}</p>
+                          )}
+                        </div>
+                      </td>
+                    </tr>
+                  )}
+                </Fragment>
               )
             })}
           </tbody>
@@ -460,6 +493,10 @@ export default function Dance() {
                       {whoDisplay}
                     </div>
                   )}
+                  {song.lyrics && (
+                    <p className="italic text-gray-400">{song.lyrics}</p>
+                  )}
+                  {song.notes && <p className="text-gray-600">{song.notes}</p>}
                   <Links song={song} />
                 </div>
               )}
