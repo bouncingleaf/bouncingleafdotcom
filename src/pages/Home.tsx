@@ -9,7 +9,7 @@ function Home() {
           Mysterious Creatures and more.
         </p>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto mt-2">
-          Check out my professional site at{' '}
+          Check out my writing and my professional site at{' '}
           <a
             href="https://www.beyondwritingcode.com"
             className="link"
@@ -19,6 +19,12 @@ function Home() {
             beyondwritingcode.com
           </a>
           .
+        </p>
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto mt-2">
+          Looking for dance songs?{' '}
+          <a href="/dance" className="link">
+            Here's a list.
+          </a>
         </p>
       </div>
 

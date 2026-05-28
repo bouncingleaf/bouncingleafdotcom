@@ -206,17 +206,26 @@ export default function Dance() {
     <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <h1 className="mb-8">Dance Music</h1>
 
-      <p className="mb-8 text-gray-600">
-        So, I love the music from Zumba classes. I made myself a playlist on
-        Apple Music. Here's a copy of that playlist, with links to Spotify,
-        Apple Music, and YouTube.
-      </p>
-
-      <p className="mb-8 text-gray-600">
-        Of course I had to make this "list" into a sortable and fiterable table,
-        as literally nobody has asked me for. The genres are AI's best guess
-        with some corrections from me.
-      </p>
+      <div className="space-y-4 mb-8">
+        <p className="text-gray-600">
+          I love Zumba music. By popular demand, meaning literally nobody asked
+          for this, here's my playlist, with links to Spotify, Apple Music, and
+          YouTube.
+        </p>
+        <p className="text-gray-600">
+          When there are clean and explicit versions of a song, I link to the
+          explicit ones. Oh no! Naughtiness!
+        </p>
+        <p className="text-gray-600">
+          Of course I had to make this sortable and fiterable. By popular demand
+          and all. Expand a song (little arrow next to the song title), to see
+          sample lyrics and notes.
+        </p>
+        <p className="text-gray-600">
+          Many thanks to the instructors (see "Who", below) for putting together
+          such great playlists. I love dancing with you.
+        </p>
+      </div>
       {/* Filters */}
       <div className="mb-6 space-y-4">
         <div>
@@ -505,31 +514,33 @@ export default function Dance() {
         })}
       </div>
 
-      <p className="mt-8 text-gray-600">
-        I had a few songs to add, so I asked Claude AI to research the details
-        and add them to the JSON file that this table uses. Claude spent 10-15
-        minutes looking everything up, and then told me it was writing the file
-        next.
-      </p>
-      <p className="mt-8 text-gray-600">
-        Then nothing happened. Claude was "working," supposedly, but the file
-        wasn't updating. After a few minutes I interrupted and asked what the
-        delay was.
-      </p>
-      <p className="mt-8 text-gray-600">
-        Claude told me the delay was from the research (false), and that it was
-        just about to add the songs (also false). I gave it another few minutes
-        and then interrupted it again to insist that it tell me what the delay
-        was.
-      </p>
-      <p className="mt-8 text-gray-600">
-        This time, Claude blamed ME. It had been just about to write the file,
-        it said, when I interrupted it to ask what the delay was. That, it said,
-        was why it hadn't finished writing the file yet. LOL.
-      </p>
-      <p className="mt-8 text-gray-600">
-        Then it stopped answering my questions. So I closed it. What a brat.
-      </p>
+      <div className="space-y-4 mt-8">
+        <p className="text-gray-600">
+          I had a few songs to add, so I asked Claude AI to research the details
+          and add them to the JSON file that this table uses. Claude spent 10-15
+          minutes looking everything up, and then told me it was writing the
+          file next.
+        </p>
+        <p className="text-gray-600">
+          Then nothing happened. Claude was "working," supposedly, but the file
+          wasn't updating. After a few minutes I interrupted and asked what the
+          delay was.
+        </p>
+        <p className="text-gray-600">
+          Claude told me the delay was from the research (false), and that it
+          was just about to add the songs (also false). I gave it another few
+          minutes and then interrupted it again to insist that it tell me what
+          the delay was.
+        </p>
+        <p className="text-gray-600">
+          This time, Claude blamed ME. It had been just about to write the file,
+          it said, when I interrupted it to ask what the delay was. That, it
+          said, was why it hadn't finished writing the file yet. LOL.
+        </p>
+        <p className="text-gray-600">
+          Then it stopped answering my questions. So I closed it. What a brat.
+        </p>
+      </div>
     </div>
   )
 }
