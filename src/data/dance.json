@@ -67,7 +67,7 @@
     "spotify": "https://open.spotify.com/track/2ogw5CX5Pxdr6MXYUYcjd5",
     "appleMusic": "https://music.apple.com/us/album/bailame-con-actitud-blue-suede-shoes-feat-el-revul%C3%BA/1700518531",
     "youtube": "https://www.youtube.com/watch?v=XgxR4JhlsBs",
-    "bpm": "?"
+    "bpm": 100
   },
   {
     "artist": "Chayanne",
@@ -224,6 +224,18 @@
     "bpm": 116
   },
   {
+    "song": "Candy Coated",
+    "album": "Bollywood Dance Party",
+    "artist": "Sing Dance",
+    "genre": ["bollywood"],
+    "who": ["Carla"],
+    "languages": ["english"],
+    "lyrics": "How you like your love? I like mine sweet",
+    "notes": "The full title of this song is: 'New Bollywood party song Latest Bhangra song Indian wedding dance music High energy Hindi song Candy Coated dance challenge Viral TikTok dance'. Someone is trying to come up in a lot of search results.",
+    "spotify": "https://open.spotify.com/track/0u6q6hQ0TWaTeIm8d9dfIl?si=ba078f9dddcf472b",
+    "appleMusic": "https://music.apple.com/us/album/new-bollywood-party-song-latest-bhangra-song-indian/1837521843"
+  },
+  {
     "artist": "Max Pizzolante",
     "album": "Cara E' tabla - Single",
     "song": "Cara E' tabla",
@@ -235,7 +247,7 @@
     "spotify": "https://open.spotify.com/track/5gSIU7fahHnb5sFxqtXU2H",
     "appleMusic": "https://music.apple.com/us/album/cara-e-tabla-single/1659625421",
     "youtube": "https://www.youtube.com/watch?v=VdjPmCleNe8",
-    "bpm": "?"
+    "bpm": 109
   },
   {
     "artist": "Ed Sheeran",
@@ -263,7 +275,7 @@
     "appleMusic": "https://music.apple.com/us/album/chomino-loco-single/1580419196",
     "spotify": "https://open.spotify.com/track/5xxOG26atHZVZNc5epxEGZ",
     "youtube": "https://www.youtube.com/watch?v=n1stgM1SUco",
-    "bpm": "?"
+    "bpm": 114
   },
   {
     "song": "Ciao Amore",
@@ -1696,7 +1708,7 @@
     "genre": ["merengue"],
     "who": ["Cheryl"],
     "languages": ["spanish"],
-    "lyrics": "Tengo calor, tengo calor, tengo calor, ay yo quiero",
+    "lyrics": "Tengo calor, papi tengo calor / Tengo calor, ay yo quiero",
     "notes": "This is an exclusive Zumba Instructor Network song, so there are no official links for it.",
     "bpm": "?"
   },
@@ -1732,7 +1744,7 @@
     "artist": "Sachin-Jigar, Rashmeet Kaur, Ash King & Amitabh Bhattacharya",
     "album": "Thumkeshwari (From _Bhediya_) - Single",
     "song": "Thumkeshwari (From Bhediya)",
-    "genre": ["Bollywood"],
+    "genre": ["bollywood"],
     "who": ["Carla"],
     "languages": ["hindi"],
     "lyrics": "",

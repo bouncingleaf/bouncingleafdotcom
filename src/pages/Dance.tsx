@@ -343,7 +343,7 @@ export default function Dance() {
 
       {/* Desktop table */}
       <div className="hidden md:block overflow-x-auto">
-        <table className="w-full text-left text-sm">
+        <table className="w-full text-left text-base">
           <thead>
             <tr className="border-b-2 border-gray-200">
               <th className="pb-3 pr-6 font-semibold">
