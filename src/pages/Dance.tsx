@@ -10,6 +10,7 @@ interface Song {
   languages: string[]
   lyrics?: string
   notes?: string
+  bpm?: number | string
   spotify?: string
   appleMusic?: string
   youtube?: string
@@ -372,7 +373,7 @@ export default function Dance() {
           <tbody>
             {displaySongs.map((song, i) => {
               const whoDisplay = song.who.filter((w) => w !== '').join(', ')
-              const hasContent = !!(song.lyrics || song.notes)
+              const hasContent = !!(song.lyrics || song.notes || song.bpm)
               const isExpanded = expandedRow === i
               return (
                 <Fragment key={i}>
@@ -430,6 +431,12 @@ export default function Dance() {
                     <tr className="border-b border-gray-100 bg-gray-50">
                       <td colSpan={6} className="pb-3 pt-1 pr-6">
                         <div className="space-y-1 text-sm">
+                          {song.bpm && (
+                            <p className="text-gray-500">
+                              <span className="font-medium">{song.bpm}</span>{' '}
+                              BPM
+                            </p>
+                          )}
                           {song.lyrics && (
                             <p className="italic text-gray-400">
                               {song.lyrics}
@@ -501,6 +508,11 @@ export default function Dance() {
                       <span className="text-gray-400">Who: </span>
                       {whoDisplay}
                     </div>
+                  )}
+                  {song.bpm && (
+                    <p className="text-gray-500">
+                      <span className="font-medium">{song.bpm}</span> BPM
+                    </p>
                   )}
                   {song.lyrics && (
                     <p className="italic text-gray-400">{song.lyrics}</p>
