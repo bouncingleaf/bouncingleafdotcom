@@ -388,6 +388,20 @@
     "bpm": 105
   },
   {
+    "song": "Dance The Night (From Barbie The Album)",
+    "artist": "Dua Lipa",
+    "album": "Dance The Night (From Barbie The Album) - Single",
+    "genre": ["dance-pop"],
+    "who": ["Cheryl"],
+    "languages": ["english"],
+    "lyrics": "'Cause every romance / shakes and it bends / don't give a damn",
+    "notes": "",
+    "spotify": "https://open.spotify.com/track/1vYXt7VSjH9JIM5oRRo7vA",
+    "appleMusic": "https://music.apple.com/us/album/dance-the-night-from-barbie-the-album-single/1707782182",
+    "youtube": "https://www.youtube.com/watch?v=OiC1rgCPmUQ",
+    "bpm": 110
+  },
+  {
     "artist": "Drew Holcomb & The Neighbors & The National Parks",
     "album": "Dance with Everybody - Single",
     "song": "Dance with Everybody",
@@ -1324,6 +1338,19 @@
     "bpm": 160
   },
   {
+    "artist": "Machel Montano",
+    "album": "Monk Monté",
+    "song": "Remedy (feat. Shaggy) [Refix]",
+    "genre": ["soca"],
+    "who": ["Lisa"],
+    "languages": ["english"],
+    "lyrics": "",
+    "notes": "",
+    "spotify": "https://open.spotify.com/track/1sAVMEf0NA3ComBs2p1Toi",
+    "appleMusic": "https://music.apple.com/us/song/remedy-feat-shaggy-refix/1701435053",
+    "youTube": "https://www.youtube.com/watch?v=Y-cgnkHqXIE"
+  },
+  {
     "artist": "Daddy Yankee",
     "album": "Barrio Fino (En Directo) [Bonus Track Version]",
     "song": "Rompe (En Directo)",
@@ -1546,6 +1573,20 @@
     "appleMusic": "https://music.apple.com/us/song/sonr%C3%ADele/1824538307",
     "youtube": "https://www.youtube.com/watch?v=eJJREqUAE2U",
     "bpm": 121
+  },
+  {
+    "artist": "Bomba Estéreo",
+    "album": "Amanecer",
+    "song": "Soy Yo",
+    "genre": ["latin-pop"],
+    "who": ["Lisa"],
+    "languages": ["spanish"],
+    "lyrics": "",
+    "notes": "",
+    "spotify": "https://open.spotify.com/track/4Egb5xP6cniUx0kgZd5zLB",
+    "appleMusic": "https://music.apple.com/us/song/soy-yo/993274903",
+    "youtube": "https://www.youtube.com/watch?v=bxWxXncl53U",
+    "bpm": 117
   },
   {
     "artist": "Jason Derulo & Michael Bublé",
