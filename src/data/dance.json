@@ -14,6 +14,20 @@
     "bpm": 126
   },
   {
+    "song": "Abu Dhabi",
+    "artist": "MIKOLAS",
+    "album": "Abu Dhabi - Single",
+    "genre": ["pop"],
+    "who": ["Cheryl"],
+    "languages": ["english"],
+    "lyrics": "You want it like that, I got it like that / I can do it all with a finger snap",
+    "notes": "",
+    "spotify": "https://open.spotify.com/track/5A6STkqg4HlSDuIvLctMC1",
+    "appleMusic": "https://music.apple.com/us/album/abu-dhabi-single/1449581367",
+    "youtube": "https://www.youtube.com/watch?v=kRScLRxbnPQ",
+    "bpm": 105
+  },
+  {
     "artist": "Harry Styles",
     "album": "Kiss All The Time. Disco, Occasionally_",
     "song": "American Girls",
@@ -224,6 +238,20 @@
     "bpm": 116
   },
   {
+    "song": "Booma (feat. Edward Sánchez DRD) [Radio Edit]",
+    "artist": "DJ Samuel Kimkò",
+    "album": "Booma - Single",
+    "genre": ["dance-pop"],
+    "who": ["Carla"],
+    "languages": ["spanish"],
+    "lyrics": "",
+    "notes": "",
+    "spotify": "https://open.spotify.com/track/2vFMwmHXjaC9d3JzA0pHbB",
+    "appleMusic": "https://music.apple.com/us/album/booma-single/1838864679",
+    "youtube": "https://www.youtube.com/watch?v=Z9w2fe4elgE",
+    "bpm": 128
+  },
+  {
     "song": "Candy Coated",
     "album": "Bollywood Dance Party",
     "artist": "Sing Dance",
@@ -368,7 +396,7 @@
     "who": ["Angelica"],
     "languages": ["spanish"],
     "lyrics": "Si me pregunta', a nadie yo le debo",
-    "notes": "This song is quoted in the Mike Montano song also listed here.",
+    "notes": "This song is sampled, or maybe quoted, in the Mike Morato's Mirando al Cielo, also listed here.",
     "spotify": "https://open.spotify.com/track/2uPMsTEKx79gJ8rB3AcT0v",
     "appleMusic": "https://music.apple.com/us/song/daddy-yankee-bzrp-music-sessions-vol-0-66/1850801720",
     "youtube": "https://www.youtube.com/watch?v=XyPkY6VT4zw",
@@ -382,7 +410,7 @@
     "who": ["Carla"],
     "languages": ["spanish", "english", "french"],
     "lyrics": "This time for the world",
-    "notes": "",
+    "notes": "A FIFA World Cup 2026 song. Also, they sing 'if you fall, get up' (not 'if you f--- it up')",
     "spotify": "https://open.spotify.com/track/2uC0KcziXp3q2iWX3ArzLD",
     "appleMusic": "https://music.apple.com/us/song/dai-dai/6767578399",
     "bpm": 105
@@ -456,6 +484,17 @@
     "appleMusic": "https://music.apple.com/us/song/dont/858517166",
     "youtube": "https://www.youtube.com/watch?v=iD2rhdFRehU",
     "bpm": 95
+  },
+  {
+    "song": "Don't Cha (Dark Pop Version)",
+    "artist": "Renan Pitanga",
+    "album": "Don't Cha (Dark Pop Version) - Single",
+    "genre": [],
+    "who": ["Cheryl"],
+    "languages": [],
+    "lyrics": "Don't cha wish your boyfriend was hot like me?",
+    "notes": "This song was made famous by the Pussycat Dolls, but it isn't originally by them either!",
+    "bpm": "?"
   },
   {
     "artist": "Dua Lipa",
@@ -917,6 +956,20 @@
     "appleMusic": "https://music.apple.com/us/song/lasso/1803471853",
     "youtube": "https://www.youtube.com/watch?v=fKah7Evrb1Y",
     "bpm": 100
+  },
+  {
+    "song": "Let Me Love You",
+    "artist": "Max Pizzolante",
+    "album": "Let Me Love You - Single",
+    "genre": ["merengue"],
+    "who": ["Cheryl"],
+    "languages": ["spanish"],
+    "lyrics": "",
+    "notes": "",
+    "spotify": "https://open.spotify.com/track/6AsiFDG27dS878xhjUMcEZ",
+    "appleMusic": "https://music.apple.com/us/album/let-me-love-you-single/1615522808",
+    "youtube": "https://www.youtube.com/watch?v=Heky1iV3xG4",
+    "bpm": 160
   },
   {
     "artist": "KOYOTIE",
@@ -1625,6 +1678,20 @@
     "bpm": 107
   },
   {
+    "song": "Suavemente (Live)",
+    "artist": "Elvis Crespo",
+    "album": "Live From Orlando",
+    "genre": ["merengue"],
+    "who": ["Lisa"],
+    "languages": ["spanish"],
+    "lyrics": "",
+    "notes": "Not 100% sure if this is the exact version, but it's close",
+    "spotify": "https://open.spotify.com/track/2FMzGUojFgZ5UYldDHyzeW",
+    "appleMusic": "https://music.apple.com/us/song/suavemente-live/1667382498",
+    "youtube": "https://www.youtube.com/watch?v=Fhe48XhkAzs",
+    "bpm": 124
+  },
+  {
     "artist": "Aitana",
     "album": "CUARTO AZUL",
     "song": "SUPERESTRELLA",
@@ -1632,7 +1699,7 @@
     "who": ["Carla"],
     "languages": ["spanish"],
     "lyrics": "",
-    "notes": "",
+    "notes": "This song is sampled in Mike Morato's Mirando al Cielo, also listed here.",
     "spotify": "https://open.spotify.com/track/6hpuesKPNa3WhV48O7Fa47",
     "appleMusic": "https://music.apple.com/us/song/superestrella/1838587945",
     "youtube": "https://www.youtube.com/watch?v=ElvzE2cPclc",
