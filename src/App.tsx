@@ -10,6 +10,7 @@ const About = lazy(() => import('./pages/About'))
 const Names = lazy(() => import('./pages/Names'))
 const Resist = lazy(() => import('./pages/Resist'))
 const Dance = lazy(() => import('./pages/Dance'))
+const Headlines = lazy(() => import('./pages/Headlines'))
 const NotFound = lazy(() => import('./pages/NotFound'))
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
               <Route path="/names" element={<Names />} />
               <Route path="/resist" element={<Resist />} />
               <Route path="/dance" element={<Dance />} />
+              <Route path="/headlines" element={<Headlines />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
