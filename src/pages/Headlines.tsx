@@ -58,8 +58,10 @@ function generateHeadline(
   return result.charAt(0).toUpperCase() + result.slice(1)
 }
 
+const BATCH_SIZE = 10
+
 function generateBatch(): string[] {
-  return Array.from({ length: 5 }, () =>
+  return Array.from({ length: BATCH_SIZE }, () =>
     generateHeadline(pick(data.templates), data.variables)
   )
 }
