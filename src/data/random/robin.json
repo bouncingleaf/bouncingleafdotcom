@@ -4,12 +4,13 @@
     "{{ROBIN}}",
     "{{ROBIN}}",
     "{{ROBIN}}, and {{ROBIN}}",
-    "{{ROBIN}}, and {{ROBIN}}",
     "{{ROBIN}}, and then {{ROBIN}}",
     "{{ROBIN}}, then {{ROBIN}}"
   ],
   "variables": {
     "ROBIN": [
+      "{{DOROBIN}}",
+      "{{DOROBIN}}",
       "{{DOROBIN}}",
       "{{DOROBIN}}",
       "{{JUST}} {{DOROBIN}}",
@@ -42,6 +43,7 @@
     "DOROBIN": ["{{DOSTUFF}}", "{{DOSTUFF}}", "{{DOSTUFF}} {{AWHILE}}"],
     "DOSTUFF": [
       "{{DORARE}}",
+      "{{FUSS}}",
       "check for danger",
       "chuff chuff chuff",
       "do nothing",
@@ -65,7 +67,7 @@
     ],
     "DORARE": [
       "meditate",
-      "fuss at {{OTHER}}",
+      "{{FUSS}} at {{OTHER}}",
       "preen",
       "prepare for Robin Nightly News",
       "scratch an itch"

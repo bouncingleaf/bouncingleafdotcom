@@ -19,6 +19,7 @@
     "security:check:all": "npm audit --audit-level=high",
     "security:fix": "npm audit fix",
     "gallery:generate": "node scripts/generate-gallery-data.js",
+    "random:validate": "node scripts/validate-random-data.js",
     "optimize:images": "node scripts/optimize-images.js",
     "install-hooks": "bash scripts/install-hooks.sh",
     "prepare": "bash scripts/install-hooks.sh"
