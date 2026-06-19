@@ -6,6 +6,7 @@ Allow: /
 # Disallow crawling of specific paths (add as needed)
 Disallow: /api/
 Disallow: /*.json$
+Disallow: /random
 
 # Sitemap location
 Sitemap: https://bouncingleaf.com/sitemap.xml

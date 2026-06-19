@@ -1,0 +1,94 @@
+{
+  "name": "Robin Activity Generator",
+  "templates": [
+    "{{ROBIN}}",
+    "{{ROBIN}}",
+    "{{ROBIN}}, and {{ROBIN}}",
+    "{{ROBIN}}, and {{ROBIN}}",
+    "{{ROBIN}}, and then {{ROBIN}}",
+    "{{ROBIN}}, then {{ROBIN}}"
+  ],
+  "variables": {
+    "ROBIN": [
+      "{{DOROBIN}}",
+      "{{DOROBIN}}",
+      "{{JUST}} {{DOROBIN}}",
+      "{{IFN}}, {{DOROBIN}}",
+      "{{DOROBIN}} {{IFN}}"
+    ],
+    "AWHILE": [
+      "a bit",
+      "a little",
+      "a {{TIME}}",
+      "awhile",
+      "briefly",
+      "for a {{TIME}}",
+      "more",
+      "some",
+      "some more"
+    ],
+    "TIME": [
+      "bit",
+      "few",
+      "few seconds",
+      "long time",
+      "minute",
+      "moment",
+      "minute or two",
+      "moment or two",
+      "time",
+      "while"
+    ],
+    "DOROBIN": ["{{DOSTUFF}}", "{{DOSTUFF}}", "{{DOSTUFF}} {{AWHILE}}"],
+    "DOSTUFF": [
+      "{{DORARE}}",
+      "check for danger",
+      "chuff chuff chuff",
+      "do nothing",
+      "don't do anything",
+      "fly away",
+      "{{HOP}}",
+      "{{HOP}}",
+      "look around",
+      "pause",
+      "peck at the ground",
+      "peck in the grass",
+      "{{PECK}}",
+      "{{PECK}}",
+      "run",
+      "stand still",
+      "stand there",
+      "stare",
+      "stay still",
+      "wait",
+      "walk"
+    ],
+    "DORARE": [
+      "meditate",
+      "fuss at {{OTHER}}",
+      "preen",
+      "prepare for Robin Nightly News",
+      "scratch an itch"
+    ],
+    "FUSS": [
+      "chip",
+      "chuff",
+      "chuff chuff chuff",
+      "fuss",
+      "glare",
+      "run",
+      "stare"
+    ],
+    "HOP": ["hop", "hop hop", "hop hop hop", "hop hop hop hop"],
+    "IFN": ["if you feel like it", "if you want", "if'n", "maybe", "perhaps"],
+    "JUST": ["carefully", "cautiously", "just", "simply"],
+    "OTHER": [
+      "a blue jay",
+      "another bird",
+      "another bird",
+      "another robin",
+      "another robin"
+    ],
+    "PECK": ["peck", "peck peck", "peck peck peck", "peck peck peck peck"]
+  }
+}
