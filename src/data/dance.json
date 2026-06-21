@@ -1,5 +1,61 @@
 [
   {
+    "artist": "Taylor Swift",
+    "album": "Reputation",
+    "song": "...Ready For It?",
+    "genre": ["electropop", "synth-pop"],
+    "who": ["Angelica"],
+    "languages": ["english"],
+    "lyrics": "I see how this is gonna go / Touch me and you'll never be alone",
+    "notes": "",
+    "spotify": "https://open.spotify.com/track/2yLa0QULdQr0qAIvVwN6B5",
+    "appleMusic": "https://music.apple.com/us/song/ready-for-it/1440934248",
+    "youtube": "https://www.youtube.com/watch?v=xXkkvGaXXpg",
+    "bpm": 160
+  },
+  {
+    "artist": "Ariana Grande",
+    "album": "thank u, next",
+    "song": "7 rings",
+    "genre": ["trap-pop", "hip-hop", "r&b"],
+    "who": ["Cheryl"],
+    "languages": ["english"],
+    "lyrics": "Breakfast at Tiffany's and bottles of bubbles",
+    "notes": "This is the one that sounds like 'My Favorite Things'",
+    "spotify": "https://open.spotify.com/track/6ocbgoVGwYJhOv1GgI9NsF",
+    "appleMusic": "https://music.apple.com/us/song/7-rings/1450330685",
+    "youtube": "https://www.youtube.com/watch?v=QYh6mYIJG2Y",
+    "bpm": 140
+  },
+  {
+    "artist": "Johnny Sky",
+    "album": "30 Minutos - Single",
+    "song": "30 Minutos",
+    "genre": ["bachata"],
+    "who": ["Carla"],
+    "languages": ["spanish", "english"],
+    "lyrics": "So many nights waiting without your love / Baby please don't go",
+    "notes": "",
+    "spotify": "https://open.spotify.com/track/0TFHKoZwEqu6bffHeO0ME3",
+    "appleMusic": "https://music.apple.com/us/album/30-minutos-single/1834443774",
+    "youtube": "https://www.youtube.com/watch?v=ZDfGo9I8_CA",
+    "bpm": 128
+  },
+  {
+    "artist": "Shaboozey",
+    "album": "Where I've Been, Isn't Where I'm Going",
+    "song": "A Bar Song (Tipsy)",
+    "genre": ["country", "pop"],
+    "who": ["Cheryl"],
+    "languages": ["english"],
+    "lyrics": "One, here comes the two to the three to the four / Tell 'em bring another round, we need plenty more / Two steppin' on the table, she don't need a dance floor / Oh my, good Lord",
+    "notes": "",
+    "spotify": "https://open.spotify.com/track/5fZJQrFKWQLb7FpJXZ1g7K",
+    "appleMusic": "https://music.apple.com/us/song/a-bar-song-tipsy/1737085899",
+    "youtube": "https://www.youtube.com/watch?v=qyQY3SDuhSM",
+    "bpm": 81
+  },
+  {
     "artist": "Lady Gaga",
     "album": "Abracadabra - Single",
     "song": "Abracadabra",
@@ -88,7 +144,7 @@
     "album": "Bailando Bachata - Single",
     "song": "Bailando Bachata",
     "genre": ["bachata"],
-    "who": ["Carla"],
+    "who": ["Carla", "Angelica"],
     "languages": ["spanish"],
     "lyrics": "Y es que contigo, mi amor / todo me sabe mejor",
     "notes": "",
@@ -126,20 +182,6 @@
     "bpm": 176
   },
   {
-    "artist": "Shaboozey",
-    "album": "Where I've Been, Isn't Where I'm Going",
-    "song": "A Bar Song (Tipsy)",
-    "genre": ["country", "pop"],
-    "who": ["Cheryl"],
-    "languages": ["english"],
-    "lyrics": "One, here comes the two to the three to the four / Tell 'em bring another round, we need plenty more / Two steppin' on the table, she don't need a dance floor / Oh my, good Lord",
-    "notes": "",
-    "spotify": "https://open.spotify.com/track/5fZJQrFKWQLb7FpJXZ1g7K",
-    "appleMusic": "https://music.apple.com/us/song/a-bar-song-tipsy/1737085899",
-    "youtube": "https://www.youtube.com/watch?v=qyQY3SDuhSM",
-    "bpm": 81
-  },
-  {
     "artist": "Carlos Vives, Mau y Ricky & Lucy Vives",
     "album": "Besos en Cualquier Horario - Single",
     "song": "Besos en Cualquier Horario",
@@ -172,7 +214,7 @@
     "artist": "The Weeknd",
     "album": "Blinding Lights - Single",
     "genre": ["r&b", "soul"],
-    "who": ["Carla"],
+    "who": ["Carla", "Angelica"],
     "languages": ["english"],
     "lyrics": "I said, ooh, I'm blinded by the lights / No, I can't sleep until I feel your touch",
     "notes": "",
@@ -276,6 +318,34 @@
     "appleMusic": "https://music.apple.com/us/album/cara-e-tabla-single/1659625421",
     "youtube": "https://www.youtube.com/watch?v=VdjPmCleNe8",
     "bpm": 109
+  },
+  {
+    "artist": "Chyno Miranda, Mau y Ricky",
+    "album": "Cariño Mío - Single",
+    "song": "Cariño Mío",
+    "genre": ["latin-urban"],
+    "who": ["Carla"],
+    "languages": ["spanish"],
+    "lyrics": "Yo te quiero, te quiero, te quiero, te quiero, te quiero, te quiero, baby",
+    "notes": "",
+    "spotify": "https://open.spotify.com/track/6Mq4WZPK1hYSVSlNMcdSMe",
+    "appleMusic": "https://music.apple.com/us/song/cari%C3%B1o-m%C3%ADo/1472657213",
+    "youtube": "https://www.youtube.com/watch?v=JwVFgfRVNdY",
+    "bpm": ""
+  },
+  {
+    "artist": "Cheat Codes, Öwnboss",
+    "album": "Carnival - Single",
+    "song": "Carnival",
+    "genre": ["electro-pop"],
+    "who": ["BodyPump"],
+    "languages": ["n/a"],
+    "lyrics": "",
+    "notes": "Also known as 'Honeybun'. The split squat song for BP 136",
+    "spotify": "https://open.spotify.com/track/5AlmkwDWQdzqQf6vQYhrz6",
+    "appleMusic": "https://music.apple.com/us/song/carnival/1796933821",
+    "youtube": "https://www.youtube.com/watch?v=xb-K_9QDzKg",
+    "bpm": 124
   },
   {
     "artist": "Ed Sheeran",
@@ -458,6 +528,20 @@
     "bpm": "?"
   },
   {
+    "artist": "Thalía",
+    "album": "Latina",
+    "song": "Desde Esa Noche (feat. Maluma)",
+    "genre": ["latin-pop"],
+    "who": ["Angelica"],
+    "languages": ["english", "spanish"],
+    "lyrics": "",
+    "notes": "",
+    "spotify": "https://open.spotify.com/track/7cJaRc4y64x0YWBJmpRzO2",
+    "appleMusic": "https://music.apple.com/us/song/desde-esa-noche-feat-maluma/1383950620",
+    "youtube": "https://www.youtube.com/watch?v=CkyBXdXkMr8",
+    "bpm": 95
+  },
+  {
     "artist": "Kendji Girac & Soolking",
     "album": "Desperado - Single",
     "song": "Desperado",
@@ -470,6 +554,20 @@
     "appleMusic": "https://music.apple.com/us/album/desperado-single/1668178877",
     "youtube": "https://www.youtube.com/watch?v=hYHGc3SCX6o",
     "bpm": 140
+  },
+  {
+    "artist": "Lidice, Marlon Caro",
+    "album": "",
+    "song": "Die with a Smile (Salsa Version)",
+    "genre": ["salsa"],
+    "who": ["Angelica"],
+    "languages": ["english", "spanish"],
+    "lyrics": "If the world was ending, I'd wanna be next to you",
+    "notes": "",
+    "spotify": "https://open.spotify.com/track/6sjR52aV8WmTd5s5HTWbFA",
+    "appleMusic": "https://music.apple.com/us/song/die-with-a-smile-salsa-version/1771296300",
+    "youtube": "https://www.youtube.com/watch?v=g1FFOwLPZjY",
+    "bpm": ""
   },
   {
     "artist": "Ed Sheeran",
@@ -523,6 +621,34 @@
     "appleMusic": "https://music.apple.com/us/album/dynamite-feat-sia-single/1589462208",
     "youtube": "https://www.youtube.com/watch?v=rilT3TOGS54",
     "bpm": 99
+  },
+  {
+    "artist": "Leoni Torres, Eddy K, Mauro El Código Secreto",
+    "album": "El Amor Que Espere - Single",
+    "song": "El Amor Que Espere",
+    "genre": ["salsa"],
+    "who": ["Carla"],
+    "languages": ["english", "spanish"],
+    "lyrics": "No se mañana pero hoy se bebe, se bebe, se bebe",
+    "notes": "",
+    "spotify": "https://open.spotify.com/track/1rW5rfZp6GRdttJsNisZwF",
+    "appleMusic": "https://music.apple.com/us/album/el-amor-que-espere-single/1784789268",
+    "youtube": "https://www.youtube.com/watch?v=CEsip93GxdA",
+    "bpm": ""
+  },
+  {
+    "artist": "Backstreet Boys",
+    "album": "This Is The End (Original Motion Picture Soundtrack)",
+    "song": "Everybody (Backstreet's Back) [Radio Edit]",
+    "genre": ["dance-pop"],
+    "who": ["Angelica"],
+    "languages": ["english"],
+    "lyrics": "",
+    "notes": "",
+    "spotify": "https://open.spotify.com/track/1di1BEgJYzPvXUuinsYJGP",
+    "appleMusic": "https://music.apple.com/us/song/everybody-backstreets-back-radio-edit/1625999581",
+    "youtube": "https://www.youtube.com/watch?v=J47YIH1XCGE",
+    "bpm": 108
   },
   {
     "artist": "Elle King",
@@ -595,18 +721,18 @@
     "bpm": 100
   },
   {
-    "artist": "BLACKPINK",
-    "album": "THE GIRLS (BLACKPINK THE GAME OST) - Single",
-    "song": "THE GIRLS (BLACKPINK THE GAME OST)",
-    "genre": ["k-pop", "pop"],
-    "who": ["Cheryl"],
-    "languages": ["english"],
-    "lyrics": "Don't mess with the girls, with the girls, with the girls",
+    "artist": "Daddy Yankee",
+    "album": "Barrio Fino",
+    "song": "Gasolina",
+    "genre": ["reggaeton"],
+    "who": ["Angelica"],
+    "languages": ["spanish"],
+    "lyrics": "A ella le gusta la gasolina (Dame más gasolina)",
     "notes": "",
-    "spotify": "https://open.spotify.com/track/1mFpMoeZfkIqtqW2AfQ8ba",
-    "appleMusic": "https://music.apple.com/us/song/the-girls-blackpink-the-game-ost/1703682348",
-    "youtube": "https://www.youtube.com/watch?v=cSqOY5nktfg",
-    "bpm": 160
+    "spotify": "https://open.spotify.com/track/228BxWXUYQPJrJYHDLOHkj",
+    "appleMusic": "https://music.apple.com/us/song/gasolina/1840496490",
+    "youtube": "https://www.youtube.com/watch?v=CCF1_jI8Prk",
+    "bpm": 96
   },
   {
     "artist": "Fergie",
@@ -914,6 +1040,20 @@
     "appleMusic": "https://music.apple.com/us/song/kiss-the-sky/1135139148",
     "youtube": "https://www.youtube.com/watch?v=8cnoj88-mgY",
     "bpm": 110
+  },
+  {
+    "artist": "Nat King Cole",
+    "album": "",
+    "song": "L-O-V-E",
+    "genre": ["jazz"],
+    "who": ["Angelica"],
+    "languages": ["english"],
+    "lyrics": "L is for the way you look at me / O is for the only one I see...",
+    "notes": "",
+    "spotify": "https://open.spotify.com/track/4QxDOjgpYtQDxxbWPuEJOy",
+    "appleMusic": "https://music.apple.com/us/song/l-o-v-e/715748058",
+    "youtube": "https://www.youtube.com/watch?v=f_HmF84G7ZY",
+    "bpm": 78
   },
   {
     "artist": "Ricky Martin",
@@ -1377,20 +1517,6 @@
     "bpm": 128
   },
   {
-    "artist": "Taylor Swift",
-    "album": "Reputation",
-    "song": "...Ready For It?",
-    "genre": ["electropop", "synth-pop"],
-    "who": ["Angelica"],
-    "languages": ["english"],
-    "lyrics": "I see how this is gonna go / Touch me and you'll never be alone",
-    "notes": "",
-    "spotify": "https://open.spotify.com/track/2yLa0QULdQr0qAIvVwN6B5",
-    "appleMusic": "https://music.apple.com/us/song/ready-for-it/1440934248",
-    "youtube": "https://www.youtube.com/watch?v=xXkkvGaXXpg",
-    "bpm": 160
-  },
-  {
     "artist": "Machel Montano",
     "album": "Monk Monté",
     "song": "Remedy (feat. Shaggy) [Refix]",
@@ -1410,6 +1536,20 @@
     "genre": ["electropop"],
     "who": ["BodyPump"],
     "notes": "Can't find this one anywhere. I'm not even sure what language it's in."
+  },
+  {
+    "artist": "Lenier, Wampi",
+    "album": "El Barrio - EP",
+    "song": "Rica",
+    "genre": ["latin-pop"],
+    "who": ["Carla"],
+    "languages": ["spanish"],
+    "lyrics": "",
+    "notes": "",
+    "spotify": "https://open.spotify.com/track/2QlqpTWpbd5fryUAcNeSX5",
+    "appleMusic": "https://music.apple.com/us/song/rica/1826909377",
+    "youtube": "https://www.youtube.com/watch?v=UUOTHuyYuNk",
+    "bpm": 107
   },
   {
     "artist": "Daddy Yankee",
@@ -1510,6 +1650,20 @@
     "bpm": 95
   },
   {
+    "artist": "Diane Warren, Rita Ora, Sofia Reyes, Reik",
+    "album": "",
+    "song": "Seaside",
+    "genre": [""],
+    "who": ["Angelica"],
+    "languages": ["english", "spanish"],
+    "lyrics": "",
+    "notes": "",
+    "spotify": "https://open.spotify.com/track/0cw83fumWofmtmNd2hVAPr",
+    "appleMusic": "https://music.apple.com/us/song/seaside/1581380050",
+    "youtube": "https://www.youtube.com/watch?v=DR4NP5AiLHM",
+    "bpm": 94
+  },
+  {
     "artist": "Jason Derulo",
     "album": "The Last Dance (Part 1)",
     "song": "Sexy For Me",
@@ -1580,6 +1734,20 @@
     "bpm": "?"
   },
   {
+    "artist": "KAROL G",
+    "album": "",
+    "song": "Si Antes Te Hubiera Conocido",
+    "genre": ["merengue"],
+    "who": ["Angelica"],
+    "languages": ["spanish"],
+    "lyrics": "",
+    "notes": "",
+    "spotify": "https://open.spotify.com/track/73scB4Q4fcOmnsBVZPmk32",
+    "appleMusic": "https://music.apple.com/us/album/si-antes-te-hubiera-conocido-single/1752031533",
+    "youtube": "https://www.youtube.com/watch?v=MgsdDfdGdHc",
+    "bpm": 128
+  },
+  {
     "artist": "Alvaro Soler",
     "album": "Eterno Agosto",
     "song": "Sofia",
@@ -1591,6 +1759,20 @@
     "spotify": "https://open.spotify.com/track/3oSfte1Dth6wL5h6b45YgY",
     "appleMusic": "https://music.apple.com/us/song/sofia/1720299674",
     "youtube": "https://www.youtube.com/watch?v=GqIWKUEjO_4",
+    "bpm": 128
+  },
+  {
+    "artist": "GIMS",
+    "album": "Sois Pas Timide - Single",
+    "song": "Sois Pas Timide",
+    "genre": [""],
+    "who": ["Carla"],
+    "languages": ["french"],
+    "lyrics": "Dans le fond, tu le sais, j'fais ça pour te garder près de moi",
+    "notes": "",
+    "spotify": "https://open.spotify.com/track/37tGmKyKlr8vyt9BVdoWQo",
+    "appleMusic": "https://music.apple.com/us/song/sois-pas-timide/1757643303",
+    "youtube": "https://www.youtube.com/watch?v=Sq5EDI7JktA",
     "bpm": 128
   },
   {
@@ -1626,7 +1808,7 @@
     "album": "Sonríele - Single",
     "song": "Sonríele",
     "genre": ["reggaeton", "pop"],
-    "who": ["Angelica"],
+    "who": ["Angelica", "Cheryl"],
     "languages": ["spanish"],
     "lyrics": "Sonríele a la vida",
     "notes": "",
@@ -1678,6 +1860,20 @@
     "bpm": 107
   },
   {
+    "artist": "Johnny Sky",
+    "album": "Still Here 4 U - Single",
+    "song": "Still Here 4 U",
+    "genre": ["bachata", "tropical"],
+    "who": ["Carla"],
+    "languages": ["english", "spanish"],
+    "lyrics": "",
+    "notes": "",
+    "spotify": "",
+    "appleMusic": "",
+    "youtube": "https://www.youtube.com/watch?v=ml6jZUuLDsU",
+    "bpm": ""
+  },
+  {
     "song": "Suavemente (Live)",
     "artist": "Elvis Crespo",
     "album": "Live From Orlando",
@@ -1690,20 +1886,6 @@
     "appleMusic": "https://music.apple.com/us/song/suavemente-live/1667382498",
     "youtube": "https://www.youtube.com/watch?v=Fhe48XhkAzs",
     "bpm": 124
-  },
-  {
-    "artist": "Aitana",
-    "album": "CUARTO AZUL",
-    "song": "SUPERESTRELLA",
-    "genre": ["latin-pop"],
-    "who": ["Carla"],
-    "languages": ["spanish"],
-    "lyrics": "",
-    "notes": "This song is sampled in Mike Morato's Mirando al Cielo, also listed here.",
-    "spotify": "https://open.spotify.com/track/6hpuesKPNa3WhV48O7Fa47",
-    "appleMusic": "https://music.apple.com/us/song/superestrella/1838587945",
-    "youtube": "https://www.youtube.com/watch?v=ElvzE2cPclc",
-    "bpm": 136
   },
   {
     "artist": "Jorge Luis Chacín",
@@ -1732,6 +1914,34 @@
     "appleMusic": "https://music.apple.com/us/song/sugar/1440855562",
     "youTube": "https://www.youtube.com/watch?v=09R8_2nJtjg",
     "bpm": 120
+  },
+  {
+    "artist": "Aitana",
+    "album": "CUARTO AZUL",
+    "song": "SUPERESTRELLA",
+    "genre": ["latin-pop"],
+    "who": ["Carla"],
+    "languages": ["spanish"],
+    "lyrics": "",
+    "notes": "This song is sampled in Mike Morato's Mirando al Cielo, also listed here.",
+    "spotify": "https://open.spotify.com/track/6hpuesKPNa3WhV48O7Fa47",
+    "appleMusic": "https://music.apple.com/us/song/superestrella/1838587945",
+    "youtube": "https://www.youtube.com/watch?v=ElvzE2cPclc",
+    "bpm": 136
+  },
+  {
+    "artist": "Alan Walker, Imanbek",
+    "album": "Sweet Dreams - Single",
+    "song": "Sweet Dreams",
+    "genre": ["dance-pop", "deep-house"],
+    "who": ["Carla"],
+    "languages": ["english"],
+    "lyrics": "",
+    "notes": "",
+    "spotify": "https://open.spotify.com/track/4uDhts78RdwIDjEqPrYVKp",
+    "appleMusic": "https://music.apple.com/us/album/sweet-dreams-single/1569421369",
+    "youtube": "https://www.youtube.com/watch?v=SM-BT9cijI4",
+    "bpm": 125
   },
   {
     "artist": "Play-N-Skillz, MONSTA X & Lil Jon",
@@ -1841,6 +2051,20 @@
     "appleMusic": "https://music.apple.com/us/song/tequila/1755709403",
     "youtube": "https://www.youtube.com/watch?v=3X08UfKOE-M",
     "bpm": 120
+  },
+  {
+    "artist": "BLACKPINK",
+    "album": "THE GIRLS (BLACKPINK THE GAME OST) - Single",
+    "song": "THE GIRLS (BLACKPINK THE GAME OST)",
+    "genre": ["k-pop", "pop"],
+    "who": ["Cheryl"],
+    "languages": ["english"],
+    "lyrics": "Don't mess with the girls, with the girls, with the girls",
+    "notes": "",
+    "spotify": "https://open.spotify.com/track/1mFpMoeZfkIqtqW2AfQ8ba",
+    "appleMusic": "https://music.apple.com/us/song/the-girls-blackpink-the-game-ost/1703682348",
+    "youtube": "https://www.youtube.com/watch?v=cSqOY5nktfg",
+    "bpm": 160
   },
   {
     "artist": "Shawn Mendes",
@@ -1969,20 +2193,6 @@
     "bpm": 100
   },
   {
-    "song": "ZUN CHA",
-    "artist": "SARUKANI",
-    "album": "ZUN CHA - Single",
-    "genre": ["pop"],
-    "who": ["Carla"],
-    "languages": ["japanese", "english"],
-    "lyrics": "'ZUN' / Okay? / 'CHA' / Okay, again?",
-    "notes": "",
-    "spotify": "https://open.spotify.com/track/5JANafOsAp6VBPTSC72yES",
-    "appleMusic": "https://music.apple.com/us/album/zun-cha-single/1830186456",
-    "youtube": "https://www.youtube.com/watch?v=rHqbuOi7Qq8",
-    "bpm": 130
-  },
-  {
     "artist": "Machel Montano",
     "album": "Waiting on the Stage (feat. Badjohn Republic) - Single",
     "song": "Waiting on the Stage (feat. Badjohn Republic)",
@@ -1995,6 +2205,34 @@
     "appleMusic": "https://music.apple.com/us/album/waiting-on-the-stage-feat-badjohn-republic-single/1702080069",
     "youtube": "https://www.youtube.com/watch?v=fe6onk98K0w",
     "bpm": 154
+  },
+  {
+    "artist": "Firelight Records",
+    "album": "",
+    "song": "Waka Waka (Acoustic)",
+    "genre": [""],
+    "who": ["Carla"],
+    "languages": [""],
+    "lyrics": "",
+    "notes": "",
+    "spotify": "",
+    "appleMusic": "",
+    "youtube": "https://www.youtube.com/playlist?list=OLAK5uy_lXrpFKklpGJ8LWHtS0cb3Bq4eshtoUOt0",
+    "bpm": ""
+  },
+  {
+    "artist": "Shakira",
+    "album": "",
+    "song": "Waka Waka (This Time For Africa)",
+    "genre": ["afropop", "soca"],
+    "who": ["Lisa"],
+    "languages": ["english"],
+    "lyrics": "",
+    "notes": "",
+    "spotify": "https://open.spotify.com/track/2Cd9iWfcOpGDHLz6tVA3G4",
+    "appleMusic": "https://music.apple.com/us/song/waka-waka-this-time-for-africa-the-official-2010-fifa/371784883",
+    "youtube": "https://www.youtube.com/watch?v=pRpeEdMmmQ0",
+    "bpm": 127
   },
   {
     "artist": "Harry Styles",
@@ -2109,6 +2347,20 @@
     "bpm": "?"
   },
   {
+    "song": "ZUN CHA",
+    "artist": "SARUKANI",
+    "album": "ZUN CHA - Single",
+    "genre": ["pop"],
+    "who": ["Carla"],
+    "languages": ["japanese", "english"],
+    "lyrics": "'ZUN' / Okay? / 'CHA' / Okay, again?",
+    "notes": "",
+    "spotify": "https://open.spotify.com/track/5JANafOsAp6VBPTSC72yES",
+    "appleMusic": "https://music.apple.com/us/album/zun-cha-single/1830186456",
+    "youtube": "https://www.youtube.com/watch?v=rHqbuOi7Qq8",
+    "bpm": 130
+  },
+  {
     "artist": "Static & Ben El & Dana International",
     "album": "אחלה גבר - Single",
     "song": "אחלה גבר",
@@ -2135,33 +2387,5 @@
     "appleMusic": "https://music.apple.com/us/song/%D7%9B%D7%95%D7%A1%D7%95%D7%AA-%D7%A8%D7%99%D7%A7%D7%95%D7%AA-feat-%D7%9C%D7%99%D7%90%D7%95%D7%A8-%D7%A0%D7%A8%D7%A7%D7%99%D7%A1/1575121207",
     "youtube": "https://www.youtube.com/watch?v=7TzGriTsOwc",
     "bpm": "?"
-  },
-  {
-    "artist": "Ariana Grande",
-    "album": "thank u, next",
-    "song": "7 rings",
-    "genre": ["trap-pop", "hip-hop", "r&b"],
-    "who": ["Cheryl"],
-    "languages": ["english"],
-    "lyrics": "Breakfast at Tiffany's and bottles of bubbles",
-    "notes": "This is the one that sounds like 'My Favorite Things'",
-    "spotify": "https://open.spotify.com/track/6ocbgoVGwYJhOv1GgI9NsF",
-    "appleMusic": "https://music.apple.com/us/song/7-rings/1450330685",
-    "youtube": "https://www.youtube.com/watch?v=QYh6mYIJG2Y",
-    "bpm": 140
-  },
-  {
-    "artist": "Johnny Sky",
-    "album": "30 Minutos - Single",
-    "song": "30 Minutos",
-    "genre": ["bachata"],
-    "who": ["Carla"],
-    "languages": ["spanish", "english"],
-    "lyrics": "So many nights waiting without your love / Baby please don't go",
-    "notes": "",
-    "spotify": "https://open.spotify.com/track/0TFHKoZwEqu6bffHeO0ME3",
-    "appleMusic": "https://music.apple.com/us/album/30-minutos-single/1834443774",
-    "youtube": "https://www.youtube.com/watch?v=ZDfGo9I8_CA",
-    "bpm": 128
   }
 ]
