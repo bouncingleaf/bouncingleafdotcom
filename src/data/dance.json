@@ -627,7 +627,7 @@
   },
   {
     "artist": "Lidice, Marlon Caro",
-    "album": "",
+    "album": "Die with a Smile (Salsa Version) - Single",
     "song": "Die with a Smile (Salsa Version)",
     "genre": ["salsa"],
     "who": ["Angelica"],
@@ -657,12 +657,12 @@
     "song": "Don't Cha (Dark Pop Version)",
     "artist": "Renan Pitanga",
     "album": "Don't Cha (Dark Pop Version) - Single",
-    "genre": [],
+    "genre": ["electro-pop"],
     "who": ["Cheryl"],
-    "languages": [],
+    "languages": ["english"],
     "lyrics": "Don't cha wish your boyfriend was hot like me?",
     "notes": "This song was made famous by the Pussycat Dolls, but it isn't originally by them either!",
-    "bpm": "?"
+    "bpm": 122
   },
   {
     "artist": "Dua Lipa",
@@ -764,7 +764,7 @@
   },
   {
     "artist": "Pitbull & Nile Rodgers",
-    "album": "?",
+    "album": "Trackhouse",
     "song": "Freak 54 (Freak Out)",
     "genre": ["latin-pop"],
     "who": ["Cheryl"],
@@ -857,7 +857,7 @@
     "notes": "",
     "spotify": "https://open.spotify.com/track/1JLbKn1c8c6C3gzaRP9y2X",
     "youtube": "https://www.youtube.com/watch?v=Z4QKAjpq4aM",
-    "bpm": "?"
+    "bpm": 157
   },
   {
     "artist": "Dolly Style",
@@ -1127,7 +1127,7 @@
   },
   {
     "artist": "Nat King Cole",
-    "album": "",
+    "album": "L-O-V-E",
     "song": "L-O-V-E",
     "genre": ["jazz"],
     "who": ["Angelica"],
@@ -1749,9 +1749,9 @@
   },
   {
     "artist": "Diane Warren, Rita Ora, Sofia Reyes, Reik",
-    "album": "",
+    "album": "Diane Warren: The Cave Sessions, Vol. 1",
     "song": "Seaside",
-    "genre": [""],
+    "genre": ["latin-pop"],
     "who": ["Angelica"],
     "languages": ["english", "spanish"],
     "lyrics": "",
@@ -1833,7 +1833,7 @@
   },
   {
     "artist": "KAROL G",
-    "album": "",
+    "album": "Tropicoqueta",
     "song": "Si Antes Te Hubiera Conocido",
     "genre": ["merengue"],
     "who": ["Angelica"],
@@ -1863,7 +1863,7 @@
     "artist": "GIMS",
     "album": "Sois Pas Timide - Single",
     "song": "Sois Pas Timide",
-    "genre": [""],
+    "genre": ["pop", "hip-hop"],
     "who": ["Carla"],
     "languages": ["french"],
     "lyrics": "Dans le fond, tu le sais, j'fais ça pour te garder près de moi",
@@ -2126,7 +2126,7 @@
     "bpm": "?"
   },
   {
-    "artist": "?",
+    "artist": "Zumba Fitness Music Lab",
     "album": "ZIN 103?",
     "song": "Tengo Calor",
     "genre": ["merengue"],
@@ -2308,9 +2308,9 @@
     "artist": "Firelight Records",
     "album": "",
     "song": "Waka Waka (Acoustic)",
-    "genre": [""],
+    "genre": ["folk-pop"],
     "who": ["Carla"],
-    "languages": [""],
+    "languages": ["fang", "english"],
     "lyrics": "",
     "notes": "",
     "spotify": "",
@@ -2320,7 +2320,7 @@
   },
   {
     "artist": "Shakira",
-    "album": "",
+    "album": "Sale el Sol",
     "song": "Waka Waka (This Time For Africa)",
     "genre": ["afro-pop", "soca"],
     "who": ["Lisa"],

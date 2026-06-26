@@ -128,6 +128,9 @@ export default function Dance() {
   )
   const [selectedWho, setSelectedWho] = useState<Set<string>>(new Set())
   const [expandedRow, setExpandedRow] = useState<number | null>(null)
+  const [genreOpen, setGenreOpen] = useState(false)
+  const [languageOpen, setLanguageOpen] = useState(false)
+  const [whoOpen, setWhoOpen] = useState(false)
 
   const allWho = useMemo(
     () =>
@@ -206,90 +209,118 @@ export default function Dance() {
 
       <div className="space-y-4 mb-8">
         <p className="text-gray-600">
-          I love Zumba music. By popular demand, meaning literally nobody asked
-          for this, here's my playlist, with links to Spotify, Apple Music, and
-          YouTube.
+          I love Zumba music. Here's a list of songs we dance to, with links to
+          Spotify, Apple Music, and YouTube. I link to the explicit versions. Oh
+          no! Naughtiness!
         </p>
         <p className="text-gray-600">
-          When there are clean and explicit versions of a song, I link to the
-          explicit ones. Oh no! Naughtiness!
+          Expand a song (little arrow next to the song title), to see sample
+          lyrics and notes.
         </p>
         <p className="text-gray-600">
-          Of course I had to make this sortable and fiterable. By popular demand
-          and all. Expand a song (little arrow next to the song title), to see
-          sample lyrics and notes.
-        </p>
-        <p className="text-gray-600">
-          Many thanks to the instructors (see "Who", below) for putting together
-          such great playlists. I love dancing with you.
+          Many thanks to the instructors (expand "Who", below) for putting
+          together such great playlists. I love dancing with you.
         </p>
       </div>
       {/* Filters */}
       <div className="mb-6 space-y-4">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">
+          <button
+            onClick={() => setGenreOpen((o) => !o)}
+            className="flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2 hover:text-gray-600"
+          >
             Genre
-          </p>
-          <div className="flex flex-wrap gap-2">
-            {allGenres.map((genre) => (
-              <button
-                key={genre}
-                onClick={() => toggleGenre(genre)}
-                className={`px-3 py-1 text-sm rounded-full border transition-colors ${
-                  selectedGenres.has(genre)
-                    ? 'bg-accent-primary text-white border-accent-primary'
-                    : 'border-gray-300 text-gray-600 hover:border-accent-primary hover:text-accent-primary'
-                }`}
-              >
-                {genre}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {allLanguages.length > 0 && (
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">
-              Language
-            </p>
+            {selectedGenres.size > 0 && (
+              <span className="text-accent-primary">
+                ({selectedGenres.size})
+              </span>
+            )}
+            <span className="text-gray-300">{genreOpen ? '▲' : '▼'}</span>
+          </button>
+          {genreOpen && (
             <div className="flex flex-wrap gap-2">
-              {allLanguages.map((language) => (
+              {allGenres.map((genre) => (
                 <button
-                  key={language}
-                  onClick={() => toggleLanguage(language)}
+                  key={genre}
+                  onClick={() => toggleGenre(genre)}
                   className={`px-3 py-1 text-sm rounded-full border transition-colors ${
-                    selectedLanguages.has(language)
+                    selectedGenres.has(genre)
                       ? 'bg-accent-primary text-white border-accent-primary'
                       : 'border-gray-300 text-gray-600 hover:border-accent-primary hover:text-accent-primary'
                   }`}
                 >
-                  {language}
+                  {genre}
                 </button>
               ))}
             </div>
+          )}
+        </div>
+
+        {allLanguages.length > 0 && (
+          <div>
+            <button
+              onClick={() => setLanguageOpen((o) => !o)}
+              className="flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2 hover:text-gray-600"
+            >
+              Language
+              {selectedLanguages.size > 0 && (
+                <span className="text-accent-primary">
+                  ({selectedLanguages.size})
+                </span>
+              )}
+              <span className="text-gray-300">{languageOpen ? '▲' : '▼'}</span>
+            </button>
+            {languageOpen && (
+              <div className="flex flex-wrap gap-2">
+                {allLanguages.map((language) => (
+                  <button
+                    key={language}
+                    onClick={() => toggleLanguage(language)}
+                    className={`px-3 py-1 text-sm rounded-full border transition-colors ${
+                      selectedLanguages.has(language)
+                        ? 'bg-accent-primary text-white border-accent-primary'
+                        : 'border-gray-300 text-gray-600 hover:border-accent-primary hover:text-accent-primary'
+                    }`}
+                  >
+                    {language}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         )}
 
         {allWho.length > 0 && (
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">
+            <button
+              onClick={() => setWhoOpen((o) => !o)}
+              className="flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2 hover:text-gray-600"
+            >
               Who
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {allWho.map((who) => (
-                <button
-                  key={who}
-                  onClick={() => toggleWho(who)}
-                  className={`px-3 py-1 text-sm rounded-full border transition-colors ${
-                    selectedWho.has(who)
-                      ? 'bg-accent-primary text-white border-accent-primary'
-                      : 'border-gray-300 text-gray-600 hover:border-accent-primary hover:text-accent-primary'
-                  }`}
-                >
-                  {who}
-                </button>
-              ))}
-            </div>
+              {selectedWho.size > 0 && (
+                <span className="text-accent-primary">
+                  ({selectedWho.size})
+                </span>
+              )}
+              <span className="text-gray-300">{whoOpen ? '▲' : '▼'}</span>
+            </button>
+            {whoOpen && (
+              <div className="flex flex-wrap gap-2">
+                {allWho.map((who) => (
+                  <button
+                    key={who}
+                    onClick={() => toggleWho(who)}
+                    className={`px-3 py-1 text-sm rounded-full border transition-colors ${
+                      selectedWho.has(who)
+                        ? 'bg-accent-primary text-white border-accent-primary'
+                        : 'border-gray-300 text-gray-600 hover:border-accent-primary hover:text-accent-primary'
+                    }`}
+                  >
+                    {who}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         )}
 
@@ -525,29 +556,7 @@ export default function Dance() {
 
       <div className="space-y-4 mt-8">
         <p className="text-gray-600">
-          I had a few songs to add, so I asked Claude AI to research the details
-          and add them to the JSON file that this table uses. Claude spent 10-15
-          minutes looking everything up, and then told me it was writing the
-          file next.
-        </p>
-        <p className="text-gray-600">
-          Then nothing happened. Claude was "working," supposedly, but the file
-          wasn't updating. After a few minutes I interrupted and asked what the
-          delay was.
-        </p>
-        <p className="text-gray-600">
-          Claude told me the delay was from the research (false), and that it
-          was just about to add the songs (also false). I gave it another few
-          minutes and then interrupted it again to insist that it tell me what
-          the delay was.
-        </p>
-        <p className="text-gray-600">
-          This time, Claude blamed ME. It had been just about to write the file,
-          it said, when I interrupted it to ask what the delay was. That, it
-          said, was why it hadn't finished writing the file yet. LOL.
-        </p>
-        <p className="text-gray-600">
-          Then it stopped answering my questions. So I closed it. What a brat.
+          Hope the list helped you find your favorites!
         </p>
       </div>
     </div>
