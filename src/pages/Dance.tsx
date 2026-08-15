@@ -227,7 +227,7 @@ export default function Dance() {
         <div>
           <button
             onClick={() => setGenreOpen((o) => !o)}
-            className="flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2 hover:text-gray-600"
+            className="flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2 hover:text-gray-600"
           >
             Genre
             {selectedGenres.size > 0 && (
@@ -260,7 +260,7 @@ export default function Dance() {
           <div>
             <button
               onClick={() => setLanguageOpen((o) => !o)}
-              className="flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2 hover:text-gray-600"
+              className="flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2 hover:text-gray-600"
             >
               Language
               {selectedLanguages.size > 0 && (
@@ -294,7 +294,7 @@ export default function Dance() {
           <div>
             <button
               onClick={() => setWhoOpen((o) => !o)}
-              className="flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2 hover:text-gray-600"
+              className="flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2 hover:text-gray-600"
             >
               Who
               {selectedWho.size > 0 && (

@@ -58,6 +58,6 @@
   }
 
   .link {
-    @apply text-accent-primary hover:underline;
+    @apply text-accent-primary underline hover:opacity-80;
   }
 }

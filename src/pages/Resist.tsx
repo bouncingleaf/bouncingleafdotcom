@@ -4,7 +4,7 @@ function Resist() {
       <h1 className="mb-8">Don't let fear and overwhelm win</h1>
 
       <nav className="mb-12 pl-5 border-l-[3px] border-accent-secondary max-w-sm">
-        <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
+        <p className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-3">
           Contents
         </p>
         <ul className="space-y-2">
