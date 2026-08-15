@@ -21,14 +21,6 @@ describe('Footer', () => {
     ).toBeInTheDocument()
   })
 
-  it('displays full copyright text', () => {
-    const currentYear = new Date().getFullYear()
-    render(<Footer />)
-    expect(
-      screen.getByText(`© ${currentYear} Jessica Roy. All rights reserved.`)
-    ).toBeInTheDocument()
-  })
-
   describe('with mocked date', () => {
     beforeEach(() => {
       vi.useFakeTimers()
