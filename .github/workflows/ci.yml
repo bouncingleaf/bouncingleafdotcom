@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 2  # Need history for docs-only check
 
@@ -98,7 +98,7 @@ jobs:
 
       - name: Upload build artifact (tarball)
         if: steps.docs_check.outputs.run_tests == 'true'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: site-dist
           path: site-dist.tar.gz
@@ -111,7 +111,7 @@ jobs:
 
     steps:
       - name: Download build artifact (tarball)
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         env:
           NODE_OPTIONS: '--trace-deprecation'
         with:
