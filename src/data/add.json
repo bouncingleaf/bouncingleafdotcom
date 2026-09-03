@@ -1,30 +1,167 @@
 [
   {
-    "artist": "",
-    "album": "",
-    "song": "",
-    "genre": [""],
-    "who": [""],
-    "languages": [""],
+    "artist": "Beéle & Elvis Crespo",
+    "album": "la patadita - Single",
+    "song": "la patadita",
+    "genre": [
+      "merengue"
+    ],
+    "who": [
+      "Cheryl"
+    ],
+    "languages": [
+      "spanish"
+    ],
     "lyrics": "",
     "notes": "",
-    "spotify": "",
-    "appleMusic": "",
-    "youtube": "",
-    "bpm": ""
+    "spotify": "https://open.spotify.com/track/2B4kxkpv5OuB5b23XlZYTt",
+    "appleMusic": "https://music.apple.com/us/album/la-patadita-single/1860989596",
+    "youtube": "https://www.youtube.com/watch?v=TqqjV0XIfWg",
+    "bpm": 150
   },
   {
-    "artist": "",
-    "album": "",
-    "song": "",
-    "genre": [""],
-    "who": [""],
-    "languages": [""],
+    "artist": "Jennifer Lopez",
+    "album": "On the 6",
+    "song": "Let's Get Loud",
+    "genre": [
+      "dance-pop",
+      "latin-pop",
+      "salsa"
+    ],
+    "who": [
+      "Angelica"
+    ],
+    "languages": [
+      "english",
+      "spanish"
+    ],
     "lyrics": "",
     "notes": "",
-    "spotify": "",
-    "appleMusic": "",
-    "youtube": "",
-    "bpm": ""
+    "spotify": "https://open.spotify.com/track/42nSaPdT6g3ZIMHmKLlP2p",
+    "appleMusic": "https://music.apple.com/us/song/lets-get-loud/1681221507",
+    "youtube": "https://www.youtube.com/watch?v=Q91hydQRGyM",
+    "bpm": 131
+  },
+  {
+    "artist": "Andy Grammer",
+    "album": "Monster",
+    "song": "Magic",
+    "genre": [
+      "pop"
+    ],
+    "who": [
+      "Cheryl"
+    ],
+    "languages": [
+      "english"
+    ],
+    "lyrics": "",
+    "notes": "",
+    "spotify": "https://open.spotify.com/track/6Bhb59RtPbvA8z6tMiZX5q",
+    "appleMusic": "https://music.apple.com/us/song/magic/1760444957",
+    "youtube": "https://www.youtube.com/watch?v=TsSv0kUmIJc",
+    "bpm": 177
+  },
+  {
+    "artist": "Salvi, Didy & Keid Sing",
+    "album": "Mano Clap Clap - Single",
+    "song": "Mano Clap Clap",
+    "genre": [
+      "dance"
+    ],
+    "who": [
+      "Carla"
+    ],
+    "languages": [
+      "spanish"
+    ],
+    "lyrics": "",
+    "notes": "",
+    "spotify": "https://open.spotify.com/track/0hwPx0dczpxMA3LwdihhUO",
+    "appleMusic": "https://music.apple.com/us/album/mano-clap-clap-single/1668776748",
+    "youtube": "https://www.youtube.com/watch?v=GeUUpgaKr4k",
+    "bpm": 95
+  },
+  {
+    "artist": "Will Smith",
+    "album": "Latin Mix USA Vol. 2",
+    "song": "Miami (Miami Mix)",
+    "genre": [
+      "r&b"
+    ],
+    "who": [
+      "Cheryl"
+    ],
+    "languages": [
+      "english",
+      "spanish"
+    ],
+    "lyrics": "",
+    "notes": "",
+    "spotify": "https://open.spotify.com/track/0sCH15W3pKl8Pj62EWK53V",
+    "appleMusic": "https://music.apple.com/sa/song/miami-miami-mix/456749633",
+    "youtube": "https://www.youtube.com/watch?v=vv0y6G3ugK8",
+    "bpm": 127
+  },
+  {
+    "artist": "Kes",
+    "album": "Soca Gold 2019",
+    "song": "Savannah Grass",
+    "genre": [
+      "soca"
+    ],
+    "who": [
+      "Cheryl"
+    ],
+    "languages": [
+      "english"
+    ],
+    "lyrics": "",
+    "notes": "",
+    "spotify": "https://open.spotify.com/track/3ToNrqyn9UNot4qNImq2ls",
+    "appleMusic": "https://music.apple.com/us/album/savannah-grass-single/1653818176",
+    "youtube": "https://www.youtube.com/watch?v=bXXq4RBKhtc",
+    "bpm": 125
+  },
+  {
+    "artist": "DJ Ricky Luna",
+    "album": "Todo El Mundo (feat. Nando Boom & HISATOMI) - Single",
+    "song": "Todo El Mundo (feat. Nando Boom & HISATOMI)",
+    "genre": [
+      "dembow",
+      "moombahton"
+    ],
+    "who": [
+      "Lisa"
+    ],
+    "languages": [
+      "spanish"
+    ],
+    "lyrics": "",
+    "notes": "",
+    "spotify": "https://open.spotify.com/track/0zrU4WxrJoOMxCpp0cMNQx",
+    "appleMusic": "https://music.apple.com/us/album/todo-el-mundo-feat-nando-boom-hisatomi-single/1411793030",
+    "youtube": "https://www.youtube.com/watch?v=6ihHEbnr51A",
+    "bpm": 127
+  },
+  {
+    "artist": "Machel Montano",
+    "album": "Spirit of Carnival Project - EP",
+    "song": "The Spirit",
+    "genre": [
+      "soca"
+    ],
+    "who": [
+      "Cheryl"
+    ],
+    "languages": [
+      "english"
+    ],
+    "lyrics": "",
+    "notes": "",
+    "spotify": "https://open.spotify.com/track/6mbYbtYsmCRQmeHuJJpgr4",
+    "appleMusic": "https://music.apple.com/us/song/the-spirit/1659942885",
+    "youtube": "https://www.youtube.com/watch?v=A6Xwt8Ep370",
+    "bpm": 130
   }
 ]

@@ -37,6 +37,9 @@
   # Remove server information disclosure
   Header always unset X-Powered-By
   Header unset X-Powered-By
+
+  # URIports monitoring
+  Header always set Reporting-Endpoints "default=\"https://leafjessicaroy.uriports.com/reports\""
 </IfModule>
 
 # Disable server signature
