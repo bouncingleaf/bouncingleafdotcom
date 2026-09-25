@@ -20,12 +20,6 @@ function Home() {
           </a>
           .
         </p>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto mt-2">
-          Looking for dance songs?{' '}
-          <a href="/dance" className="link">
-            Here's a list.
-          </a>
-        </p>
       </div>
 
       {/* Featured artwork section */}

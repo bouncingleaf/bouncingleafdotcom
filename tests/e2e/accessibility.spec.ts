@@ -8,7 +8,6 @@ const pages = [
   { path: '/about', name: 'About' },
   { path: '/names', name: 'Names' },
   { path: '/resist', name: 'Resist' },
-  { path: '/dance', name: 'Dance' },
   { path: '/random', name: 'Random' },
   { path: '/nonexistent-page', name: '404' },
 ]
