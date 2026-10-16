@@ -1,0 +1,19 @@
+name: Security Audit
+
+on:
+  schedule:
+    - cron: '0 9 * * 1' # Weekly, Mondays at 9 AM UTC
+  pull_request:
+    paths:
+      - 'package-lock.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    permissions:
+      contents: read
+      issues: write
+    uses: bouncingleaf/repo-security/.github/workflows/security-audit.yml@v1
