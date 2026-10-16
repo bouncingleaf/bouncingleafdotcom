@@ -32,7 +32,7 @@ describe('Writing', () => {
   it('has link to The Book Academy', () => {
     renderWriting()
     const link = screen.getByRole('link', { name: 'The Book Academy' })
-    expect(link).toHaveAttribute('href', 'https://thebookacademy.org/')
+    expect(link).toHaveAttribute('href', 'https://thebookacademy.com/')
   })
 
   it('has link to Luvvie Ajayi Jones', () => {
