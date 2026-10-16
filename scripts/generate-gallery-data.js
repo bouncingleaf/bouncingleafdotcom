@@ -117,13 +117,13 @@ if (fs.existsSync(sketchbookDir)) {
 
 // Generate other images data
 const otherImages = [];
-['jmrGlasses.jpeg', 'leaf2.png'].forEach(filename => {
+['leafPortrait.jpg', 'leaf2.png'].forEach(filename => {
   const filePath = path.join(publicDir, filename);
   if (fs.existsSync(filePath)) {
     otherImages.push({
-      id: filename.replace(/\.(jpeg|png)/, ''),
+      id: filename.replace(/\.(jpe?g|png)/, ''),
       path: `/images/${filename}`,
-      title: filename.replace(/\.(jpeg|png)/, '').replace(/_/g, ' ')
+      title: filename.replace(/\.(jpe?g|png)/, '').replace(/_/g, ' ')
     });
   }
 });

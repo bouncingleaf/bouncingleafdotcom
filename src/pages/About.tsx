@@ -1,13 +1,16 @@
+import OptimizedImage from '../components/OptimizedImage'
+
 function About() {
   return (
     <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <h1 className="mb-6">About Leaf</h1>
       <div className="prose max-w-none">
-        <img
-          src="/images/jmrGlasses.jpeg"
+        <OptimizedImage
+          src="/images/leafPortrait.jpg"
           width={200}
-          alt="Leaf smiling, wearing glasses and a plaid shirt"
-          className="rounded shadow-lg mb-6"
+          alt="Leaf smiling, wearing glasses and a blue top, seated in a tan armchair"
+          className="rounded shadow-lg mb-6 sm:float-left sm:mr-6"
+          size="medium"
         />
         <p>
           Hi! I'm Leaf. I like to mess around with acrylic and watercolor

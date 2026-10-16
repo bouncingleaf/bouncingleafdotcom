@@ -24,6 +24,6 @@ describe('About', () => {
     render(<About />)
     const image = screen.getByAltText(/Leaf smiling.*glasses/i)
     expect(image).toBeInTheDocument()
-    expect(image).toHaveAttribute('src', '/images/jmrGlasses.jpeg')
+    expect(image).toHaveAttribute('src', '/images/leafPortrait.jpg')
   })
 })

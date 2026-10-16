@@ -17,32 +17,23 @@ function Header() {
               loading="eager"
               size="thumbnail"
             />
-            <span
-              className="text-xl font-semibold text-text-primary"
-              style={{
-                fontFamily:
-                  "'Garamond', 'Minion Pro', 'Adobe Garamond Pro', 'Cormorant Garamond', Georgia, 'Times New Roman', serif",
-              }}
-            >
+            <span className="text-2xl font-semibold text-text-primary">
               Leaf's site
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div
-            className="hidden md:flex space-x-8"
-            style={{
-              fontFamily:
-                "'Garamond', 'Minion Pro', 'Adobe Garamond Pro', 'Cormorant Garamond', Georgia, 'Times New Roman', serif",
-            }}
-          >
-            <Link to="/writing" className="link">
+          <div className="hidden md:flex space-x-8 text-xl">
+            <Link to="/writing" className="link no-underline">
               Writing
             </Link>
-            <Link to="/art" className="link">
+            <Link to="/art" className="link no-underline">
               Art
             </Link>
-            <Link to="/about" className="link">
+            <Link to="/zumba" className="link no-underline">
+              Zumba
+            </Link>
+            <Link to="/about" className="link no-underline">
               About
             </Link>
           </div>
@@ -74,30 +65,31 @@ function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div
-            className="md:hidden pb-4"
-            style={{
-              fontFamily:
-                "'Garamond', 'Minion Pro', 'Adobe Garamond Pro', 'Cormorant Garamond', Georgia, 'Times New Roman', serif",
-            }}
-          >
+          <div className="md:hidden pb-4 text-xl">
             <Link
               to="/writing"
-              className="block py-2 link"
+              className="block py-2 link no-underline"
               onClick={() => setIsMenuOpen(false)}
             >
               Writing
             </Link>
             <Link
               to="/art"
-              className="block py-2 link"
+              className="block py-2 link no-underline"
               onClick={() => setIsMenuOpen(false)}
             >
               Art
             </Link>
             <Link
+              to="/zumba"
+              className="block py-2 link no-underline"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Zumba
+            </Link>
+            <Link
               to="/about"
-              className="block py-2 link"
+              className="block py-2 link no-underline"
               onClick={() => setIsMenuOpen(false)}
             >
               About

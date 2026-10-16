@@ -32,13 +32,11 @@ function Writing() {
           </a>
           .
         </p>
-        <div className="flex justify-center my-8">
-          <img
-            src="/images/TBA_certificate.jpeg"
-            alt="The Book Academy Certificate"
-            className="w-full md:w-[90%] h-auto rounded shadow-lg mx-auto"
-          />
-        </div>
+        <img
+          src="/images/TBA_certificate.jpeg"
+          alt="The Book Academy Certificate"
+          className="block w-1/2 md:w-[29%] md:float-left md:mr-6 h-auto rounded shadow-lg mb-6"
+        />
         <p>
           I love getting a peek into the process of other artists. So I'll be
           posting about my writing journey as I go. Check out{' '}

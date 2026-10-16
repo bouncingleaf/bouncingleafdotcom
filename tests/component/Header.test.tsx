@@ -40,6 +40,12 @@ describe('Header', () => {
       expect(artLinks[0]).toHaveAttribute('href', '/art')
     })
 
+    it('renders Zumba link', () => {
+      renderHeader()
+      const zumbaLinks = screen.getAllByText('Zumba')
+      expect(zumbaLinks[0].closest('a')).toHaveAttribute('href', '/zumba')
+    })
+
     it('renders About link', () => {
       renderHeader()
       const aboutLinks = screen.getAllByText('About')

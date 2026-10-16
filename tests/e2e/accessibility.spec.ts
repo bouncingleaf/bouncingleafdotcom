@@ -5,6 +5,7 @@ const pages = [
   { path: '/', name: 'Home' },
   { path: '/writing', name: 'Writing' },
   { path: '/art', name: 'Art' },
+  { path: '/zumba', name: 'Zumba' },
   { path: '/about', name: 'About' },
   { path: '/names', name: 'Names' },
   { path: '/resist', name: 'Resist' },

@@ -7,6 +7,7 @@ const Home = lazy(() => import('./pages/Home'))
 const Writing = lazy(() => import('./pages/Writing'))
 const Art = lazy(() => import('./pages/Art'))
 const About = lazy(() => import('./pages/About'))
+const Zumba = lazy(() => import('./pages/Zumba'))
 const Names = lazy(() => import('./pages/Names'))
 const Resist = lazy(() => import('./pages/Resist'))
 const Random = lazy(() => import('./pages/Random'))
@@ -23,6 +24,7 @@ function App() {
               <Route path="/writing" element={<Writing />} />
               <Route path="/art" element={<Art />} />
               <Route path="/about" element={<About />} />
+              <Route path="/zumba" element={<Zumba />} />
               <Route path="/names" element={<Names />} />
               <Route path="/resist" element={<Resist />} />
               <Route path="/random" element={<Random />} />
