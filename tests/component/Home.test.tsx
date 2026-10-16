@@ -22,16 +22,16 @@ describe('Home', () => {
     renderHome()
     const links = screen.getAllByRole('link')
     expect(links.map((link) => link.textContent)).toEqual([
-      'Art',
       'Writing',
+      'Art',
       'Zumba',
       'About Leaf',
     ])
   })
 
   it.each([
-    ['Art', '/art'],
     ['Writing', '/writing'],
+    ['Art', '/art'],
     ['Zumba', '/zumba'],
     ['About Leaf', '/about'],
   ])('%s card links to %s', (name, href) => {
@@ -43,7 +43,8 @@ describe('Home', () => {
     renderHome()
     const images = document.querySelectorAll('img')
     expect(images).toHaveLength(4)
-    expect(images[0]).toHaveAttribute(
+    expect(images[0]).toHaveAttribute('src', '/images/TBA_certificate.jpeg')
+    expect(images[1]).toHaveAttribute(
       'src',
       '/images/creatures/creatures07/emblem07.jpeg'
     )

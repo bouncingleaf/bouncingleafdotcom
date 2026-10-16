@@ -10,16 +10,6 @@ describe('About', () => {
     )
   })
 
-  it('shows personal bio with art materials', () => {
-    render(<About />)
-    expect(screen.getByText(/Pigma Micron pens/i)).toBeInTheDocument()
-  })
-
-  it('shows personal interests', () => {
-    render(<About />)
-    expect(screen.getByText(/look at birds/i)).toBeInTheDocument()
-  })
-
   it('displays profile image', () => {
     render(<About />)
     const image = screen.getByAltText(/Leaf smiling.*glasses/i)

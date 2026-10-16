@@ -15,44 +15,13 @@ describe('Writing', () => {
   it('renders the main heading', () => {
     renderWriting()
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
-      "I'm writing a book."
+      'Writing'
     )
-  })
-
-  it('shows information about The Book Academy', () => {
-    renderWriting()
-    expect(screen.getByText(/The Book Academy/i)).toBeInTheDocument()
-  })
-
-  it('mentions Luvvie Ajayi Jones', () => {
-    renderWriting()
-    expect(screen.getByText(/Luvvie Ajayi Jones/i)).toBeInTheDocument()
-  })
-
-  it('has link to The Book Academy', () => {
-    renderWriting()
-    const link = screen.getByRole('link', { name: 'The Book Academy' })
-    expect(link).toHaveAttribute('href', 'https://thebookacademy.com/')
-  })
-
-  it('has link to Luvvie Ajayi Jones', () => {
-    renderWriting()
-    const link = screen.getByRole('link', { name: 'Luvvie Ajayi Jones' })
-    expect(link).toHaveAttribute('href', 'https://luvvie.org/')
   })
 
   it('has link to Beyond Writing Code', () => {
     renderWriting()
     const link = screen.getByRole('link', { name: 'Beyond Writing Code' })
     expect(link).toHaveAttribute('href', 'https://www.beyondwritingcode.com/')
-  })
-
-  it('has link to Instagram', () => {
-    renderWriting()
-    const link = screen.getByRole('link', { name: 'Instagram' })
-    expect(link).toHaveAttribute(
-      'href',
-      'https://www.instagram.com/leafjessicaroy/'
-    )
   })
 })
