@@ -3,14 +3,14 @@ import OptimizedImage from '../components/OptimizedImage'
 
 const options = [
   {
-    label: 'Art',
-    to: '/art',
-    image: '/images/creatures/creatures07/emblem07.jpeg',
-  },
-  {
     label: 'Writing',
     to: '/writing',
     image: '/images/TBA_certificate.jpeg',
+  },
+  {
+    label: 'Art',
+    to: '/art',
+    image: '/images/creatures/creatures07/emblem07.jpeg',
   },
   {
     label: 'Zumba',
